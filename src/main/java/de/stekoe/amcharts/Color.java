@@ -16,8 +16,9 @@ public class Color {
         return new Color(colorHexVal);
     }
 
+    // Append # to color values as we have hex values
     @Override
     public String toString() {
-        return this.colorHexVal;
+        return "#" + this.colorHexVal;
     }
 }

@@ -117,6 +117,11 @@ public abstract class Graph implements Serializable {
     private List<JSONObject> getValueAxes() throws JSONException {
         List<JSONObject> list = new ArrayList<JSONObject>();
 
+        ValueAxis valueAxis = new ValueAxis();
+        valueAxis.setGridColor(Color.WHITE);
+        valueAxis.setGridAlpha(0.2);
+        valueAxis.setDashLength(0);
+
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("gridColor", "#FFFFFF");
         jsonObject.put("gridAlpha", 0.2);

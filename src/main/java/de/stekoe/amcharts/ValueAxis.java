@@ -1,51 +1,51 @@
 package de.stekoe.amcharts;
 
 public class ValueAxis extends AxisBase {
-    private double axisTitleOffset = 10;
-    private double baseCoord;
-    private double baseValue = 0;
+    private Double axisTitleOffset;
+    private Double baseCoord;
+    private Double baseValue;
     private String duration;
-    private String durationUnits = "{DD:'d. ', hh:':', mm:':',ss:''}";
-    private GridType gridType = GridType.polygons;
+    private String durationUnits;
+    private GridType gridType;
     private String id;
-    private boolean includeGuidesInMinMax = false;
-    private boolean includeHidden = false;
-    private boolean integersOnly = false;
-    private boolean logarithmic = false;
-    private double max;
-    private double maximum;
-    private double min;
-    private double minimum;
-    private double minMaxMultiplier = 1;
-    private Position position = Position.left;
-    private double precision;
-    private boolean radarCategoriesEnabled = true;
-    private boolean recalculateToPercents = false;
-    private boolean reversed = false;
-    private StackType stackType = StackType.none;
-    private double step;
-    private double synchronizationMultiplier;
+    private Boolean includeGuidesInMinMax;
+    private Boolean includeHidden;
+    private Boolean integersOnly;
+    private Boolean logarithmic;
+    private Double max;
+    private Double maximum;
+    private Double min;
+    private Double minimum;
+    private Double minMaxMultiplier;
+    private Position position;
+    private Double precision;
+    private Boolean radarCategoriesEnabled;
+    private Boolean recalculateToPercents;
+    private Boolean reversed;
+    private StackType stackType;
+    private Double step;
+    private Double synchronizationMultiplier;
     private ValueAxis synchronizeWith;
     private String totalText;
     private Color totalTextColor;
     private String unit;
-    private Position unitPosition = Position.right;
-    private boolean usePrefixes = false;
-    private boolean useScientificNotation = false;
+    private Position unitPosition;
+    private Boolean usePrefixes;
+    private Boolean useScientificNotation;
 
-    public double getAxisTitleOffset() {
+    public Double getAxisTitleOffset() {
         return axisTitleOffset;
     }
     public void setAxisTitleOffset(double axisTitleOffset) {
         this.axisTitleOffset = axisTitleOffset;
     }
-    public double getBaseCoord() {
+    public Double getBaseCoord() {
         return baseCoord;
     }
     public void setBaseCoord(double baseCoord) {
         this.baseCoord = baseCoord;
     }
-    public double getBaseValue() {
+    public Double getBaseValue() {
         return baseValue;
     }
     public void setBaseValue(double baseValue) {
@@ -75,55 +75,55 @@ public class ValueAxis extends AxisBase {
     public void setId(String id) {
         this.id = id;
     }
-    public boolean isIncludeGuidesInMinMax() {
+    public Boolean isIncludeGuidesInMinMax() {
         return includeGuidesInMinMax;
     }
     public void setIncludeGuidesInMinMax(boolean includeGuidesInMinMax) {
         this.includeGuidesInMinMax = includeGuidesInMinMax;
     }
-    public boolean isIncludeHidden() {
+    public Boolean isIncludeHidden() {
         return includeHidden;
     }
     public void setIncludeHidden(boolean includeHidden) {
         this.includeHidden = includeHidden;
     }
-    public boolean isIntegersOnly() {
+    public Boolean isIntegersOnly() {
         return integersOnly;
     }
     public void setIntegersOnly(boolean integersOnly) {
         this.integersOnly = integersOnly;
     }
-    public boolean isLogarithmic() {
+    public Boolean isLogarithmic() {
         return logarithmic;
     }
     public void setLogarithmic(boolean logarithmic) {
         this.logarithmic = logarithmic;
     }
-    public double getMax() {
+    public Double getMax() {
         return max;
     }
     public void setMax(double max) {
         this.max = max;
     }
-    public double getMaximum() {
+    public Double getMaximum() {
         return maximum;
     }
     public void setMaximum(double maximum) {
         this.maximum = maximum;
     }
-    public double getMin() {
+    public Double getMin() {
         return min;
     }
     public void setMin(double min) {
         this.min = min;
     }
-    public double getMinimum() {
+    public Double getMinimum() {
         return minimum;
     }
     public void setMinimum(double minimum) {
         this.minimum = minimum;
     }
-    public double getMinMaxMultiplier() {
+    public Double getMinMaxMultiplier() {
         return minMaxMultiplier;
     }
     public void setMinMaxMultiplier(double minMaxMultiplier) {
@@ -137,25 +137,25 @@ public class ValueAxis extends AxisBase {
     public void setPosition(Position position) {
         this.position = position;
     }
-    public double getPrecision() {
+    public Double getPrecision() {
         return precision;
     }
     public void setPrecision(double precision) {
         this.precision = precision;
     }
-    public boolean isRadarCategoriesEnabled() {
+    public Boolean isRadarCategoriesEnabled() {
         return radarCategoriesEnabled;
     }
     public void setRadarCategoriesEnabled(boolean radarCategoriesEnabled) {
         this.radarCategoriesEnabled = radarCategoriesEnabled;
     }
-    public boolean isRecalculateToPercents() {
+    public Boolean isRecalculateToPercents() {
         return recalculateToPercents;
     }
     public void setRecalculateToPercents(boolean recalculateToPercents) {
         this.recalculateToPercents = recalculateToPercents;
     }
-    public boolean isReversed() {
+    public Boolean isReversed() {
         return reversed;
     }
     public void setReversed(boolean reversed) {
@@ -167,13 +167,13 @@ public class ValueAxis extends AxisBase {
     public void setStackType(StackType stackType) {
         this.stackType = stackType;
     }
-    public double getStep() {
+    public Double getStep() {
         return step;
     }
     public void setStep(double step) {
         this.step = step;
     }
-    public double getSynchronizationMultiplier() {
+    public Double getSynchronizationMultiplier() {
         return synchronizationMultiplier;
     }
     public void setSynchronizationMultiplier(double synchronizationMultiplier) {
@@ -209,13 +209,13 @@ public class ValueAxis extends AxisBase {
     public void setUnitPosition(Position unitPosition) {
         this.unitPosition = unitPosition;
     }
-    public boolean isUsePrefixes() {
+    public Boolean isUsePrefixes() {
         return usePrefixes;
     }
     public void setUsePrefixes(boolean usePrefixes) {
         this.usePrefixes = usePrefixes;
     }
-    public boolean isUseScientificNotation() {
+    public Boolean isUseScientificNotation() {
         return useScientificNotation;
     }
     public void setUseScientificNotation(boolean useScientificNotation) {

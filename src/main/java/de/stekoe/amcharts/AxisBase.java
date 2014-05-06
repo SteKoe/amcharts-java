@@ -1,51 +1,51 @@
 package de.stekoe.amcharts;
 
-public abstract class AxisBase {
-    private boolean autoGridCount = true;
-    private double axisAlpha = 1;
-    private Color axisColor = Color.BLACK;
-    private double axisThickness = 1;
-    private double axisX;
-    private double axisY;
+public abstract class AxisBase extends Jsonifyable {
+    private Boolean autoGridCount;
+    private Double axisAlpha;
+    private Color axisColor;
+    private Double axisThickness;
+    private Double axisX;
+    private Double axisY;
     private String color;
-    private double dashLength = 0;
-    private double fillAlpha = 0;
-    private Color fillColor = Color.WHITE;
-    private double fontSize;
-    private double gridAlpha = 0.15;
-    private Color gridColor = Color.BLACK;
-    private double gridCount = 5;
-    private double gridThickness = 1;
-    // private Array[Guide] guides = [];
-    private boolean ignoreAxisWidth = false;
-    private boolean inside = false;
-    private double labelFrequency = 1;
-    private double labelRotation = 0;
-    private boolean labelsEnabled = true;
-    private double minHorizontalGap = 75;
-    private double minorGridAlpha = 0.07;
-    private boolean minorGridEnabled = false;
-    private double minVerticalGap = 35;
-    private double offset = 0;
-    private Position position = Position.bottom;
-    private boolean showFirstLabel = true;
-    private boolean showLastLabel = true;
-    private double tickLength = 5;
+    private Double dashLength;
+    private Double fillAlpha;
+    private Color fillColor;
+    private Double fontSize;
+    private Double gridAlpha;
+    private Color gridColor;
+    private Double gridCount;
+    private Double gridThickness;
+    // private Array[Guide] guides;
+    private Boolean ignoreAxisWidth;
+    private Boolean inside;
+    private Double labelFrequency;
+    private Double labelRotation;
+    private Boolean labelsEnabled;
+    private Double minHorizontalGap;
+    private Double minorGridAlpha;
+    private Boolean minorGridEnabled;
+    private Double minVerticalGap;
+    private Double offset;
+    private Position position;
+    private Boolean showFirstLabel;
+    private Boolean showLastLabel;
+    private Double tickLength;
     private String title;
-    private boolean titleBold = true;
+    private Boolean titleBold;
     private String titleColor;
-    private double titleFontSize;
+    private Double titleFontSize;
 
-    public boolean isAutoGridCount() {
+    public Boolean isAutoGridCount() {
         return autoGridCount;
     }
     public void setAutoGridCount(boolean autoGridCount) {
         this.autoGridCount = autoGridCount;
     }
-    public double getAxisAlpha() {
+    public Double getAxisAlpha() {
         return axisAlpha;
     }
-    public void setAxisAlpha(double axisAlpha) {
+    public void setAxisAlpha(Double axisAlpha) {
         this.axisAlpha = axisAlpha;
     }
     public Color getAxisColor() {
@@ -54,22 +54,22 @@ public abstract class AxisBase {
     public void setAxisColor(Color axisColor) {
         this.axisColor = axisColor;
     }
-    public double getAxisThickness() {
+    public Double getAxisThickness() {
         return axisThickness;
     }
-    public void setAxisThickness(double axisThickness) {
+    public void setAxisThickness(Double axisThickness) {
         this.axisThickness = axisThickness;
     }
-    public double getAxisX() {
+    public Double getAxisX() {
         return axisX;
     }
-    public void setAxisX(double axisX) {
+    public void setAxisX(Double axisX) {
         this.axisX = axisX;
     }
-    public double getAxisY() {
+    public Double getAxisY() {
         return axisY;
     }
-    public void setAxisY(double axisY) {
+    public void setAxisY(Double axisY) {
         this.axisY = axisY;
     }
     public String getColor() {
@@ -78,13 +78,13 @@ public abstract class AxisBase {
     public void setColor(String color) {
         this.color = color;
     }
-    public double getDashLength() {
+    public Double getDashLength() {
         return dashLength;
     }
     public void setDashLength(double dashLength) {
         this.dashLength = dashLength;
     }
-    public double getFillAlpha() {
+    public Double getFillAlpha() {
         return fillAlpha;
     }
     public void setFillAlpha(double fillAlpha) {
@@ -96,13 +96,13 @@ public abstract class AxisBase {
     public void setFillColor(Color fillColor) {
         this.fillColor = fillColor;
     }
-    public double getFontSize() {
+    public Double getFontSize() {
         return fontSize;
     }
     public void setFontSize(double fontSize) {
         this.fontSize = fontSize;
     }
-    public double getGridAlpha() {
+    public Double getGridAlpha() {
         return gridAlpha;
     }
     public void setGridAlpha(double gridAlpha) {
@@ -114,73 +114,73 @@ public abstract class AxisBase {
     public void setGridColor(Color gridColor) {
         this.gridColor = gridColor;
     }
-    public double getGridCount() {
+    public Double getGridCount() {
         return gridCount;
     }
     public void setGridCount(double gridCount) {
         this.gridCount = gridCount;
     }
-    public double getGridThickness() {
+    public Double getGridThickness() {
         return gridThickness;
     }
     public void setGridThickness(double gridThickness) {
         this.gridThickness = gridThickness;
     }
-    public boolean isIgnoreAxisWidth() {
+    public Boolean isIgnoreAxisWidth() {
         return ignoreAxisWidth;
     }
     public void setIgnoreAxisWidth(boolean ignoreAxisWidth) {
         this.ignoreAxisWidth = ignoreAxisWidth;
     }
-    public boolean isInside() {
+    public Boolean isInside() {
         return inside;
     }
     public void setInside(boolean inside) {
         this.inside = inside;
     }
-    public double getLabelFrequency() {
+    public Double getLabelFrequency() {
         return labelFrequency;
     }
     public void setLabelFrequency(double labelFrequency) {
         this.labelFrequency = labelFrequency;
     }
-    public double getLabelRotation() {
+    public Double getLabelRotation() {
         return labelRotation;
     }
     public void setLabelRotation(double labelRotation) {
         this.labelRotation = labelRotation;
     }
-    public boolean isLabelsEnabled() {
+    public Boolean isLabelsEnabled() {
         return labelsEnabled;
     }
     public void setLabelsEnabled(boolean labelsEnabled) {
         this.labelsEnabled = labelsEnabled;
     }
-    public double getMinHorizontalGap() {
+    public Double getMinHorizontalGap() {
         return minHorizontalGap;
     }
     public void setMinHorizontalGap(double minHorizontalGap) {
         this.minHorizontalGap = minHorizontalGap;
     }
-    public double getMinorGridAlpha() {
+    public Double getMinorGridAlpha() {
         return minorGridAlpha;
     }
     public void setMinorGridAlpha(double minorGridAlpha) {
         this.minorGridAlpha = minorGridAlpha;
     }
-    public boolean isMinorGridEnabled() {
+    public Boolean isMinorGridEnabled() {
         return minorGridEnabled;
     }
     public void setMinorGridEnabled(boolean minorGridEnabled) {
         this.minorGridEnabled = minorGridEnabled;
     }
-    public double getMinVerticalGap() {
+    public Double getMinVerticalGap() {
         return minVerticalGap;
     }
     public void setMinVerticalGap(double minVerticalGap) {
         this.minVerticalGap = minVerticalGap;
     }
-    public double getOffset() {
+    public Double getOffset() {
         return offset;
     }
     public void setOffset(double offset) {
@@ -192,19 +192,19 @@ public abstract class AxisBase {
     public void setPosition(Position position) {
         this.position = position;
     }
-    public boolean isShowFirstLabel() {
+    public Boolean isShowFirstLabel() {
         return showFirstLabel;
     }
     public void setShowFirstLabel(boolean showFirstLabel) {
         this.showFirstLabel = showFirstLabel;
     }
-    public boolean isShowLastLabel() {
+    public Boolean isShowLastLabel() {
         return showLastLabel;
     }
     public void setShowLastLabel(boolean showLastLabel) {
         this.showLastLabel = showLastLabel;
     }
-    public double getTickLength() {
+    public Double getTickLength() {
         return tickLength;
     }
     public void setTickLength(double tickLength) {
@@ -216,7 +216,7 @@ public abstract class AxisBase {
     public void setTitle(String title) {
         this.title = title;
     }
-    public boolean isTitleBold() {
+    public Boolean isTitleBold() {
         return titleBold;
     }
     public void setTitleBold(boolean titleBold) {
@@ -228,7 +228,7 @@ public abstract class AxisBase {
     public void setTitleColor(String titleColor) {
         this.titleColor = titleColor;
     }
-    public double getTitleFontSize() {
+    public Double getTitleFontSize() {
         return titleFontSize;
     }
     public void setTitleFontSize(double titleFontSize) {
