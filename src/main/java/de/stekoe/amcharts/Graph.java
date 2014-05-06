@@ -14,6 +14,7 @@ public abstract class Graph implements Serializable {
     private String categoryField;
     private final String htmlId;
     private final String chartVar = getChartVar();
+    private boolean rotate = false;
 
     public Graph(String htmlId) {
         this.htmlId = htmlId;
@@ -21,7 +22,7 @@ public abstract class Graph implements Serializable {
 
     private String getChartVar() {
         String id = "";
-        return "chart" + id.substring(0, id.indexOf("-")-1);
+        return "chart";
     }
 
     public List<GraphValue> getGraphValues() {
@@ -53,6 +54,7 @@ public abstract class Graph implements Serializable {
             graph.put("chartCursor", getChartCursor());
             graph.put("categoryField", getCategoryField());
             graph.put("exportConfig", getExportConfig());
+            graph.put("rotate", isRotate());
 
             List<JSONObject> dataProvider = new ArrayList<JSONObject>();
             for(GraphValue gv : getGraphValues()) {
@@ -74,12 +76,13 @@ public abstract class Graph implements Serializable {
     private JSONObject getExportConfig() throws JSONException {
         List<JSONObject> list = new ArrayList<JSONObject>();
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("icon", "vendors/amcharts/amcharts/images/export.png");
+        jsonObject.put("icon", "http://localhost:8080/idss-webui/vendors/amcharts/amcharts/images/export.png");
         jsonObject.put("format", "png");
         list.add(jsonObject);
 
         JSONObject exportConfig = new JSONObject();
         exportConfig.put("menuTop", 0);
+        exportConfig.put("menuRight", 0);
         exportConfig.put("menuItems", list);
 
         return exportConfig;
@@ -104,9 +107,10 @@ public abstract class Graph implements Serializable {
         List<JSONObject> list = new ArrayList<JSONObject>();
 
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("balloonText", "[[category]]: <b>[[value]]</b>");
+        jsonObject.put("balloonText", "[[" + getCategoryField() + "]]: <b>[[value]]</b>");
         jsonObject.put("type", "column");
-        jsonObject.put("valueField", "visits");
+        jsonObject.put("valueField", "count");
+        jsonObject.put("labelText", "[[count]]");
         jsonObject.put("fillAlphas", 0.8);
         jsonObject.put("lineAlpha", 0.2);
 
@@ -121,6 +125,7 @@ public abstract class Graph implements Serializable {
         valueAxis.setGridColor(Color.WHITE);
         valueAxis.setGridAlpha(0.2);
         valueAxis.setDashLength(0);
+        valueAxis.setIntegersOnly(true);
 
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("gridColor", "#FFFFFF");
@@ -133,5 +138,13 @@ public abstract class Graph implements Serializable {
 
     public String getHtmlId() {
         return htmlId;
+    }
+
+    public boolean isRotate() {
+        return rotate;
+    }
+
+    public void setRotate(boolean rotate) {
+        this.rotate = rotate;
     }
 }

@@ -1,5 +1,7 @@
 # Created by http://www.gitignore.io
 
+src/main/resources/java/
+
 ### Eclipse ###
 *.pydevproject
 .metadata
