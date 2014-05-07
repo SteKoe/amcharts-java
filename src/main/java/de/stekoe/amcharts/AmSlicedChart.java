@@ -1,11 +1,15 @@
 package de.stekoe.amcharts;
 
 import java.util.List;
+
+import de.stekoe.amcharts.addition.Color;
+
 public class AmSlicedChart extends AmChart {
     private Double alpha;
     private String alphaField;
     private Color baseColor;
     private Double brightnessStep;
+    private List<Object> chartData;
     private String colorField;
     private List<Color> colors;
     private String descriptionField;
@@ -46,134 +50,158 @@ public class AmSlicedChart extends AmChart {
     /**
      * Opacity of all slices.
      **/
-    public void setAlpha(double alpha) {
-        this.alpha = alpha;
-    }
     public Double getAlpha() {
         return alpha;
+    }
+    public AmSlicedChart setAlpha(double alpha) {
+        this.alpha = alpha;
+        return this;
     }
 
     /**
      * Name of the field in chart's dataProvider which holds slice's alpha.
      **/
-    public void setAlphaField(String alphaField) {
-        this.alphaField = alphaField;
-    }
     public String getAlphaField() {
         return alphaField;
+    }
+    public AmSlicedChart setAlphaField(String alphaField) {
+        this.alphaField = alphaField;
+        return this;
     }
 
     /**
      *      *Color of the first slice. All the other will be colored with darker or brighter colors.
      **/
-    public void setBaseColor(Color baseColor) {
-        this.baseColor = baseColor;
-    }
     public Color getBaseColor() {
         return baseColor;
+    }
+    public AmSlicedChart setBaseColor(Color baseColor) {
+        this.baseColor = baseColor;
+        return this;
     }
 
     /**
      * Lightness increase of each subsequent slice. This is only useful if baseColor is
      * set. Use negative values for darker colors. Value range is from -255 to 255.
      **/
-    public void setBrightnessStep(double brightnessStep) {
-        this.brightnessStep = brightnessStep;
-    }
     public Double getBrightnessStep() {
         return brightnessStep;
+    }
+    public AmSlicedChart setBrightnessStep(double brightnessStep) {
+        this.brightnessStep = brightnessStep;
+        return this;
+    }
+
+    /**
+     * Read-only. Array of Slice objects.
+     **/
+    public List<Object> getChartData() {
+        return chartData;
+    }
+    public AmSlicedChart setChartData(List<Object> chartData) {
+        this.chartData = chartData;
+        return this;
     }
 
     /**
      * Name of the field in chart's dataProvider which holds slice's color.
      **/
-    public void setColorField(String colorField) {
-        this.colorField = colorField;
-    }
     public String getColorField() {
         return colorField;
+    }
+    public AmSlicedChart setColorField(String colorField) {
+        this.colorField = colorField;
+        return this;
     }
 
     /**
      * Specifies the colors of the slices, if the slice color is not set. If there are more
      * slices than colors in this array, the chart picks random color.
      **/
-    public void setColors(List<Color> colors) {
-        this.colors = colors;
-    }
     public List<Color> getColors() {
         return colors;
+    }
+    public AmSlicedChart setColors(List<Color> colors) {
+        this.colors = colors;
+        return this;
     }
 
     /**
      * Name of the field in chart's dataProvider which holds a string with description.
      **/
-    public void setDescriptionField(String descriptionField) {
-        this.descriptionField = descriptionField;
-    }
     public String getDescriptionField() {
         return descriptionField;
+    }
+    public AmSlicedChart setDescriptionField(String descriptionField) {
+        this.descriptionField = descriptionField;
+        return this;
     }
 
     /**
      * Example: [0,10]. Will make slices to be filled with color gradients.
      **/
-    public void setGradientRatio(List<Number> gradientRatio) {
-        this.gradientRatio = gradientRatio;
-    }
     public List<Number> getGradientRatio() {
         return gradientRatio;
+    }
+    public AmSlicedChart setGradientRatio(List<Number> gradientRatio) {
+        this.gradientRatio = gradientRatio;
+        return this;
     }
 
     /**
      * Opacity of the group slice. Value range is 0 - 1.
      **/
-    public void setGroupedAlpha(double groupedAlpha) {
-        this.groupedAlpha = groupedAlpha;
-    }
     public Double getGroupedAlpha() {
         return groupedAlpha;
+    }
+    public AmSlicedChart setGroupedAlpha(double groupedAlpha) {
+        this.groupedAlpha = groupedAlpha;
+        return this;
     }
 
     /**
      * Color of the group slice. The default value is not set - this means the next available
      * color from "colors" array will be used.
      **/
-    public void setGroupedColor(Color groupedColor) {
-        this.groupedColor = groupedColor;
-    }
     public Color getGroupedColor() {
         return groupedColor;
+    }
+    public AmSlicedChart setGroupedColor(Color groupedColor) {
+        this.groupedColor = groupedColor;
+        return this;
     }
 
     /**
      * Description of the group slice.
      **/
-    public void setGroupedDescription(String groupedDescription) {
-        this.groupedDescription = groupedDescription;
-    }
     public String getGroupedDescription() {
         return groupedDescription;
+    }
+    public AmSlicedChart setGroupedDescription(String groupedDescription) {
+        this.groupedDescription = groupedDescription;
+        return this;
     }
 
     /**
      * If this is set to true, the group slice will be pulled out when the chart loads.
      **/
-    public void setGroupedPulled(boolean groupedPulled) {
-        this.groupedPulled = groupedPulled;
-    }
-    public boolean isGroupedPulled() {
+    public Boolean getGroupedPulled() {
         return groupedPulled;
+    }
+    public AmSlicedChart setGroupedPulled(boolean groupedPulled) {
+        this.groupedPulled = groupedPulled;
+        return this;
     }
 
     /**
      * Title of the group slice.
      **/
-    public void setGroupedTitle(String groupedTitle) {
-        this.groupedTitle = groupedTitle;
-    }
     public String getGroupedTitle() {
         return groupedTitle;
+    }
+    public AmSlicedChart setGroupedTitle(String groupedTitle) {
+        this.groupedTitle = groupedTitle;
+        return this;
     }
 
     /**
@@ -181,11 +209,12 @@ public class AmSlicedChart extends AmChart {
      * those slices will be grouped together into one slice. This is the "other" slice.
      * It will always be the last slice in a pie.
      **/
-    public void setGroupPercent(double groupPercent) {
-        this.groupPercent = groupPercent;
-    }
     public Double getGroupPercent() {
         return groupPercent;
+    }
+    public AmSlicedChart setGroupPercent(double groupPercent) {
+        this.groupPercent = groupPercent;
+        return this;
     }
 
     /**
@@ -193,121 +222,133 @@ public class AmSlicedChart extends AmChart {
      * to avoid cluttering up the chart, if you have a lot of small slices. 0 means all
      * labels will be shown.
      **/
-    public void setHideLabelsPercent(double hideLabelsPercent) {
-        this.hideLabelsPercent = hideLabelsPercent;
-    }
     public Double getHideLabelsPercent() {
         return hideLabelsPercent;
+    }
+    public AmSlicedChart setHideLabelsPercent(double hideLabelsPercent) {
+        this.hideLabelsPercent = hideLabelsPercent;
+        return this;
     }
 
     /**
      * Opacity of a hovered slice. Value range is 0 - 1.
      **/
-    public void setHoverAlpha(double hoverAlpha) {
-        this.hoverAlpha = hoverAlpha;
-    }
     public Double getHoverAlpha() {
         return hoverAlpha;
+    }
+    public AmSlicedChart setHoverAlpha(double hoverAlpha) {
+        this.hoverAlpha = hoverAlpha;
+        return this;
     }
 
     /**
      * Specifies whether data labels are visible.
      **/
-    public void setLabelsEnabled(boolean labelsEnabled) {
-        this.labelsEnabled = labelsEnabled;
-    }
-    public boolean isLabelsEnabled() {
+    public Boolean getLabelsEnabled() {
         return labelsEnabled;
+    }
+    public AmSlicedChart setLabelsEnabled(boolean labelsEnabled) {
+        this.labelsEnabled = labelsEnabled;
+        return this;
     }
 
     /**
      * Label tick opacity. Value range is 0 - 1.
      **/
-    public void setLabelTickAlpha(double labelTickAlpha) {
-        this.labelTickAlpha = labelTickAlpha;
-    }
     public Double getLabelTickAlpha() {
         return labelTickAlpha;
+    }
+    public AmSlicedChart setLabelTickAlpha(double labelTickAlpha) {
+        this.labelTickAlpha = labelTickAlpha;
+        return this;
     }
 
     /**
      * Label tick color.
      **/
-    public void setLabelTickColor(Color labelTickColor) {
-        this.labelTickColor = labelTickColor;
-    }
     public Color getLabelTickColor() {
         return labelTickColor;
+    }
+    public AmSlicedChart setLabelTickColor(Color labelTickColor) {
+        this.labelTickColor = labelTickColor;
+        return this;
     }
 
     /**
      * Bottom margin of the chart.
      **/
-    public void setMarginBottom(double marginBottom) {
-        this.marginBottom = marginBottom;
-    }
     public Double getMarginBottom() {
         return marginBottom;
+    }
+    public AmSlicedChart setMarginBottom(double marginBottom) {
+        this.marginBottom = marginBottom;
+        return this;
     }
 
     /**
      * Left margin of the chart.
      **/
-    public void setMarginLeft(double marginLeft) {
-        this.marginLeft = marginLeft;
-    }
     public Double getMarginLeft() {
         return marginLeft;
+    }
+    public AmSlicedChart setMarginLeft(double marginLeft) {
+        this.marginLeft = marginLeft;
+        return this;
     }
 
     /**
      * Right margin of the chart.
      **/
-    public void setMarginRight(double marginRight) {
-        this.marginRight = marginRight;
-    }
     public Double getMarginRight() {
         return marginRight;
+    }
+    public AmSlicedChart setMarginRight(double marginRight) {
+        this.marginRight = marginRight;
+        return this;
     }
 
     /**
      * Top margin of the chart.
      **/
-    public void setMarginTop(double marginTop) {
-        this.marginTop = marginTop;
-    }
     public Double getMarginTop() {
         return marginTop;
+    }
+    public AmSlicedChart setMarginTop(double marginTop) {
+        this.marginTop = marginTop;
+        return this;
     }
 
     /**
      * Outline opacity. Value range is 0 - 1.
      **/
-    public void setOutlineAlpha(double outlineAlpha) {
-        this.outlineAlpha = outlineAlpha;
-    }
     public Double getOutlineAlpha() {
         return outlineAlpha;
+    }
+    public AmSlicedChart setOutlineAlpha(double outlineAlpha) {
+        this.outlineAlpha = outlineAlpha;
+        return this;
     }
 
     /**
      * Outline color.
      **/
-    public void setOutlineColor(Color outlineColor) {
-        this.outlineColor = outlineColor;
-    }
     public Color getOutlineColor() {
         return outlineColor;
+    }
+    public AmSlicedChart setOutlineColor(Color outlineColor) {
+        this.outlineColor = outlineColor;
+        return this;
     }
 
     /**
      * Pie outline thickness.
      **/
-    public void setOutlineThickness(double outlineThickness) {
-        this.outlineThickness = outlineThickness;
-    }
     public Double getOutlineThickness() {
         return outlineThickness;
+    }
+    public AmSlicedChart setOutlineThickness(double outlineThickness) {
+        this.outlineThickness = outlineThickness;
+        return this;
     }
 
     /**
@@ -318,147 +359,161 @@ public class AmSlicedChart extends AmChart {
      * create your own patterns and use them. Note, x, y, randomX and randomY properties
      * won't work with IE8 and older. 3D bar/Pie charts won't work properly with patterns.
      **/
-    public void setPatternField(String patternField) {
-        this.patternField = patternField;
-    }
     public String getPatternField() {
         return patternField;
+    }
+    public AmSlicedChart setPatternField(String patternField) {
+        this.patternField = patternField;
+        return this;
     }
 
     /**
      * Name of the field in chart's dataProvider which holds a boolean value telling the
      * chart whether this slice must be pulled or not.
      **/
-    public void setPulledField(String pulledField) {
-        this.pulledField = pulledField;
-    }
     public String getPulledField() {
         return pulledField;
+    }
+    public AmSlicedChart setPulledField(String pulledField) {
+        this.pulledField = pulledField;
+        return this;
     }
 
     /**
      * Pull out duration, in seconds.
      **/
-    public void setPullOutDuration(double pullOutDuration) {
-        this.pullOutDuration = pullOutDuration;
-    }
     public Double getPullOutDuration() {
         return pullOutDuration;
+    }
+    public AmSlicedChart setPullOutDuration(double pullOutDuration) {
+        this.pullOutDuration = pullOutDuration;
+        return this;
     }
 
     /**
      * Pull out effect. Possible values are: easeOutSine, easeInSine, elastic, bounce
      **/
-    public void setPullOutEffect(String pullOutEffect) {
-        this.pullOutEffect = pullOutEffect;
-    }
     public String getPullOutEffect() {
         return pullOutEffect;
+    }
+    public AmSlicedChart setPullOutEffect(String pullOutEffect) {
+        this.pullOutEffect = pullOutEffect;
+        return this;
     }
 
     /**
      * If this is set to true, only one slice can be pulled out at a time. If the viewer
      * clicks on a slice, any other pulled-out slice will be pulled in.
      **/
-    public void setPullOutOnlyOne(boolean pullOutOnlyOne) {
-        this.pullOutOnlyOne = pullOutOnlyOne;
-    }
-    public boolean isPullOutOnlyOne() {
+    public Boolean getPullOutOnlyOne() {
         return pullOutOnlyOne;
+    }
+    public AmSlicedChart setPullOutOnlyOne(boolean pullOutOnlyOne) {
+        this.pullOutOnlyOne = pullOutOnlyOne;
+        return this;
     }
 
     /**
      * Specifies whether the animation should be sequenced or all slices should appear at
      * once.
      **/
-    public void setSequencedAnimation(boolean sequencedAnimation) {
-        this.sequencedAnimation = sequencedAnimation;
-    }
-    public boolean isSequencedAnimation() {
+    public Boolean getSequencedAnimation() {
         return sequencedAnimation;
+    }
+    public AmSlicedChart setSequencedAnimation(boolean sequencedAnimation) {
+        this.sequencedAnimation = sequencedAnimation;
+        return this;
     }
 
     /**
      * Initial opacity of all slices. Slices will fade in from startAlpha.
      **/
-    public void setStartAlpha(double startAlpha) {
-        this.startAlpha = startAlpha;
-    }
     public Double getStartAlpha() {
         return startAlpha;
+    }
+    public AmSlicedChart setStartAlpha(double startAlpha) {
+        this.startAlpha = startAlpha;
+        return this;
     }
 
     /**
      * Duration of the animation, in seconds.
      **/
-    public void setStartDuration(double startDuration) {
-        this.startDuration = startDuration;
-    }
     public Double getStartDuration() {
         return startDuration;
+    }
+    public AmSlicedChart setStartDuration(double startDuration) {
+        this.startDuration = startDuration;
+        return this;
     }
 
     /**
      * Animation effect. Possible values are: easeOutSine, easeInSine, elastic, bounce
      **/
-    public void setStartEffect(String startEffect) {
-        this.startEffect = startEffect;
-    }
     public String getStartEffect() {
         return startEffect;
+    }
+    public AmSlicedChart setStartEffect(String startEffect) {
+        this.startEffect = startEffect;
+        return this;
     }
 
     /**
      * Name of the field in chart's dataProvider which holds slice's title.
      **/
-    public void setTitleField(String titleField) {
-        this.titleField = titleField;
-    }
     public String getTitleField() {
         return titleField;
+    }
+    public AmSlicedChart setTitleField(String titleField) {
+        this.titleField = titleField;
+        return this;
     }
 
     /**
      * Name of the field in chart's dataProvider which holds url which would be accessed
      * if the user clicks on a slice.
      **/
-    public void setUrlField(String urlField) {
-        this.urlField = urlField;
-    }
     public String getUrlField() {
         return urlField;
+    }
+    public AmSlicedChart setUrlField(String urlField) {
+        this.urlField = urlField;
+        return this;
     }
 
     /**
      * If url is specified for a slice, it will be opened when user clicks on it. urlTarget
      * specifies target of this url. Use _blank if you want url to be opened in a new window.
      **/
-    public void setUrlTarget(String urlTarget) {
-        this.urlTarget = urlTarget;
-    }
     public String getUrlTarget() {
         return urlTarget;
+    }
+    public AmSlicedChart setUrlTarget(String urlTarget) {
+        this.urlTarget = urlTarget;
+        return this;
     }
 
     /**
      * Name of the field in chart's dataProvider which holds slice's value.
      **/
-    public void setValueField(String valueField) {
-        this.valueField = valueField;
-    }
     public String getValueField() {
         return valueField;
+    }
+    public AmSlicedChart setValueField(String valueField) {
+        this.valueField = valueField;
+        return this;
     }
 
     /**
      * Name of the field in chart's dataProvider which holds boolean variable defining whether
      * this data item should have an entry in the legend.
      **/
-    public void setVisibleInLegendField(String visibleInLegendField) {
-        this.visibleInLegendField = visibleInLegendField;
-    }
     public String getVisibleInLegendField() {
         return visibleInLegendField;
+    }
+    public AmSlicedChart setVisibleInLegendField(String visibleInLegendField) {
+        this.visibleInLegendField = visibleInLegendField;
+        return this;
     }
 
 }

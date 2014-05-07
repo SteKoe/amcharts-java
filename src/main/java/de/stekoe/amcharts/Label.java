@@ -1,6 +1,12 @@
 package de.stekoe.amcharts;
 
-public class Label {
+import org.json.JSONObject;
+
+import de.stekoe.amcharts.addition.Color;
+import de.stekoe.amcharts.helper.Jsonifyable;
+import de.stekoe.amcharts.helper.Jsonifyer;
+
+public class Label implements Jsonifyable {
     private String align;
     private Double alpha;
     private Boolean bold;
@@ -16,111 +22,125 @@ public class Label {
     /**
      * 
      **/
-    public void setAlign(String align) {
-        this.align = align;
-    }
     public String getAlign() {
         return align;
+    }
+    public Label setAlign(String align) {
+        this.align = align;
+        return this;
     }
 
     /**
      * 
      **/
-    public void setAlpha(double alpha) {
-        this.alpha = alpha;
-    }
     public Double getAlpha() {
         return alpha;
+    }
+    public Label setAlpha(double alpha) {
+        this.alpha = alpha;
+        return this;
     }
 
     /**
      * Specifies if label is bold or not.
      **/
-    public void setBold(boolean bold) {
-        this.bold = bold;
-    }
-    public boolean isBold() {
+    public Boolean getBold() {
         return bold;
+    }
+    public Label setBold(boolean bold) {
+        this.bold = bold;
+        return this;
     }
 
     /**
      * Color of a label.
      **/
-    public void setColor(Color color) {
-        this.color = color;
-    }
     public Color getColor() {
         return color;
+    }
+    public Label setColor(Color color) {
+        this.color = color;
+        return this;
     }
 
     /**
      * Unique id of a Label. You don't need to set it, unless you want to.
      **/
-    public void setId(String id) {
-        this.id = id;
-    }
     public String getId() {
         return id;
+    }
+    public Label setId(String id) {
+        this.id = id;
+        return this;
     }
 
     /**
      * Rotation angle.
      **/
-    public void setRotation(double rotation) {
-        this.rotation = rotation;
-    }
     public Double getRotation() {
         return rotation;
+    }
+    public Label setRotation(double rotation) {
+        this.rotation = rotation;
+        return this;
     }
 
     /**
      * Text size.
      **/
-    public void setSize(double size) {
-        this.size = size;
-    }
     public Double getSize() {
         return size;
+    }
+    public Label setSize(double size) {
+        this.size = size;
+        return this;
     }
 
     /**
      * Text of a label.
      **/
-    public void setText(String text) {
-        this.text = text;
-    }
     public String getText() {
         return text;
+    }
+    public Label setText(String text) {
+        this.text = text;
+        return this;
     }
 
     /**
      * URL which will be access if user clicks on a label.
      **/
-    public void setUrl(String url) {
-        this.url = url;
-    }
     public String getUrl() {
         return url;
+    }
+    public Label setUrl(String url) {
+        this.url = url;
+        return this;
     }
 
     /**
      * X position of a label.
      **/
-    public void setX(String x) {
-        this.x = x;
-    }
     public String getX() {
         return x;
+    }
+    public Label setX(String x) {
+        this.x = x;
+        return this;
     }
 
     /**
      * y position of a label.
      **/
-    public void setY(String y) {
-        this.y = y;
-    }
     public String getY() {
         return y;
     }
+    public Label setY(String y) {
+        this.y = y;
+        return this;
+    }
 
+    public JSONObject toJson() {
+        return new Jsonifyer(this).toJson();
+    }
 }

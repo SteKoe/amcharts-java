@@ -1,4 +1,4 @@
-package de.stekoe.amcharts;
+package de.stekoe.amcharts.cust;
 
 public class SerialGraph extends Graph {
     public SerialGraph(String htmlId) {

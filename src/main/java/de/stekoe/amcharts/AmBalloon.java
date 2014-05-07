@@ -1,6 +1,12 @@
 package de.stekoe.amcharts;
 
-public class AmBalloon {
+import org.json.JSONObject;
+
+import de.stekoe.amcharts.addition.Color;
+import de.stekoe.amcharts.helper.Jsonifyable;
+import de.stekoe.amcharts.helper.Jsonifyer;
+
+public class AmBalloon implements Jsonifyable {
     private Boolean adjustBorderColor;
     private Double animationDuration;
     private Double borderAlpha;
@@ -27,133 +33,146 @@ public class AmBalloon {
      * If this is set to true, border color instead of background color will be changed
      * when user rolls-over the slice, graph, etc.
      **/
-    public void setAdjustBorderColor(boolean adjustBorderColor) {
-        this.adjustBorderColor = adjustBorderColor;
-    }
-    public boolean isAdjustBorderColor() {
+    public Boolean getAdjustBorderColor() {
         return adjustBorderColor;
+    }
+    public AmBalloon setAdjustBorderColor(boolean adjustBorderColor) {
+        this.adjustBorderColor = adjustBorderColor;
+        return this;
     }
 
     /**
      * Duration of balloon movement from previous point to current point, in seconds.
      **/
-    public void setAnimationDuration(double animationDuration) {
-        this.animationDuration = animationDuration;
-    }
     public Double getAnimationDuration() {
         return animationDuration;
+    }
+    public AmBalloon setAnimationDuration(double animationDuration) {
+        this.animationDuration = animationDuration;
+        return this;
     }
 
     /**
      * Balloon border opacity. Value range is 0 - 1.
      **/
-    public void setBorderAlpha(double borderAlpha) {
-        this.borderAlpha = borderAlpha;
-    }
     public Double getBorderAlpha() {
         return borderAlpha;
+    }
+    public AmBalloon setBorderAlpha(double borderAlpha) {
+        this.borderAlpha = borderAlpha;
+        return this;
     }
 
     /**
      * Balloon border color. Will only be used of adjustBorderColor is false.
      **/
-    public void setBorderColor(Color borderColor) {
-        this.borderColor = borderColor;
-    }
     public Color getBorderColor() {
         return borderColor;
+    }
+    public AmBalloon setBorderColor(Color borderColor) {
+        this.borderColor = borderColor;
+        return this;
     }
 
     /**
      * Balloon border thickness.
      **/
-    public void setBorderThickness(double borderThickness) {
-        this.borderThickness = borderThickness;
-    }
     public Double getBorderThickness() {
         return borderThickness;
+    }
+    public AmBalloon setBorderThickness(double borderThickness) {
+        this.borderThickness = borderThickness;
+        return this;
     }
 
     /**
      * Color of text in the balloon.
      **/
-    public void setColor(Color color) {
-        this.color = color;
-    }
     public Color getColor() {
         return color;
+    }
+    public AmBalloon setColor(Color color) {
+        this.color = color;
+        return this;
     }
 
     /**
      * Balloon corner radius.
      **/
-    public void setCornerRadius(double cornerRadius) {
-        this.cornerRadius = cornerRadius;
-    }
     public Double getCornerRadius() {
         return cornerRadius;
+    }
+    public AmBalloon setCornerRadius(double cornerRadius) {
+        this.cornerRadius = cornerRadius;
+        return this;
     }
 
     /**
      * Duration of a fade out animation, in seconds.
      **/
-    public void setFadeOutDuration(double fadeOutDuration) {
-        this.fadeOutDuration = fadeOutDuration;
-    }
     public Double getFadeOutDuration() {
         return fadeOutDuration;
+    }
+    public AmBalloon setFadeOutDuration(double fadeOutDuration) {
+        this.fadeOutDuration = fadeOutDuration;
+        return this;
     }
 
     /**
      * Balloon background opacity.
      **/
-    public void setFillAlpha(double fillAlpha) {
-        this.fillAlpha = fillAlpha;
-    }
     public Double getFillAlpha() {
         return fillAlpha;
+    }
+    public AmBalloon setFillAlpha(double fillAlpha) {
+        this.fillAlpha = fillAlpha;
+        return this;
     }
 
     /**
      * Balloon background color. Usually balloon background color is set by the chart. Only
      * if "adjustBorderColor" is "true" this color will be used.
      **/
-    public void setFillColor(Color fillColor) {
-        this.fillColor = fillColor;
-    }
     public Color getFillColor() {
         return fillColor;
+    }
+    public AmBalloon setFillColor(Color fillColor) {
+        this.fillColor = fillColor;
+        return this;
     }
 
     /**
      * Specifies if balloon should follow mouse when hovering the slice/column/bullet or
      * stay in fixed position (this does not affect balloon behavior if ChartCursor is used).
      **/
-    public void setFixedPosition(boolean fixedPosition) {
-        this.fixedPosition = fixedPosition;
-    }
-    public boolean isFixedPosition() {
+    public Boolean getFixedPosition() {
         return fixedPosition;
+    }
+    public AmBalloon setFixedPosition(boolean fixedPosition) {
+        this.fixedPosition = fixedPosition;
+        return this;
     }
 
     /**
      * Size of text in the balloon. Chart's fontSize is used by default.
      **/
-    public void setFontSize(double fontSize) {
-        this.fontSize = fontSize;
-    }
     public Double getFontSize() {
         return fontSize;
+    }
+    public AmBalloon setFontSize(double fontSize) {
+        this.fontSize = fontSize;
+        return this;
     }
 
     /**
      * Horizontal padding of the balloon.
      **/
-    public void setHorizontalPadding(double horizontalPadding) {
-        this.horizontalPadding = horizontalPadding;
-    }
     public Double getHorizontalPadding() {
         return horizontalPadding;
+    }
+    public AmBalloon setHorizontalPadding(double horizontalPadding) {
+        this.horizontalPadding = horizontalPadding;
+        return this;
     }
 
     /**
@@ -161,52 +180,57 @@ public class AmBalloon {
      * to a small value, the balloon might flicker, as mouse might lose focus on hovered
      * object.
      **/
-    public void setOffsetX(double offsetX) {
-        this.offsetX = offsetX;
-    }
     public Double getOffsetX() {
         return offsetX;
+    }
+    public AmBalloon setOffsetX(double offsetX) {
+        this.offsetX = offsetX;
+        return this;
     }
 
     /**
      * Defines vertical distance from mouse pointer to balloon pointer. If you set it to
      * a small value, the balloon might flicker, as mouse might lose focus on hovered object.
      **/
-    public void setOffsetY(double offsetY) {
-        this.offsetY = offsetY;
-    }
     public Double getOffsetY() {
         return offsetY;
+    }
+    public AmBalloon setOffsetY(double offsetY) {
+        this.offsetY = offsetY;
+        return this;
     }
 
     /**
      * The width of the pointer (arrow) "root". Only used if cornerRadius is 0.
      **/
-    public void setPointerWidth(double pointerWidth) {
-        this.pointerWidth = pointerWidth;
-    }
     public Double getPointerWidth() {
         return pointerWidth;
+    }
+    public AmBalloon setPointerWidth(double pointerWidth) {
+        this.pointerWidth = pointerWidth;
+        return this;
     }
 
     /**
      * Opacity of a shadow.
      **/
-    public void setShadowAlpha(double shadowAlpha) {
-        this.shadowAlpha = shadowAlpha;
-    }
     public Double getShadowAlpha() {
         return shadowAlpha;
+    }
+    public AmBalloon setShadowAlpha(double shadowAlpha) {
+        this.shadowAlpha = shadowAlpha;
+        return this;
     }
 
     /**
      * Color of a shadow.
      **/
-    public void setShadowColor(Color shadowColor) {
-        this.shadowColor = shadowColor;
-    }
     public Color getShadowColor() {
         return shadowColor;
+    }
+    public AmBalloon setShadowColor(Color shadowColor) {
+        this.shadowColor = shadowColor;
+        return this;
     }
 
     /**
@@ -214,31 +238,37 @@ public class AmBalloon {
      * when ChartCursor is used. If you don't want the bullet near the balloon, set it to
      * false: chart.balloon.showBullet = false
      **/
-    public void setShowBullet(boolean showBullet) {
-        this.showBullet = showBullet;
-    }
-    public boolean isShowBullet() {
+    public Boolean getShowBullet() {
         return showBullet;
+    }
+    public AmBalloon setShowBullet(boolean showBullet) {
+        this.showBullet = showBullet;
+        return this;
     }
 
     /**
      * Text alignment, possible values "left", "middle" and "right"
      **/
-    public void setTextAlign(String textAlign) {
-        this.textAlign = textAlign;
-    }
     public String getTextAlign() {
         return textAlign;
+    }
+    public AmBalloon setTextAlign(String textAlign) {
+        this.textAlign = textAlign;
+        return this;
     }
 
     /**
      * Vertical padding of the balloon.
      **/
-    public void setVerticalPadding(double verticalPadding) {
-        this.verticalPadding = verticalPadding;
-    }
     public Double getVerticalPadding() {
         return verticalPadding;
     }
+    public AmBalloon setVerticalPadding(double verticalPadding) {
+        this.verticalPadding = verticalPadding;
+        return this;
+    }
 
+    public JSONObject toJson() {
+        return new Jsonifyer(this).toJson();
+    }
 }

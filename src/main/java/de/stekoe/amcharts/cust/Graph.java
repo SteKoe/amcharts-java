@@ -1,4 +1,4 @@
-package de.stekoe.amcharts;
+package de.stekoe.amcharts.cust;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -7,6 +7,9 @@ import java.util.Map.Entry;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import de.stekoe.amcharts.ValueAxis;
+import de.stekoe.amcharts.addition.Color;
 
 
 public abstract class Graph implements Serializable {

@@ -1,7 +1,14 @@
 package de.stekoe.amcharts;
 
 import java.util.List;
-public class AmLegend {
+
+import org.json.JSONObject;
+
+import de.stekoe.amcharts.addition.Color;
+import de.stekoe.amcharts.helper.Jsonifyable;
+import de.stekoe.amcharts.helper.Jsonifyer;
+
+public class AmLegend implements Jsonifyable {
     private String align;
     private Boolean autoMargins;
     private Double backgroundAlpha;
@@ -54,284 +61,311 @@ public class AmLegend {
     /**
      * Alignment of legend entries. Possible values are: "left", "center", "right".
      **/
-    public void setAlign(String align) {
-        this.align = align;
-    }
     public String getAlign() {
         return align;
+    }
+    public AmLegend setAlign(String align) {
+        this.align = align;
+        return this;
     }
 
     /**
      * Used if chart is Serial or XY. In case true, margins of the legend are adjusted and
      * made equal to chart's margins.
      **/
-    public void setAutoMargins(boolean autoMargins) {
-        this.autoMargins = autoMargins;
-    }
-    public boolean isAutoMargins() {
+    public Boolean getAutoMargins() {
         return autoMargins;
+    }
+    public AmLegend setAutoMargins(boolean autoMargins) {
+        this.autoMargins = autoMargins;
+        return this;
     }
 
     /**
      * Opacity of legend's background. Value range is 0 - 1
      **/
-    public void setBackgroundAlpha(double backgroundAlpha) {
-        this.backgroundAlpha = backgroundAlpha;
-    }
     public Double getBackgroundAlpha() {
         return backgroundAlpha;
+    }
+    public AmLegend setBackgroundAlpha(double backgroundAlpha) {
+        this.backgroundAlpha = backgroundAlpha;
+        return this;
     }
 
     /**
      * Background color. You should set backgroundAlpha to >0 vallue in order background
      * to be visible.
      **/
-    public void setBackgroundColor(Color backgroundColor) {
-        this.backgroundColor = backgroundColor;
-    }
     public Color getBackgroundColor() {
         return backgroundColor;
+    }
+    public AmLegend setBackgroundColor(Color backgroundColor) {
+        this.backgroundColor = backgroundColor;
+        return this;
     }
 
     /**
      * Opacity of chart's border. Value range is 0 - 1.
      **/
-    public void setBorderAlpha(double borderAlpha) {
-        this.borderAlpha = borderAlpha;
-    }
     public Double getBorderAlpha() {
         return borderAlpha;
+    }
+    public AmLegend setBorderAlpha(double borderAlpha) {
+        this.borderAlpha = borderAlpha;
+        return this;
     }
 
     /**
      *      *Color of legend's border. You should set borderAlpha >0 in order border to be visible.
      **/
-    public void setBorderColor(Color borderColor) {
-        this.borderColor = borderColor;
-    }
     public Color getBorderColor() {
         return borderColor;
+    }
+    public AmLegend setBorderColor(Color borderColor) {
+        this.borderColor = borderColor;
+        return this;
     }
 
     /**
      * In case legend position is set to "absolute", you can set distance from bottom of
      * the chart, in pixels.
      **/
-    public void setBottom(double bottom) {
-        this.bottom = bottom;
-    }
     public Double getBottom() {
         return bottom;
+    }
+    public AmLegend setBottom(double bottom) {
+        this.bottom = bottom;
+        return this;
     }
 
     /**
      * Text color.
      **/
-    public void setColor(Color color) {
-        this.color = color;
-    }
     public Color getColor() {
         return color;
+    }
+    public AmLegend setColor(Color color) {
+        this.color = color;
+        return this;
     }
 
     /**
      * You can pass array of objects with title, color, markerType values, for example:
      * [{title: "One", color: "#3366CC"},{title: "Two", color: "#FFCC33"}]
      **/
-    public void setData(List<Object> data) {
-        this.data = data;
-    }
     public List<Object> getData() {
         return data;
+    }
+    public AmLegend setData(List<Object> data) {
+        this.data = data;
+        return this;
     }
 
     /**
      * You can set id of a div or a reference to div object in case you want the legend
      * to be placed in a separate container.
      **/
-    public void setDivId(String divId) {
-        this.divId = divId;
-    }
     public String getDivId() {
         return divId;
+    }
+    public AmLegend setDivId(String divId) {
+        this.divId = divId;
+        return this;
     }
 
     /**
      * Specifies if each of legend entry should be equal to the most wide entry. Won't look
      * good if legend has more than one line.
      **/
-    public void setEqualWidths(boolean equalWidths) {
-        this.equalWidths = equalWidths;
-    }
-    public boolean isEqualWidths() {
+    public Boolean getEqualWidths() {
         return equalWidths;
+    }
+    public AmLegend setEqualWidths(boolean equalWidths) {
+        this.equalWidths = equalWidths;
+        return this;
     }
 
     /**
      * Font size.
      **/
-    public void setFontSize(double fontSize) {
-        this.fontSize = fontSize;
-    }
     public Double getFontSize() {
         return fontSize;
+    }
+    public AmLegend setFontSize(double fontSize) {
+        this.fontSize = fontSize;
+        return this;
     }
 
     /**
      * Horizontal space between legend item and left/right border.
      **/
-    public void setHorizontalGap(double horizontalGap) {
-        this.horizontalGap = horizontalGap;
-    }
     public Double getHorizontalGap() {
         return horizontalGap;
+    }
+    public AmLegend setHorizontalGap(double horizontalGap) {
+        this.horizontalGap = horizontalGap;
+        return this;
     }
 
     /**
      * The text which will be displayed in the legend. Tag [[title]] will be replaced with
      * the title of the graph.
      **/
-    public void setLabelText(String labelText) {
-        this.labelText = labelText;
-    }
     public String getLabelText() {
         return labelText;
+    }
+    public AmLegend setLabelText(String labelText) {
+        this.labelText = labelText;
+        return this;
     }
 
     /**
      * In case legend position is set to "absolute", you can set distance from left side
      * of the chart, in pixels.
      **/
-    public void setLeft(double left) {
-        this.left = left;
-    }
     public Double getLeft() {
         return left;
+    }
+    public AmLegend setLeft(double left) {
+        this.left = left;
+        return this;
     }
 
     /**
      * Bottom margin.
      **/
-    public void setMarginBottom(double marginBottom) {
-        this.marginBottom = marginBottom;
-    }
     public Double getMarginBottom() {
         return marginBottom;
+    }
+    public AmLegend setMarginBottom(double marginBottom) {
+        this.marginBottom = marginBottom;
+        return this;
     }
 
     /**
      * Left margin. This property will be ignored if chart is Serial or XY and autoMargins
      * property of the legend is true (default).
      **/
-    public void setMarginLeft(double marginLeft) {
-        this.marginLeft = marginLeft;
-    }
     public Double getMarginLeft() {
         return marginLeft;
+    }
+    public AmLegend setMarginLeft(double marginLeft) {
+        this.marginLeft = marginLeft;
+        return this;
     }
 
     /**
      * Right margin. This property will be ignored if chart is Serial or XY and autoMargins
      * property of the legend is true (default).
      **/
-    public void setMarginRight(double marginRight) {
-        this.marginRight = marginRight;
-    }
     public Double getMarginRight() {
         return marginRight;
+    }
+    public AmLegend setMarginRight(double marginRight) {
+        this.marginRight = marginRight;
+        return this;
     }
 
     /**
      * Top margin.
      **/
-    public void setMarginTop(double marginTop) {
-        this.marginTop = marginTop;
-    }
     public Double getMarginTop() {
         return marginTop;
+    }
+    public AmLegend setMarginTop(double marginTop) {
+        this.marginTop = marginTop;
+        return this;
     }
 
     /**
      * Marker border opacity.
      **/
-    public void setMarkerBorderAlpha(double markerBorderAlpha) {
-        this.markerBorderAlpha = markerBorderAlpha;
-    }
     public Double getMarkerBorderAlpha() {
         return markerBorderAlpha;
+    }
+    public AmLegend setMarkerBorderAlpha(double markerBorderAlpha) {
+        this.markerBorderAlpha = markerBorderAlpha;
+        return this;
     }
 
     /**
      * Marker border color. If not set, will use the same color as marker.
      **/
-    public void setMarkerBorderColor(Color markerBorderColor) {
-        this.markerBorderColor = markerBorderColor;
-    }
     public Color getMarkerBorderColor() {
         return markerBorderColor;
+    }
+    public AmLegend setMarkerBorderColor(Color markerBorderColor) {
+        this.markerBorderColor = markerBorderColor;
+        return this;
     }
 
     /**
      * Thickness of the legend border. The default value (0) means the line will be a "hairline"
      * (1 px). In case marker type is line, this style will be used for line thickness.
      **/
-    public void setMarkerBorderThickness(double markerBorderThickness) {
-        this.markerBorderThickness = markerBorderThickness;
-    }
     public Double getMarkerBorderThickness() {
         return markerBorderThickness;
+    }
+    public AmLegend setMarkerBorderThickness(double markerBorderThickness) {
+        this.markerBorderThickness = markerBorderThickness;
+        return this;
     }
 
     /**
      * The color of the disabled marker (when the graph is hidden).
      **/
-    public void setMarkerDisabledColor(Color markerDisabledColor) {
-        this.markerDisabledColor = markerDisabledColor;
-    }
     public Color getMarkerDisabledColor() {
         return markerDisabledColor;
+    }
+    public AmLegend setMarkerDisabledColor(Color markerDisabledColor) {
+        this.markerDisabledColor = markerDisabledColor;
+        return this;
     }
 
     /**
      * Space between legend marker and legend text, in pixels.
      **/
-    public void setMarkerLabelGap(double markerLabelGap) {
-        this.markerLabelGap = markerLabelGap;
-    }
     public Double getMarkerLabelGap() {
         return markerLabelGap;
+    }
+    public AmLegend setMarkerLabelGap(double markerLabelGap) {
+        this.markerLabelGap = markerLabelGap;
+        return this;
     }
 
     /**
      * Size of the legend marker (key).
      **/
-    public void setMarkerSize(double markerSize) {
-        this.markerSize = markerSize;
-    }
     public Double getMarkerSize() {
         return markerSize;
+    }
+    public AmLegend setMarkerSize(double markerSize) {
+        this.markerSize = markerSize;
+        return this;
     }
 
     /**
      * Shape of the legend marker (key). Possible values are: square, circle, diamond, triangleUp,
      * triangleDown, triangleLeft, triangleDown, bubble, line, none.
      **/
-    public void setMarkerType(String markerType) {
-        this.markerType = markerType;
-    }
     public String getMarkerType() {
         return markerType;
+    }
+    public AmLegend setMarkerType(String markerType) {
+        this.markerType = markerType;
+        return this;
     }
 
     /**
      * Maximum number of columns in the legend. If Legend's position is set to "right" or
      * "left", maxColumns is automatically set to 1.
      **/
-    public void setMaxColumns(double maxColumns) {
-        this.maxColumns = maxColumns;
-    }
     public Double getMaxColumns() {
         return maxColumns;
+    }
+    public AmLegend setMaxColumns(double maxColumns) {
+        this.maxColumns = maxColumns;
+        return this;
     }
 
     /**
@@ -342,11 +376,12 @@ public class AmLegend {
      * [[value.sum]] means that sum of all data points of value field in the selected period
      * will be displayed.
      **/
-    public void setPeriodValueText(String periodValueText) {
-        this.periodValueText = periodValueText;
-    }
     public String getPeriodValueText() {
         return periodValueText;
+    }
+    public AmLegend setPeriodValueText(String periodValueText) {
+        this.periodValueText = periodValueText;
+        return this;
     }
 
     /**
@@ -355,42 +390,46 @@ public class AmLegend {
      * ignored in Stock charts). In case legend is used with AmMap, position is set to "absolute"
      * automatically.
      **/
-    public void setPosition(String position) {
-        this.position = position;
-    }
     public String getPosition() {
         return position;
+    }
+    public AmLegend setPosition(String position) {
+        this.position = position;
+        return this;
     }
 
     /**
      * Specifies whether legend entries should be placed in reversed order.
      **/
-    public void setReversedOrder(boolean reversedOrder) {
-        this.reversedOrder = reversedOrder;
-    }
-    public boolean isReversedOrder() {
+    public Boolean getReversedOrder() {
         return reversedOrder;
+    }
+    public AmLegend setReversedOrder(boolean reversedOrder) {
+        this.reversedOrder = reversedOrder;
+        return this;
     }
 
     /**
      * In case legend position is set to "absolute", you can set distance from right side
      * of the chart, in pixels.
      **/
-    public void setRight(double right) {
-        this.right = right;
-    }
     public Double getRight() {
         return right;
+    }
+    public AmLegend setRight(double right) {
+        this.right = right;
+        return this;
     }
 
     /**
      * Legend item text color on roll-over.
      **/
-    public void setRollOverColor(Color rollOverColor) {
-        this.rollOverColor = rollOverColor;
-    }
     public Color getRollOverColor() {
         return rollOverColor;
+    }
+    public AmLegend setRollOverColor(Color rollOverColor) {
+        this.rollOverColor = rollOverColor;
+        return this;
     }
 
     /**
@@ -398,168 +437,187 @@ public class AmLegend {
      * that the graph you rolled-over would be distinguished. This style specifies the opacity
      * of the graphs.
      **/
-    public void setRollOverGraphAlpha(double rollOverGraphAlpha) {
-        this.rollOverGraphAlpha = rollOverGraphAlpha;
-    }
     public Double getRollOverGraphAlpha() {
         return rollOverGraphAlpha;
+    }
+    public AmLegend setRollOverGraphAlpha(double rollOverGraphAlpha) {
+        this.rollOverGraphAlpha = rollOverGraphAlpha;
+        return this;
     }
 
     /**
      * You can use this property to turn all the legend entries off.
      **/
-    public void setShowEntries(boolean showEntries) {
-        this.showEntries = showEntries;
-    }
-    public boolean isShowEntries() {
+    public Boolean getShowEntries() {
         return showEntries;
+    }
+    public AmLegend setShowEntries(boolean showEntries) {
+        this.showEntries = showEntries;
+        return this;
     }
 
     /**
      * Horizontal space between legend items, in pixels.
      **/
-    public void setSpacing(double spacing) {
-        this.spacing = spacing;
-    }
     public Double getSpacing() {
         return spacing;
+    }
+    public AmLegend setSpacing(double spacing) {
+        this.spacing = spacing;
+        return this;
     }
 
     /**
      * Whether showing/hiding of graphs by clicking on the legend marker is enabled or not.
      * In case legend is used with AmMap, this is set to false automatically.
      **/
-    public void setSwitchable(boolean switchable) {
-        this.switchable = switchable;
-    }
-    public boolean isSwitchable() {
+    public Boolean getSwitchable() {
         return switchable;
+    }
+    public AmLegend setSwitchable(boolean switchable) {
+        this.switchable = switchable;
+        return this;
     }
 
     /**
      * Legend switch color.
      **/
-    public void setSwitchColor(Color switchColor) {
-        this.switchColor = switchColor;
-    }
     public Color getSwitchColor() {
         return switchColor;
+    }
+    public AmLegend setSwitchColor(Color switchColor) {
+        this.switchColor = switchColor;
+        return this;
     }
 
     /**
      * Legend switch type (in case the legend is switchable). Possible values are "x" and
      * "v".
      **/
-    public void setSwitchType(String switchType) {
-        this.switchType = switchType;
-    }
     public String getSwitchType() {
         return switchType;
+    }
+    public AmLegend setSwitchType(String switchType) {
+        this.switchType = switchType;
+        return this;
     }
 
     /**
      * If true, clicking on the text will show/hide balloon of the graph. Otherwise it will
      * show/hide graph/slice, if switchable is set to true.
      **/
-    public void setTextClickEnabled(boolean textClickEnabled) {
-        this.textClickEnabled = textClickEnabled;
-    }
-    public boolean isTextClickEnabled() {
+    public Boolean getTextClickEnabled() {
         return textClickEnabled;
+    }
+    public AmLegend setTextClickEnabled(boolean textClickEnabled) {
+        this.textClickEnabled = textClickEnabled;
+        return this;
     }
 
     /**
      * In case legend position is set to "absolute", you can set distance from top of the
      * chart, in pixels.
      **/
-    public void setTop(double top) {
-        this.top = top;
-    }
     public Double getTop() {
         return top;
+    }
+    public AmLegend setTop(double top) {
+        this.top = top;
+        return this;
     }
 
     /**
      * Legend markers can mirror graph’s settings, displaying a line and a real bullet as
      * in the graph itself. Set this property to true if you want to enable this feature.
      **/
-    public void setUseGraphSettings(boolean useGraphSettings) {
-        this.useGraphSettings = useGraphSettings;
-    }
-    public boolean isUseGraphSettings() {
+    public Boolean getUseGraphSettings() {
         return useGraphSettings;
+    }
+    public AmLegend setUseGraphSettings(boolean useGraphSettings) {
+        this.useGraphSettings = useGraphSettings;
+        return this;
     }
 
     /**
      * Labels will use marker color if you set this to true.
      **/
-    public void setUseMarkerColorForLabels(boolean useMarkerColorForLabels) {
-        this.useMarkerColorForLabels = useMarkerColorForLabels;
-    }
-    public boolean isUseMarkerColorForLabels() {
+    public Boolean getUseMarkerColorForLabels() {
         return useMarkerColorForLabels;
+    }
+    public AmLegend setUseMarkerColorForLabels(boolean useMarkerColorForLabels) {
+        this.useMarkerColorForLabels = useMarkerColorForLabels;
+        return this;
     }
 
     /**
      * Specifies if legend values should be use same color as corresponding markers.
      **/
-    public void setUseMarkerColorForValues(boolean useMarkerColorForValues) {
-        this.useMarkerColorForValues = useMarkerColorForValues;
-    }
-    public boolean isUseMarkerColorForValues() {
+    public Boolean getUseMarkerColorForValues() {
         return useMarkerColorForValues;
+    }
+    public AmLegend setUseMarkerColorForValues(boolean useMarkerColorForValues) {
+        this.useMarkerColorForValues = useMarkerColorForValues;
+        return this;
     }
 
     /**
      * Alignment of the value text. Possible values are "left" and "right".
      **/
-    public void setValueAlign(String valueAlign) {
-        this.valueAlign = valueAlign;
-    }
     public String getValueAlign() {
         return valueAlign;
+    }
+    public AmLegend setValueAlign(String valueAlign) {
+        this.valueAlign = valueAlign;
+        return this;
     }
 
     /**
      * The text which will be displayed in the value portion of the legend. You can use
      * tags like [[value]], [[open]], [[high]], [[low]], [[close]], [[percents]], [[description]].
      **/
-    public void setValueText(String valueText) {
-        this.valueText = valueText;
-    }
     public String getValueText() {
         return valueText;
+    }
+    public AmLegend setValueText(String valueText) {
+        this.valueText = valueText;
+        return this;
     }
 
     /**
      * Width of the value text.
      **/
-    public void setValueWidth(double valueWidth) {
-        this.valueWidth = valueWidth;
-    }
     public Double getValueWidth() {
         return valueWidth;
+    }
+    public AmLegend setValueWidth(double valueWidth) {
+        this.valueWidth = valueWidth;
+        return this;
     }
 
     /**
      * Vertical space between legend items also between legend border and first and last
      * legend row.
      **/
-    public void setVerticalGap(double verticalGap) {
-        this.verticalGap = verticalGap;
-    }
     public Double getVerticalGap() {
         return verticalGap;
+    }
+    public AmLegend setVerticalGap(double verticalGap) {
+        this.verticalGap = verticalGap;
+        return this;
     }
 
     /**
      * Width of a legend, when position is set to absolute.
      **/
-    public void setWidth(double width) {
-        this.width = width;
-    }
     public Double getWidth() {
         return width;
     }
+    public AmLegend setWidth(double width) {
+        this.width = width;
+        return this;
+    }
 
+    public JSONObject toJson() {
+        return new Jsonifyer(this).toJson();
+    }
 }

@@ -1,6 +1,8 @@
-package de.stekoe.amcharts;
+package de.stekoe.amcharts.cust;
 
 import org.junit.Before;
+
+import de.stekoe.amcharts.cust.GraphValue;
 
 
 public class GraphValueTest {

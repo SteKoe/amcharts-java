@@ -1,7 +1,13 @@
 package de.stekoe.amcharts;
 
 import java.util.List;
-public class AmCharts {
+
+import org.json.JSONObject;
+
+import de.stekoe.amcharts.helper.Jsonifyable;
+import de.stekoe.amcharts.helper.Jsonifyer;
+
+public class AmCharts implements Jsonifyable {
     private Boolean baseHref;
     private List<String> dayNames;
     private List<String> monthNames;
@@ -15,66 +21,72 @@ public class AmCharts {
      * Set it to true if you have base href set for your page. This will fix rendering problems
      * in Firefox caused by base href.
      **/
-    public void setBaseHref(boolean baseHref) {
-        this.baseHref = baseHref;
-    }
-    public boolean isBaseHref() {
+    public Boolean getBaseHref() {
         return baseHref;
+    }
+    public AmCharts setBaseHref(boolean baseHref) {
+        this.baseHref = baseHref;
+        return this;
     }
 
     /**
      * Array of day names, used when formatting dates (if categoryAxis.parseDates is set
      * to true)
      **/
-    public void setDayNames(List<String> dayNames) {
-        this.dayNames = dayNames;
-    }
     public List<String> getDayNames() {
         return dayNames;
+    }
+    public AmCharts setDayNames(List<String> dayNames) {
+        this.dayNames = dayNames;
+        return this;
     }
 
     /**
      * Array of month names, used when formatting dates (if categoryAxis.parseDates is set
      * to true)
      **/
-    public void setMonthNames(List<String> monthNames) {
-        this.monthNames = monthNames;
-    }
     public List<String> getMonthNames() {
         return monthNames;
+    }
+    public AmCharts setMonthNames(List<String> monthNames) {
+        this.monthNames = monthNames;
+        return this;
     }
 
     /**
      * Delay in ms at which each chart on the page should be rendered. This is very handy
      * if you have a lot of charts on the page and do not want to overload the device CPU.
      **/
-    public void setProcessDelay(double processDelay) {
-        this.processDelay = processDelay;
-    }
     public Double getProcessDelay() {
         return processDelay;
+    }
+    public AmCharts setProcessDelay(double processDelay) {
+        this.processDelay = processDelay;
+        return this;
     }
 
     /**
      * Array of short versions of day names, used when formatting dates (if categoryAxis.parseDates
      * is set to true)
      **/
-    public void setShortDayNames(List<String> shortDayNames) {
-        this.shortDayNames = shortDayNames;
-    }
     public List<String> getShortDayNames() {
         return shortDayNames;
+    }
+    public AmCharts setShortDayNames(List<String> shortDayNames) {
+        this.shortDayNames = shortDayNames;
+        return this;
     }
 
     /**
      * Array of short versions of month names, used when formatting dates (if categoryAxis.parseDates
      * is set to true)
      **/
-    public void setShortMonthNames(List<String> shortMonthNames) {
-        this.shortMonthNames = shortMonthNames;
-    }
     public List<String> getShortMonthNames() {
         return shortMonthNames;
+    }
+    public AmCharts setShortMonthNames(List<String> shortMonthNames) {
+        this.shortMonthNames = shortMonthNames;
+        return this;
     }
 
     /**
@@ -85,21 +97,26 @@ public class AmCharts {
      * way to change theme of already created chart, you have to create chart's instance
      * once more if you want to change theme.
      **/
-    public void setTheme(String theme) {
-        this.theme = theme;
-    }
     public String getTheme() {
         return theme;
+    }
+    public AmCharts setTheme(String theme) {
+        this.theme = theme;
+        return this;
     }
 
     /**
      * Set it to true if you want UTC time to be used instead of local time.
      **/
-    public void setUseUTC(boolean useUTC) {
-        this.useUTC = useUTC;
-    }
-    public boolean isUseUTC() {
+    public Boolean getUseUTC() {
         return useUTC;
     }
+    public AmCharts setUseUTC(boolean useUTC) {
+        this.useUTC = useUTC;
+        return this;
+    }
 
+    public JSONObject toJson() {
+        return new Jsonifyer(this).toJson();
+    }
 }

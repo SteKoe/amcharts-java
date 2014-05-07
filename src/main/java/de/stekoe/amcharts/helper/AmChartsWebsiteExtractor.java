@@ -3,11 +3,11 @@ package de.stekoe.amcharts.helper;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
-import java.util.LinkedHashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
@@ -17,10 +17,9 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class AmChartsWebsiteExtractor {
-    private final Set<String> fields = new LinkedHashSet<String>();
-    private final List<String> getter = new ArrayList<String>();
-    private final List<String> setter = new ArrayList<String>();
-    private final List<String> docs = new ArrayList<String>();
+    private final Map<String, Field> fields = new LinkedHashMap<String, Field>();
+
+    private final List<String> imports = Arrays.asList("java.util.Date","java.util.List", "org.json.JSONObject", "de.stekoe.amcharts.addition.Color", "de.stekoe.amcharts.helper.Jsonifyable","de.stekoe.amcharts.helper.Jsonifyer");
     private final Map<String, String> inheritances = new HashMap<String, String>();
     private final boolean forceWrite = true;
 
@@ -28,6 +27,8 @@ public class AmChartsWebsiteExtractor {
 
     private static final String RESOURCES_CSV = "src/main/resources/csv/";
     private static final String RESOURCES_JAVA = "src/main/resources/java/";
+
+    private String component;
 
     public static void main(String[] args) throws IOException {
         List<String> components = new ArrayList<String>();
@@ -48,6 +49,7 @@ public class AmChartsWebsiteExtractor {
     }
 
     public void run(String component) throws IOException {
+            this.component = component;
             System.out.print("Processing " + component + "... ");
             extractProperties(component);
 
@@ -136,12 +138,13 @@ public class AmChartsWebsiteExtractor {
                 String getMeth = createGetterFor(type, prop.attribute);
                 String setMeth = createSetterFor(type, prop.attribute);
 
-                if(!javaDoc.toLowerCase().contains("read-only")) {
-                    docs.add(javaDoc);
-                    fields.add(field);
-                    setter.add(getMeth);
-                    getter.add(setMeth);
-                }
+                Field f = new Field();
+                f.field = field;
+                f.setter = setMeth;
+                f.getter = getMeth;
+                f.javadoc = (javaDoc == null) ? "" : javaDoc;
+
+                fields.put(field, f);
 
                 writeClassFile(outputFile);
             }
@@ -178,29 +181,53 @@ public class AmChartsWebsiteExtractor {
         String className = FilenameUtils.getBaseName(outputFile.getAbsolutePath());
 
         String superClass = inheritances.get(className);
-        String inheritance = "";
-        if(superClass != null) {
+        String inheritance = " implements Jsonifyable";
+        if(hasSuperClass(className)) {
             inheritance = " extends " + superClass;
         }
 
-        FileUtils.write(outputFile, "package de.stekoe.amcharts;\n");
+        FileUtils.write(outputFile, "package de.stekoe.amcharts;\n\n");
+
+        for (String _import : imports) {
+            FileUtils.write(outputFile, "import "+ _import +";\n", true);
+        }
         FileUtils.write(outputFile, "\n", true);
-        FileUtils.write(outputFile, "import java.util.List;", true);
-        FileUtils.write(outputFile, "\n", true);
+
         FileUtils.write(outputFile, "public class " + className + inheritance + " {\n", true);
-        for (String field : fields) {
+
+        // Write all fields
+        for (String field : fields.keySet()) {
             FileUtils.write(outputFile, field + "\n", true);
         }
         FileUtils.write(outputFile, "\n", true);
 
-        for(int i = 0; i < getter.size(); i++) {
-            FileUtils.write(outputFile, docs.get(i), true);
-            FileUtils.write(outputFile, getter.get(i), true);
-            FileUtils.write(outputFile, setter.get(i), true);
+        // Write doc, getter and setter blockwise
+        for(String field : fields.keySet()) {
+            Field f = fields.get(field);
+            FileUtils.write(outputFile, f.javadoc, true);
+            FileUtils.write(outputFile, f.getter, true);
+            FileUtils.write(outputFile, f.setter, true);
             FileUtils.write(outputFile, "\n", true);
         }
 
+        // Write toJson() method
+        if(!hasSuperClass(className)) {
+            FileUtils.write(outputFile, getToJsonMethod(), true);
+        }
+
         FileUtils.write(outputFile, "}", true);
+    }
+
+    private CharSequence getToJsonMethod() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("    public JSONObject toJson() {\n");
+        sb.append("        return new Jsonifyer(this).toJson();\n");
+        sb.append("    }\n");
+        return sb.toString();
+    }
+
+    private boolean hasSuperClass(Object className) {
+        return inheritances.get(className) != null;
     }
 
     private String createSetterFor(String type, String field) {
@@ -213,22 +240,17 @@ public class AmChartsWebsiteExtractor {
             t = "double";
         }
 
-        sb.append("    public void set"+capitalize(field)+"("+t+" "+field+") {\n");
+        sb.append("    public " + component + " set"+capitalize(field)+"("+t+" "+field+") {\n");
         sb.append("        this."+ field +" = "+field+";\n");
+        sb.append("        return this;\n");
         sb.append("    }\n");
         return sb.toString();
     }
 
     private String createGetterFor(String type, String field) {
         StringBuilder sb = new StringBuilder();
-        if(type.equals("Boolean")) {
-            sb.append("    public boolean is"+capitalize(field) + "() {\n");
-        } else {
-            sb.append("    public "+ type + " get"+capitalize(field) + "() {\n");
-        }
-
+        sb.append("    public "+ type + " get"+capitalize(field) + "() {\n");
         sb.append("        return "+field+";\n");
-
         sb.append("    }\n");
 
         return sb.toString();
@@ -244,5 +266,12 @@ public class AmChartsWebsiteExtractor {
         public String attribute;
         public String type;
         public String documentation;
+    }
+
+    class Field {
+        public String field;
+        public String javadoc;
+        public String getter;
+        public String setter;
     }
 }

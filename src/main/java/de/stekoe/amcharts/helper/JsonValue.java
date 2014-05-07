@@ -1,4 +1,4 @@
-package de.stekoe.amcharts;
+package de.stekoe.amcharts.helper;
 
 public class JsonValue {
     private String attribute;

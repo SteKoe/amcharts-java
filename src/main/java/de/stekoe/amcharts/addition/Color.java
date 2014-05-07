@@ -1,4 +1,4 @@
-package de.stekoe.amcharts;
+package de.stekoe.amcharts.addition;
 
 public class Color {
 

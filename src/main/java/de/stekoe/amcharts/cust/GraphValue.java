@@ -1,4 +1,4 @@
-package de.stekoe.amcharts;
+package de.stekoe.amcharts.cust;
 
 import java.io.Serializable;
 import java.util.HashMap;

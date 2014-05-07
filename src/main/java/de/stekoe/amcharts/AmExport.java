@@ -1,6 +1,12 @@
 package de.stekoe.amcharts;
 
-public class AmExport {
+import org.json.JSONObject;
+
+import de.stekoe.amcharts.addition.Color;
+import de.stekoe.amcharts.helper.Jsonifyable;
+import de.stekoe.amcharts.helper.Jsonifyer;
+
+public class AmExport implements Jsonifyable {
     private String bottom;
     private Double buttonAlpha;
     private String buttonIcon;
@@ -21,154 +27,172 @@ public class AmExport {
      * Bottom position of export button. You might need to set top to undefined for this
      * to work.
      **/
-    public void setBottom(String bottom) {
-        this.bottom = bottom;
-    }
     public String getBottom() {
         return bottom;
+    }
+    public AmExport setBottom(String bottom) {
+        this.bottom = bottom;
+        return this;
     }
 
     /**
      * Opacity of a button.
      **/
-    public void setButtonAlpha(double buttonAlpha) {
-        this.buttonAlpha = buttonAlpha;
-    }
     public Double getButtonAlpha() {
         return buttonAlpha;
+    }
+    public AmExport setButtonAlpha(double buttonAlpha) {
+        this.buttonAlpha = buttonAlpha;
+        return this;
     }
 
     /**
      * Name of export button image.
      **/
-    public void setButtonIcon(String buttonIcon) {
-        this.buttonIcon = buttonIcon;
-    }
     public String getButtonIcon() {
         return buttonIcon;
+    }
+    public AmExport setButtonIcon(String buttonIcon) {
+        this.buttonIcon = buttonIcon;
+        return this;
     }
 
     /**
      * Roll-over color of button background.
      **/
-    public void setButtonRollOverColor(Color buttonRollOverColor) {
-        this.buttonRollOverColor = buttonRollOverColor;
-    }
     public Color getButtonRollOverColor() {
         return buttonRollOverColor;
+    }
+    public AmExport setButtonRollOverColor(Color buttonRollOverColor) {
+        this.buttonRollOverColor = buttonRollOverColor;
+        return this;
     }
 
     /**
      * Text, displayed in a tool-tip.
      **/
-    public void setButtonTitle(String buttonTitle) {
-        this.buttonTitle = buttonTitle;
-    }
     public String getButtonTitle() {
         return buttonTitle;
+    }
+    public AmExport setButtonTitle(String buttonTitle) {
+        this.buttonTitle = buttonTitle;
+        return this;
     }
 
     /**
      * Specifies if export of JPG should be enabled.
      **/
-    public void setExportJPG(boolean exportJPG) {
-        this.exportJPG = exportJPG;
-    }
-    public boolean isExportJPG() {
+    public Boolean getExportJPG() {
         return exportJPG;
+    }
+    public AmExport setExportJPG(boolean exportJPG) {
+        this.exportJPG = exportJPG;
+        return this;
     }
 
     /**
      * Specifies if export of PDF should be enabled.
      **/
-    public void setExportPDF(boolean exportPDF) {
-        this.exportPDF = exportPDF;
-    }
-    public boolean isExportPDF() {
+    public Boolean getExportPDF() {
         return exportPDF;
+    }
+    public AmExport setExportPDF(boolean exportPDF) {
+        this.exportPDF = exportPDF;
+        return this;
     }
 
     /**
      * Specifies if export of PNG should be enabled.
      **/
-    public void setExportPNG(boolean exportPNG) {
-        this.exportPNG = exportPNG;
-    }
-    public boolean isExportPNG() {
+    public Boolean getExportPNG() {
         return exportPNG;
+    }
+    public AmExport setExportPNG(boolean exportPNG) {
+        this.exportPNG = exportPNG;
+        return this;
     }
 
     /**
      * Specifies if export of SVG should be enabled.
      **/
-    public void setExportSVG(boolean exportSVG) {
-        this.exportSVG = exportSVG;
-    }
-    public boolean isExportSVG() {
+    public Boolean getExportSVG() {
         return exportSVG;
+    }
+    public AmExport setExportSVG(boolean exportSVG) {
+        this.exportSVG = exportSVG;
+        return this;
     }
 
     /**
      * Background color of a saved image
      **/
-    public void setImageBackgroundColor(Color imageBackgroundColor) {
-        this.imageBackgroundColor = imageBackgroundColor;
-    }
     public Color getImageBackgroundColor() {
         return imageBackgroundColor;
+    }
+    public AmExport setImageBackgroundColor(Color imageBackgroundColor) {
+        this.imageBackgroundColor = imageBackgroundColor;
+        return this;
     }
 
     /**
      * File name of a saved image.
      **/
-    public void setImageFileName(String imageFileName) {
-        this.imageFileName = imageFileName;
-    }
     public String getImageFileName() {
         return imageFileName;
+    }
+    public AmExport setImageFileName(String imageFileName) {
+        this.imageFileName = imageFileName;
+        return this;
     }
 
     /**
      * Left position of export button. You might need to set right to undefined for this
      * to work.
      **/
-    public void setLeft(String left) {
-        this.left = left;
-    }
     public String getLeft() {
         return left;
+    }
+    public AmExport setLeft(String left) {
+        this.left = left;
+        return this;
     }
 
     /**
      * Right position of export button. You might need to set left to undefined for this
      * to work.
      **/
-    public void setRight(String right) {
-        this.right = right;
-    }
     public String getRight() {
         return right;
+    }
+    public AmExport setRight(String right) {
+        this.right = right;
+        return this;
     }
 
     /**
      * Text roll-over color.
      **/
-    public void setTextRollOverColor(Color textRollOverColor) {
-        this.textRollOverColor = textRollOverColor;
-    }
     public Color getTextRollOverColor() {
         return textRollOverColor;
+    }
+    public AmExport setTextRollOverColor(Color textRollOverColor) {
+        this.textRollOverColor = textRollOverColor;
+        return this;
     }
 
     /**
      * Top position of export button. You might need to set bottom to undefined for this
      * to work.
      **/
-    public void setTop(String top) {
-        this.top = top;
-    }
     public String getTop() {
         return top;
     }
+    public AmExport setTop(String top) {
+        this.top = top;
+        return this;
+    }
 
+    public JSONObject toJson() {
+        return new Jsonifyer(this).toJson();
+    }
 }

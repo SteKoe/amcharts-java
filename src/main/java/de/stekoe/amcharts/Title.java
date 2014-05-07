@@ -1,6 +1,12 @@
 package de.stekoe.amcharts;
 
-public class Title {
+import org.json.JSONObject;
+
+import de.stekoe.amcharts.addition.Color;
+import de.stekoe.amcharts.helper.Jsonifyable;
+import de.stekoe.amcharts.helper.Jsonifyer;
+
+public class Title implements Jsonifyable {
     private Double alpha;
     private Boolean bold;
     private Color color;
@@ -11,61 +17,70 @@ public class Title {
     /**
      * Opacity of a title.
      **/
-    public void setAlpha(double alpha) {
-        this.alpha = alpha;
-    }
     public Double getAlpha() {
         return alpha;
+    }
+    public Title setAlpha(double alpha) {
+        this.alpha = alpha;
+        return this;
     }
 
     /**
      * Specifies if title should be bold or not.
      **/
-    public void setBold(boolean bold) {
-        this.bold = bold;
-    }
-    public boolean isBold() {
+    public Boolean getBold() {
         return bold;
+    }
+    public Title setBold(boolean bold) {
+        this.bold = bold;
+        return this;
     }
 
     /**
      * Text color of a title.
      **/
-    public void setColor(Color color) {
-        this.color = color;
-    }
     public Color getColor() {
         return color;
+    }
+    public Title setColor(Color color) {
+        this.color = color;
+        return this;
     }
 
     /**
      * Unique id of a Title. You don't need to set it, unless you want to.
      **/
-    public void setId(String id) {
-        this.id = id;
-    }
     public String getId() {
         return id;
+    }
+    public Title setId(String id) {
+        this.id = id;
+        return this;
     }
 
     /**
      * Text size of a title.
      **/
-    public void setSize(double size) {
-        this.size = size;
-    }
     public Double getSize() {
         return size;
+    }
+    public Title setSize(double size) {
+        this.size = size;
+        return this;
     }
 
     /**
      * Text of a title.
      **/
-    public void setText(String text) {
-        this.text = text;
-    }
     public String getText() {
         return text;
     }
+    public Title setText(String text) {
+        this.text = text;
+        return this;
+    }
 
+    public JSONObject toJson() {
+        return new Jsonifyer(this).toJson();
+    }
 }

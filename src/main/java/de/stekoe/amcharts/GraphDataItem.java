@@ -1,7 +1,14 @@
 package de.stekoe.amcharts;
 
 import java.util.List;
-public class GraphDataItem {
+
+import org.json.JSONObject;
+
+import de.stekoe.amcharts.addition.Color;
+import de.stekoe.amcharts.helper.Jsonifyable;
+import de.stekoe.amcharts.helper.Jsonifyer;
+
+public class GraphDataItem implements Jsonifyable {
     private Double alpha;
     private String bullet;
     private Double bulletSize;
@@ -21,151 +28,169 @@ public class GraphDataItem {
     /**
      * Opacity of the data item.
      **/
-    public void setAlpha(double alpha) {
-        this.alpha = alpha;
-    }
     public Double getAlpha() {
         return alpha;
+    }
+    public GraphDataItem setAlpha(double alpha) {
+        this.alpha = alpha;
+        return this;
     }
 
     /**
      * Bullet type.
      **/
-    public void setBullet(String bullet) {
-        this.bullet = bullet;
-    }
     public String getBullet() {
         return bullet;
+    }
+    public GraphDataItem setBullet(String bullet) {
+        this.bullet = bullet;
+        return this;
     }
 
     /**
      * Bullet size.
      **/
-    public void setBulletSize(double bulletSize) {
-        this.bulletSize = bulletSize;
-    }
     public Double getBulletSize() {
         return bulletSize;
+    }
+    public GraphDataItem setBulletSize(double bulletSize) {
+        this.bulletSize = bulletSize;
+        return this;
     }
 
     /**
      * Category value.
      **/
-    public void setCategory(String category) {
-        this.category = category;
-    }
     public String getCategory() {
         return category;
+    }
+    public GraphDataItem setCategory(String category) {
+        this.category = category;
+        return this;
     }
 
     /**
      * Color of the data item.
      **/
-    public void setColor(Color color) {
-        this.color = color;
-    }
     public Color getColor() {
         return color;
+    }
+    public GraphDataItem setColor(Color color) {
+        this.color = color;
+        return this;
     }
 
     /**
      * Custom bullet (path to file name).
      **/
-    public void setCustomBullet(String customBullet) {
-        this.customBullet = customBullet;
-    }
     public String getCustomBullet() {
         return customBullet;
+    }
+    public GraphDataItem setCustomBullet(String customBullet) {
+        this.customBullet = customBullet;
+        return this;
     }
 
     /**
      * Original object from data provider.
      **/
-    public void setDataContext(Object dataContext) {
-        this.dataContext = dataContext;
-    }
     public Object getDataContext() {
         return dataContext;
+    }
+    public GraphDataItem setDataContext(Object dataContext) {
+        this.dataContext = dataContext;
+        return this;
     }
 
     /**
      * Description.
      **/
-    public void setDescription(String description) {
-        this.description = description;
-    }
     public String getDescription() {
         return description;
+    }
+    public GraphDataItem setDescription(String description) {
+        this.description = description;
+        return this;
     }
 
     /**
      * Array of colors of the data item, used by column and candlestick chart only.
      **/
-    public void setFillColors(List<Color> fillColors) {
-        this.fillColors = fillColors;
-    }
     public List<Color> getFillColors() {
         return fillColors;
+    }
+    public GraphDataItem setFillColors(List<Color> fillColors) {
+        this.fillColors = fillColors;
+        return this;
     }
 
     /**
      * Object which holds percents when recalculateToPercents is set to true.
      **/
-    public void setPercents(Object percents) {
-        this.percents = percents;
-    }
     public Object getPercents() {
         return percents;
+    }
+    public GraphDataItem setPercents(Object percents) {
+        this.percents = percents;
+        return this;
     }
 
     /**
      * SerialDataItem of this graphDataItem
      **/
-    public void setSerialDataItem(SerialDataItem serialDataItem) {
-        this.serialDataItem = serialDataItem;
-    }
     public SerialDataItem getSerialDataItem() {
         return serialDataItem;
+    }
+    public GraphDataItem setSerialDataItem(SerialDataItem serialDataItem) {
+        this.serialDataItem = serialDataItem;
+        return this;
     }
 
     /**
      * url
      **/
-    public void setUrl(String url) {
-        this.url = url;
-    }
     public String getUrl() {
         return url;
+    }
+    public GraphDataItem setUrl(String url) {
+        this.url = url;
+        return this;
     }
 
     /**
      * Object which holds values of the data item (value, open, close, low, high).
      **/
-    public void setValues(Object values) {
-        this.values = values;
-    }
     public Object getValues() {
         return values;
+    }
+    public GraphDataItem setValues(Object values) {
+        this.values = values;
+        return this;
     }
 
     /**
      * x coordinate of the data item.
      **/
-    public void setX(double x) {
-        this.x = x;
-    }
     public Double getX() {
         return x;
+    }
+    public GraphDataItem setX(double x) {
+        this.x = x;
+        return this;
     }
 
     /**
      * y coordinate of the data item.
      **/
-    public void setY(double y) {
-        this.y = y;
-    }
     public Double getY() {
         return y;
     }
+    public GraphDataItem setY(double y) {
+        this.y = y;
+        return this;
+    }
 
+    public JSONObject toJson() {
+        return new Jsonifyer(this).toJson();
+    }
 }
