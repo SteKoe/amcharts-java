@@ -1,12 +1,10 @@
 package de.stekoe.amcharts;
 
-import org.json.JSONObject;
+import java.io.Serializable;
 
 import de.stekoe.amcharts.addition.Color;
-import de.stekoe.amcharts.helper.Jsonifyable;
-import de.stekoe.amcharts.helper.Jsonifyer;
 
-public class ChartCursor implements Jsonifyable {
+public class ChartCursor implements Serializable {
     private Double adjustment;
     private Double animationDuration;
     private Boolean bulletsEnabled;
@@ -298,7 +296,5 @@ public class ChartCursor implements Jsonifyable {
         return this;
     }
 
-    public JSONObject toJson() {
-        return new Jsonifyer(this).toJson();
-    }
+
 }

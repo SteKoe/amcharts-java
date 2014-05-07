@@ -1,6 +1,8 @@
 package de.stekoe.amcharts.addition;
 
-public class Color {
+import java.io.Serializable;
+
+public class Color implements Serializable{
 
     public static final Color BLACK = create("000000");
     public static final Color WHITE = create("FFFFFF");

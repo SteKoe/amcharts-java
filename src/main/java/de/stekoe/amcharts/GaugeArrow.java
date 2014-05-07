@@ -1,12 +1,10 @@
 package de.stekoe.amcharts;
 
-import org.json.JSONObject;
+import java.io.Serializable;
 
 import de.stekoe.amcharts.addition.Color;
-import de.stekoe.amcharts.helper.Jsonifyable;
-import de.stekoe.amcharts.helper.Jsonifyer;
 
-public class GaugeArrow implements Jsonifyable {
+public class GaugeArrow implements Serializable {
     private Double alpha;
     private GaugeAxis axis;
     private Double borderAlpha;
@@ -177,7 +175,5 @@ public class GaugeArrow implements Jsonifyable {
         return this;
     }
 
-    public JSONObject toJson() {
-        return new Jsonifyer(this).toJson();
-    }
+
 }

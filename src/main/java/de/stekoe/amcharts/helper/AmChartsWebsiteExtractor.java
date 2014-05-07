@@ -181,7 +181,7 @@ public class AmChartsWebsiteExtractor {
         String className = FilenameUtils.getBaseName(outputFile.getAbsolutePath());
 
         String superClass = inheritances.get(className);
-        String inheritance = " implements Jsonifyable";
+        String inheritance = " implements Jsonifyable, Serializable";
         if(hasSuperClass(className)) {
             inheritance = " extends " + superClass;
         }

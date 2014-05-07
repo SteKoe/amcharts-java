@@ -1,12 +1,10 @@
 package de.stekoe.amcharts;
 
-import org.json.JSONObject;
+import java.io.Serializable;
 
 import de.stekoe.amcharts.addition.Color;
-import de.stekoe.amcharts.helper.Jsonifyable;
-import de.stekoe.amcharts.helper.Jsonifyer;
 
-public class Slice implements Jsonifyable {
+public class Slice implements Serializable {
     private Double alpha;
     private Color color;
     private Object dataContext;
@@ -140,7 +138,5 @@ public class Slice implements Jsonifyable {
         return this;
     }
 
-    public JSONObject toJson() {
-        return new Jsonifyer(this).toJson();
-    }
+
 }

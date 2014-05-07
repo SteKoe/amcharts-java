@@ -1,14 +1,11 @@
 package de.stekoe.amcharts;
 
+import java.io.Serializable;
 import java.util.Date;
 
-import org.json.JSONObject;
-
 import de.stekoe.amcharts.addition.Color;
-import de.stekoe.amcharts.helper.Jsonifyable;
-import de.stekoe.amcharts.helper.Jsonifyer;
 
-public class TrendLine implements Jsonifyable {
+public class TrendLine implements Serializable {
     private Double dashLength;
     private String finalCategory;
     private Date finalDate;
@@ -209,7 +206,5 @@ public class TrendLine implements Jsonifyable {
         return this;
     }
 
-    public JSONObject toJson() {
-        return new Jsonifyer(this).toJson();
-    }
+
 }

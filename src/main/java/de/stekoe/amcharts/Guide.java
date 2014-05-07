@@ -1,14 +1,11 @@
 package de.stekoe.amcharts;
 
+import java.io.Serializable;
 import java.util.Date;
 
-import org.json.JSONObject;
-
 import de.stekoe.amcharts.addition.Color;
-import de.stekoe.amcharts.helper.Jsonifyable;
-import de.stekoe.amcharts.helper.Jsonifyer;
 
-public class Guide implements Jsonifyable {
+public class Guide implements Serializable {
     private Boolean above;
     private Double angle;
     private Color balloonColor;
@@ -317,7 +314,5 @@ public class Guide implements Jsonifyable {
         return this;
     }
 
-    public JSONObject toJson() {
-        return new Jsonifyer(this).toJson();
-    }
+
 }

@@ -19,7 +19,6 @@ public class ValueAxis extends AxisBase {
     private Double min;
     private Double minimum;
     private Double minMaxMultiplier;
-    private String position;
     private Double precision;
     private Boolean radarCategoriesEnabled;
     private Boolean recalculateToPercents;
@@ -219,18 +218,6 @@ public class ValueAxis extends AxisBase {
     }
     public ValueAxis setMinMaxMultiplier(double minMaxMultiplier) {
         this.minMaxMultiplier = minMaxMultiplier;
-        return this;
-    }
-
-    /**
-     * Possible values are: "top", "bottom", "left", "right". If axis is vertical, default
-     * position is "left". If axis is horizontal, default position is "bottom".
-     **/
-    public String getPosition() {
-        return position;
-    }
-    public ValueAxis setPosition(String position) {
-        this.position = position;
         return this;
     }
 

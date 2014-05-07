@@ -1,14 +1,11 @@
 package de.stekoe.amcharts;
 
+import java.io.Serializable;
 import java.util.List;
 
-import org.json.JSONObject;
-
 import de.stekoe.amcharts.addition.Color;
-import de.stekoe.amcharts.helper.Jsonifyable;
-import de.stekoe.amcharts.helper.Jsonifyer;
 
-public class GraphDataItem implements Jsonifyable {
+public class GraphDataItem implements Serializable {
     private Double alpha;
     private String bullet;
     private Double bulletSize;
@@ -190,7 +187,5 @@ public class GraphDataItem implements Jsonifyable {
         return this;
     }
 
-    public JSONObject toJson() {
-        return new Jsonifyer(this).toJson();
-    }
+
 }

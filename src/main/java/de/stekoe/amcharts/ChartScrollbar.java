@@ -1,12 +1,10 @@
 package de.stekoe.amcharts;
 
-import org.json.JSONObject;
+import java.io.Serializable;
 
 import de.stekoe.amcharts.addition.Color;
-import de.stekoe.amcharts.helper.Jsonifyable;
-import de.stekoe.amcharts.helper.Jsonifyer;
 
-public class ChartScrollbar implements Jsonifyable {
+public class ChartScrollbar implements Serializable {
     private Boolean autoGridCount;
     private Double backgroundAlpha;
     private Color backgroundColor;
@@ -376,7 +374,5 @@ public class ChartScrollbar implements Jsonifyable {
         return this;
     }
 
-    public JSONObject toJson() {
-        return new Jsonifyer(this).toJson();
-    }
+
 }

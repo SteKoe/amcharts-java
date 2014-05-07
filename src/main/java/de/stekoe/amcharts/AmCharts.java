@@ -1,13 +1,9 @@
 package de.stekoe.amcharts;
 
+import java.io.Serializable;
 import java.util.List;
 
-import org.json.JSONObject;
-
-import de.stekoe.amcharts.helper.Jsonifyable;
-import de.stekoe.amcharts.helper.Jsonifyer;
-
-public class AmCharts implements Jsonifyable {
+public class AmCharts implements Serializable {
     private Boolean baseHref;
     private List<String> dayNames;
     private List<String> monthNames;
@@ -116,7 +112,5 @@ public class AmCharts implements Jsonifyable {
         return this;
     }
 
-    public JSONObject toJson() {
-        return new Jsonifyer(this).toJson();
-    }
+
 }

@@ -16,7 +16,6 @@ public class CategoryAxis extends AxisBase {
     private Boolean markPeriodChange;
     private String minPeriod;
     private Boolean parseDates;
-    private String position;
     private Boolean startOnAxis;
     private Boolean twoLineMode;
 
@@ -183,18 +182,6 @@ public class CategoryAxis extends AxisBase {
     }
     public CategoryAxis setParseDates(boolean parseDates) {
         this.parseDates = parseDates;
-        return this;
-    }
-
-    /**
-     * Possible values are: "top", "bottom", "left", "right". If axis is vertical, default
-     * position is "left". If axis is horizontal, default position is "bottom".
-     **/
-    public String getPosition() {
-        return position;
-    }
-    public CategoryAxis setPosition(String position) {
-        this.position = position;
         return this;
     }
 
