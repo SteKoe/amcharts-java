@@ -1,6 +1,7 @@
 package de.stekoe.amcharts;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import de.stekoe.amcharts.addition.Color;
@@ -15,7 +16,7 @@ public class AmChart implements Serializable {
     private Color borderColor;
     private Color color;
     private String creditsPosition;
-    private List<Object> dataProvider;
+    private List<Object> dataProvider = new ArrayList<Object>();
     private String decimalSeparator;
     private Object exportConfig;
     private String fontFamily;
