@@ -2,11 +2,14 @@ package de.stekoe.amcharts;
 
 import java.util.List;
 
+import de.stekoe.amcharts.addition.Function;
+
 public class CategoryAxis extends AxisBase {
     private Double autoRotateAngle;
     private Double autoRotateCount;
     private Boolean autoWrap;
     private Boolean boldPeriodBeginning;
+    private Function categoryFunction;
     private Boolean centerLabelOnFullPeriod;
     private List<Object> dateFormats;
     private Boolean equalSpacing;
@@ -209,6 +212,21 @@ public class CategoryAxis extends AxisBase {
     public CategoryAxis setTwoLineMode(boolean twoLineMode) {
         this.twoLineMode = twoLineMode;
         return this;
+    }
+
+    public Function getCategoryFunction() {
+        return categoryFunction;
+    }
+    /**
+     * specifies a method that returns the value that should be used as categoryValue for current item. If this property
+     * is set, the return value of the custom data function takes precedence over categoryField. When a chart calls this
+     * method, it passes category value, data item from chart's data provider and reference to categoryAxis:
+     * categoryFunction(category, dataItem, categoryAxis); This method can be used both when category axis parses
+     * dates and when it doesn't. If axis parses dates, your categoryFunction should return Date object. For example,
+     * if you have date strings in your data, you can use this method to convert these strings into Date objects.
+     */
+    public void setCategoryFunction(Function categoryFunction) {
+        this.categoryFunction = categoryFunction;
     }
 
 }

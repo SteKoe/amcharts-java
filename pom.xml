@@ -10,6 +10,12 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <repositories>
+        <repository>
+            <id>julman99-github</id>
+            <url>https://raw.github.com/julman99/mvn-repo/master</url>
+        </repository>
+    </repositories>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -36,6 +42,11 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.julman99</groupId>
+            <artifactId>gson-fire</artifactId>
+            <version>0.8.1</version>
         </dependency>
     </dependencies>
 </project>
