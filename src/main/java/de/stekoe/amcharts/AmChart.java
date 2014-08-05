@@ -153,6 +153,9 @@ public class AmChart implements Serializable {
      * AmMap, data provider should be MapData object.
      **/
     public List<Object> getDataProvider() {
+        if(dataProvider == null) {
+            dataProvider = new ArrayList<Object>();
+        }
         return dataProvider;
     }
     public AmChart setDataProvider(List<Object> dataProvider) {

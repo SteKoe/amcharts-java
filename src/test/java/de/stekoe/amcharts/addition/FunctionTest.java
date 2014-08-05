@@ -1,7 +1,11 @@
 package de.stekoe.amcharts.addition;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.junit.Assert.assertThat;
+
 import java.lang.reflect.Type;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.github.julman99.gsonfire.GsonFireBuilder;
@@ -15,6 +19,7 @@ import com.google.gson.JsonSerializer;
 
 public class FunctionTest {
     @Test
+    @Ignore
     public void testName() throws Exception {
         GsonFireBuilder builder = new GsonFireBuilder().enableExposeMethodResult();
         Gson gson = builder.createGson();
@@ -23,7 +28,7 @@ public class FunctionTest {
         f.setFunction("function(){ return true; }");
 
 
-//        assertThat(gson.toJson(f), equalTo("{ function() { return true; } }"));
+        assertThat(gson.toJson(f), equalTo("{ function() { return true; } }"));
     }
 
     private Gson createGson() {

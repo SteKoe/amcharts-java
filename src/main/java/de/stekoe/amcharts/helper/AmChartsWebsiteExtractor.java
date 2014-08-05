@@ -205,8 +205,8 @@ public class AmChartsWebsiteExtractor {
         for(String field : fields.keySet()) {
             Field f = fields.get(field);
             FileUtils.write(outputFile, f.javadoc, true);
-            FileUtils.write(outputFile, f.getter, true);
             FileUtils.write(outputFile, f.setter, true);
+            FileUtils.write(outputFile, f.getter, true);
             FileUtils.write(outputFile, "\n", true);
         }
 
