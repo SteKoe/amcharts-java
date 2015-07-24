@@ -1,8 +1,8 @@
 package de.stekoe.amcharts;
 
-import java.io.Serializable;
-
 import de.stekoe.amcharts.addition.Color;
+
+import java.io.Serializable;
 
 public class GaugeArrow implements Serializable {
     private Double alpha;
@@ -22,158 +22,171 @@ public class GaugeArrow implements Serializable {
 
     /**
      * Opacity of an arrow.
-     **/
-    public Double getAlpha() {
-        return alpha;
-    }
+     */
     public GaugeArrow setAlpha(double alpha) {
         this.alpha = alpha;
         return this;
     }
 
+    public Double getAlpha() {
+        return alpha;
+    }
+
     /**
      * Axis of the arrow. You can use reference to the axis or id of the axis. If you don't
      * set any axis, the first axis of a chart will be used.
-     **/
-    public GaugeAxis getAxis() {
-        return axis;
-    }
+     */
     public GaugeArrow setAxis(GaugeAxis axis) {
         this.axis = axis;
         return this;
     }
 
+    public GaugeAxis getAxis() {
+        return axis;
+    }
+
     /**
      * Opacity of arrow border.
-     **/
-    public Double getBorderAlpha() {
-        return borderAlpha;
-    }
+     */
     public GaugeArrow setBorderAlpha(double borderAlpha) {
         this.borderAlpha = borderAlpha;
         return this;
     }
 
+    public Double getBorderAlpha() {
+        return borderAlpha;
+    }
+
     /**
      * In case you need the arrow to rotate only clock-wise, set this property to true.
-     **/
-    public Boolean getClockWiseOnly() {
-        return clockWiseOnly;
-    }
+     */
     public GaugeArrow setClockWiseOnly(boolean clockWiseOnly) {
         this.clockWiseOnly = clockWiseOnly;
         return this;
     }
 
+    public Boolean getClockWiseOnly() {
+        return clockWiseOnly;
+    }
+
     /**
      * Color of an arrow.
-     **/
-    public Color getColor() {
-        return color;
-    }
+     */
     public GaugeArrow setColor(Color color) {
         this.color = color;
         return this;
     }
 
+    public Color getColor() {
+        return color;
+    }
+
     /**
      * Unique id of an arrow.
-     **/
-    public String getId() {
-        return id;
-    }
+     */
     public GaugeArrow setId(String id) {
         this.id = id;
         return this;
     }
 
+    public String getId() {
+        return id;
+    }
+
     /**
      * Inner radius of an arrow.
-     **/
-    public String getInnerRadius() {
-        return innerRadius;
-    }
+     */
     public GaugeArrow setInnerRadius(String innerRadius) {
         this.innerRadius = innerRadius;
         return this;
     }
 
+    public String getInnerRadius() {
+        return innerRadius;
+    }
+
     /**
      * Opacity of a nail, holding the arrow.
-     **/
-    public Double getNailAlpha() {
-        return nailAlpha;
-    }
+     */
     public GaugeArrow setNailAlpha(double nailAlpha) {
         this.nailAlpha = nailAlpha;
         return this;
     }
 
+    public Double getNailAlpha() {
+        return nailAlpha;
+    }
+
     /**
      * Opacity of nail border.
-     **/
-    public Double getNailBorderAlpha() {
-        return nailBorderAlpha;
-    }
+     */
     public GaugeArrow setNailBorderAlpha(double nailBorderAlpha) {
         this.nailBorderAlpha = nailBorderAlpha;
         return this;
     }
 
+    public Double getNailBorderAlpha() {
+        return nailBorderAlpha;
+    }
+
     /**
      * Thickness of nail border.
-     **/
-    public Double getNailBorderThickness() {
-        return nailBorderThickness;
-    }
+     */
     public GaugeArrow setNailBorderThickness(double nailBorderThickness) {
         this.nailBorderThickness = nailBorderThickness;
         return this;
     }
 
+    public Double getNailBorderThickness() {
+        return nailBorderThickness;
+    }
+
     /**
      * Radius of a nail, holding the arrow.
-     **/
-    public Double getNailRadius() {
-        return nailRadius;
-    }
+     */
     public GaugeArrow setNailRadius(double nailRadius) {
         this.nailRadius = nailRadius;
         return this;
     }
 
+    public Double getNailRadius() {
+        return nailRadius;
+    }
+
     /**
      * Radius of an arrow.
-     **/
-    public String getRadius() {
-        return radius;
-    }
+     */
     public GaugeArrow setRadius(String radius) {
         this.radius = radius;
         return this;
     }
 
+    public String getRadius() {
+        return radius;
+    }
+
     /**
      * Width of arrow root.
-     **/
-    public Double getStartWidth() {
-        return startWidth;
-    }
+     */
     public GaugeArrow setStartWidth(double startWidth) {
         this.startWidth = startWidth;
         return this;
     }
 
+    public Double getStartWidth() {
+        return startWidth;
+    }
+
     /**
      * Value to which the arrow should point at.
-     **/
-    public Double getValue() {
-        return value;
-    }
+     */
     public GaugeArrow setValue(double value) {
         this.value = value;
         return this;
     }
 
+    public Double getValue() {
+        return value;
+    }
 
 }

@@ -1,8 +1,8 @@
 package de.stekoe.amcharts;
 
-import java.util.List;
-
 import de.stekoe.amcharts.addition.Color;
+
+import java.util.List;
 
 public class AmAngularGauge extends AmChart {
     private Boolean adjustSize;
@@ -15,8 +15,8 @@ public class AmAngularGauge extends AmChart {
     private Double faceBorderWidth;
     private Color faceColor;
     private Object facePattern;
-    private String gaugeX;
-    private String gaugeY;
+    private Double gaugeX;
+    private Double gaugeY;
     private Double marginBottom;
     private Double marginLeft;
     private Double marginRight;
@@ -26,213 +26,233 @@ public class AmAngularGauge extends AmChart {
     private String startEffect;
 
     /**
-     * If you set this to true, the gauge will try to occupy all available space.
-     **/
-    public Boolean getAdjustSize() {
-        return adjustSize;
-    }
+     * Uses the whole space of the canvas to draw the gauge.
+     */
     public AmAngularGauge setAdjustSize(boolean adjustSize) {
         this.adjustSize = adjustSize;
         return this;
     }
 
+    public Boolean getAdjustSize() {
+        return adjustSize;
+    }
+
     /**
      * Array of arrows.
-     **/
-    public List<GaugeArrow> getArrows() {
-        return arrows;
-    }
+     */
     public AmAngularGauge setArrows(List<GaugeArrow> arrows) {
         this.arrows = arrows;
         return this;
     }
 
+    public List<GaugeArrow> getArrows() {
+        return arrows;
+    }
+
     /**
      * Array of axes.
-     **/
-    public List<GaugeAxis> getAxes() {
-        return axes;
-    }
+     */
     public AmAngularGauge setAxes(List<GaugeAxis> axes) {
         this.axes = axes;
         return this;
     }
 
+    public List<GaugeAxis> getAxes() {
+        return axes;
+    }
+
     /**
      * In case you use gauge to create a clock, set this to true.
-     **/
-    public Boolean getClockWiseOnly() {
-        return clockWiseOnly;
-    }
+     */
     public AmAngularGauge setClockWiseOnly(boolean clockWiseOnly) {
         this.clockWiseOnly = clockWiseOnly;
         return this;
     }
 
-    /**
-     * Opacity of gauge face.
-     **/
-    public Double getFaceAlpha() {
-        return faceAlpha;
+    public Boolean getClockWiseOnly() {
+        return clockWiseOnly;
     }
+
+    /**
+     * Gauge face opacity.
+     */
     public AmAngularGauge setFaceAlpha(double faceAlpha) {
         this.faceAlpha = faceAlpha;
         return this;
     }
 
-    /**
-     * Opacity of face border.
-     **/
-    public Double getFaceBorderAlpha() {
-        return faceBorderAlpha;
+    public Double getFaceAlpha() {
+        return faceAlpha;
     }
+
+    /**
+     * Gauge face border opacity.
+     */
     public AmAngularGauge setFaceBorderAlpha(double faceBorderAlpha) {
         this.faceBorderAlpha = faceBorderAlpha;
         return this;
     }
 
-    /**
-     * Color of face border.
-     **/
-    public Color getFaceBorderColor() {
-        return faceBorderColor;
+    public Double getFaceBorderAlpha() {
+        return faceBorderAlpha;
     }
+
+    /**
+     * Gauge face border color.
+     */
     public AmAngularGauge setFaceBorderColor(Color faceBorderColor) {
         this.faceBorderColor = faceBorderColor;
         return this;
     }
 
-    /**
-     * Width of face border.
-     **/
-    public Double getFaceBorderWidth() {
-        return faceBorderWidth;
+    public Color getFaceBorderColor() {
+        return faceBorderColor;
     }
+
+    /**
+     * Gauge face border width.
+     */
     public AmAngularGauge setFaceBorderWidth(double faceBorderWidth) {
         this.faceBorderWidth = faceBorderWidth;
         return this;
     }
 
-    /**
-     * Color of a gauge face. You should set faceAlpha to > 0 if you want to see it.
-     **/
-    public Color getFaceColor() {
-        return faceColor;
+    public Double getFaceBorderWidth() {
+        return faceBorderWidth;
     }
+
+    /**
+     * Gauge face color, requires faceAlpha > 0
+     */
     public AmAngularGauge setFaceColor(Color faceColor) {
         this.faceColor = faceColor;
         return this;
     }
 
-    /**
-     * Pattern object for gauge face. Pattern object example: {"url":"../amcharts/patterns/black/pattern1.png",
-     * "width":4, "height":4}
-     **/
-    public Object getFacePattern() {
-        return facePattern;
+    public Color getFaceColor() {
+        return faceColor;
     }
+
+    /**
+     * Gauge face image-pattern. Example: {"url":"../amcharts/patterns/black/pattern1.png",
+     * "width":4, "height":4}
+     */
     public AmAngularGauge setFacePattern(Object facePattern) {
         this.facePattern = facePattern;
         return this;
     }
 
-    /**
-     * X coordinate of a gauge. Will be placed in the center, if not set any.
-     **/
-    public String getGaugeX() {
-        return gaugeX;
+    public Object getFacePattern() {
+        return facePattern;
     }
-    public AmAngularGauge setGaugeX(String gaugeX) {
+
+    /**
+     * Gauge's horizontal position in pixel, origin is the center. Centered by default.
+     */
+    public AmAngularGauge setGaugeX(double gaugeX) {
         this.gaugeX = gaugeX;
         return this;
     }
 
-    /**
-     * Y coordinate of a gauge. Will be placed in the center, if not set any.
-     **/
-    public String getGaugeY() {
-        return gaugeY;
+    public Double getGaugeX() {
+        return gaugeX;
     }
-    public AmAngularGauge setGaugeY(String gaugeY) {
+
+    /**
+     * Gauge's vertical position in pixel, origin is the center. Centered by default.
+     */
+    public AmAngularGauge setGaugeY(double gaugeY) {
         this.gaugeY = gaugeY;
         return this;
     }
 
-    /**
-     * Distance bottom of a chart's container to the gauge.
-     **/
-    public Double getMarginBottom() {
-        return marginBottom;
+    public Double getGaugeY() {
+        return gaugeY;
     }
+
+    /**
+     * Bottom spacing between chart and container.
+     */
     public AmAngularGauge setMarginBottom(double marginBottom) {
         this.marginBottom = marginBottom;
         return this;
     }
 
-    /**
-     * Distance from left side of a chart's container to the gauge.
-     **/
-    public Double getMarginLeft() {
-        return marginLeft;
+    public Double getMarginBottom() {
+        return marginBottom;
     }
+
+    /**
+     * Left-hand spacing between chart and container.
+     */
     public AmAngularGauge setMarginLeft(double marginLeft) {
         this.marginLeft = marginLeft;
         return this;
     }
 
-    /**
-     * Distance from right side of a chart's container to the gauge.
-     **/
-    public Double getMarginRight() {
-        return marginRight;
+    public Double getMarginLeft() {
+        return marginLeft;
     }
+
+    /**
+     * Right-hand spacing between chart and container.
+     */
     public AmAngularGauge setMarginRight(double marginRight) {
         this.marginRight = marginRight;
         return this;
     }
 
-    /**
-     * Distance from top of a chart's container to the gauge.
-     **/
-    public Double getMarginTop() {
-        return marginTop;
+    public Double getMarginRight() {
+        return marginRight;
     }
+
+    /**
+     * Top spacing between chart and container.
+     */
     public AmAngularGauge setMarginTop(double marginTop) {
         this.marginTop = marginTop;
         return this;
     }
 
+    public Double getMarginTop() {
+        return marginTop;
+    }
+
     /**
      * Minimum radius of a gauge.
-     **/
-    public Double getMinRadius() {
-        return minRadius;
-    }
+     */
     public AmAngularGauge setMinRadius(double minRadius) {
         this.minRadius = minRadius;
         return this;
     }
 
+    public Double getMinRadius() {
+        return minRadius;
+    }
+
     /**
      * Duration of arrow animation.
-     **/
-    public Double getStartDuration() {
-        return startDuration;
-    }
+     */
     public AmAngularGauge setStartDuration(double startDuration) {
         this.startDuration = startDuration;
         return this;
     }
 
-    /**
-     * Possible values are: easeOutSine, easeInSine, elastic, bounce
-     **/
-    public String getStartEffect() {
-        return startEffect;
+    public Double getStartDuration() {
+        return startDuration;
     }
+
+    /**
+     * Transition effect of the arrows, possible effects: easeOutSine, easeInSine, elastic,
+     * bounce.
+     */
     public AmAngularGauge setStartEffect(String startEffect) {
         this.startEffect = startEffect;
         return this;
+    }
+
+    public String getStartEffect() {
+        return startEffect;
     }
 
 }

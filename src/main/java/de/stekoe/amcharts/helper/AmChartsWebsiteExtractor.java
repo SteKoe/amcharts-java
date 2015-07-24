@@ -1,14 +1,5 @@
 package de.stekoe.amcharts.helper;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.jsoup.Jsoup;
@@ -16,10 +7,14 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
+
 public class AmChartsWebsiteExtractor {
     private final Map<String, Field> fields = new LinkedHashMap<String, Field>();
 
-    private final List<String> imports = Arrays.asList("java.util.Date","java.util.List", "org.json.JSONObject", "de.stekoe.amcharts.addition.Color", "de.stekoe.amcharts.helper.Jsonifyable","de.stekoe.amcharts.helper.Jsonifyer");
+    private final List<String> imports = Arrays.asList("java.util.Date", "java.util.List", "org.json.JSONObject", "de.stekoe.amcharts.addition.Color", "import java.io.Serializable");
     private final Map<String, String> inheritances = new HashMap<String, String>();
     private final boolean forceWrite = true;
 
@@ -33,11 +28,14 @@ public class AmChartsWebsiteExtractor {
     public static void main(String[] args) throws IOException {
         List<String> components = new ArrayList<String>();
 
-        Document doc = Jsoup.connect("http://docs.amcharts.com/3/javascriptcharts/").get();
+        Document doc = Jsoup.connect("http://docs.amcharts.com/3/javascriptcharts/")
+                .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
+                .get();
+
         Elements navListItems = doc.select(".nav.nav-list.left li");
         for (Element element : navListItems) {
             String attr = element.attr("class");
-            if(!attr.equals("search-group") && !attr.equals("nav-header")) {
+            if (!attr.equals("search-group") && !attr.equals("nav-header")) {
                 components.add(element.text());
             }
         }
@@ -49,28 +47,31 @@ public class AmChartsWebsiteExtractor {
     }
 
     public void run(String component) throws IOException {
-            this.component = component;
-            System.out.print("Processing " + component + "... ");
-            extractProperties(component);
+        this.component = component;
+        System.out.print("Processing " + component + "... ");
+        extractProperties(component);
 
-            Status status = createJavaClassFile(component);
-            if(status.SUCCESS.equals(status)) {
-                System.out.println("done!");
-            } else if(status.DO_NOT_OVERWRITE.equals(status)) {
-                System.out.println("alread exists!");
-            } else if(status.ERROR.equals(status)) {
-                System.out.println("error!");
-            } else {
-                System.out.println("unknown!");
-            }
+        Status status = createJavaClassFile(component);
+        if (status.SUCCESS.equals(status)) {
+            System.out.println("done!");
+        } else if (status.DO_NOT_OVERWRITE.equals(status)) {
+            System.out.println("alread exists!");
+        } else if (status.ERROR.equals(status)) {
+            System.out.println("error!");
+        } else {
+            System.out.println("unknown!");
+        }
     }
 
     private void extractProperties(String component) throws IOException {
-        Document doc = Jsoup.connect("http://docs.amcharts.com/3/javascriptcharts/" + component ).get();
+        Document doc = Jsoup.connect("http://docs.amcharts.com/3/javascriptcharts/" + component)
+                .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
+                .get();
+
         Elements paragraphs = doc.select("div.inside p");
         for (Element paragraph : paragraphs) {
             String text = paragraph.text();
-            if(text.toLowerCase().startsWith("inheritance:")) {
+            if (text.toLowerCase().startsWith("inheritance:")) {
                 String substring = extractSuperClass(text);
                 inheritances.put(component, substring);
                 break;
@@ -78,14 +79,14 @@ public class AmChartsWebsiteExtractor {
         }
 
         Elements propertyTables = doc.select(".property-list");
-        if(propertyTables.size() != 0) {
+        if (propertyTables.size() != 0) {
             Element propertyTable = propertyTables.first();
             Elements trs = propertyTable.getElementsByTag("tr");
-            if(trs.size() > 1) {
-                for(int i = 1; i < trs.size(); i++) {
+            if (trs.size() > 1) {
+                for (int i = 1; i < trs.size(); i++) {
                     Element tr = trs.get(i);
                     String cssClass = tr.attr("class");
-                    if(!cssClass.contains("inherited")) {
+                    if (!cssClass.contains("inherited")) {
                         Elements tds = tr.getElementsByTag("td");
 
                         Property property = new Property();
@@ -102,7 +103,7 @@ public class AmChartsWebsiteExtractor {
     String extractSuperClass(String text) {
         String substring = text.substring(text.indexOf("→") + 1);
         int nextArrow = substring.indexOf("→");
-        if(nextArrow != -1) {
+        if (nextArrow != -1) {
             substring = substring.substring(0, nextArrow);
         }
         return substring.trim();
@@ -111,21 +112,21 @@ public class AmChartsWebsiteExtractor {
     private Status createJavaClassFile(String component) {
         try {
             File outputFile = new File(RESOURCES_JAVA + component + ".java");
-            if(outputFile.exists() && !forceWrite ) {
+            if (outputFile.exists() && !forceWrite) {
                 return Status.DO_NOT_OVERWRITE;
             }
 
-            for(Property prop : properties) {
+            for (Property prop : properties) {
                 String type = prop.type;
-                if(type.trim().isEmpty()) {
+                if (type.trim().isEmpty()) {
                     continue;
                 }
-                if(type.equals("Number")) {
+                if (type.equals("Number")) {
                     type = "Double";
-                } else if(type.contains("Array")) {
+                } else if (type.contains("Array")) {
                     type = type.replace("Array[", "List<");
-                    type = type.replace("]",">");
-                } else if(type.equals("Number/String")) {
+                    type = type.replace("]", ">");
+                } else if (type.equals("Number/String")) {
                     type = "String";
                 }
 
@@ -158,14 +159,14 @@ public class AmChartsWebsiteExtractor {
 
     private String breakDocumentation(String documentation, int breakPoint) {
         int length = documentation.length();
-        if(length <= breakPoint)
+        if (length <= breakPoint)
             return documentation;
 
         StringBuilder sb = new StringBuilder();
         int curPos = 0;
-        for(int cut = breakPoint; cut < documentation.length(); cut++) {
-            if(documentation.charAt(cut) == ' ') {
-                if(curPos != 0) {
+        for (int cut = breakPoint; cut < documentation.length(); cut++) {
+            if (documentation.charAt(cut) == ' ') {
+                if (curPos != 0) {
                     sb.append("     *");
                 }
                 sb.append(documentation.substring(curPos, cut) + "\n");
@@ -181,15 +182,15 @@ public class AmChartsWebsiteExtractor {
         String className = FilenameUtils.getBaseName(outputFile.getAbsolutePath());
 
         String superClass = inheritances.get(className);
-        String inheritance = " implements Jsonifyable, Serializable";
-        if(hasSuperClass(className)) {
+        String inheritance = " implements Serializable";
+        if (hasSuperClass(className)) {
             inheritance = " extends " + superClass;
         }
 
         FileUtils.write(outputFile, "package de.stekoe.amcharts;\n\n");
 
         for (String _import : imports) {
-            FileUtils.write(outputFile, "import "+ _import +";\n", true);
+            FileUtils.write(outputFile, "import " + _import + ";\n", true);
         }
         FileUtils.write(outputFile, "\n", true);
 
@@ -202,7 +203,7 @@ public class AmChartsWebsiteExtractor {
         FileUtils.write(outputFile, "\n", true);
 
         // Write doc, getter and setter blockwise
-        for(String field : fields.keySet()) {
+        for (String field : fields.keySet()) {
             Field f = fields.get(field);
             FileUtils.write(outputFile, f.javadoc, true);
             FileUtils.write(outputFile, f.setter, true);
@@ -210,20 +211,7 @@ public class AmChartsWebsiteExtractor {
             FileUtils.write(outputFile, "\n", true);
         }
 
-        // Write toJson() method
-        if(!hasSuperClass(className)) {
-            FileUtils.write(outputFile, getToJsonMethod(), true);
-        }
-
         FileUtils.write(outputFile, "}", true);
-    }
-
-    private CharSequence getToJsonMethod() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("    public JSONObject toJson() {\n");
-        sb.append("        return new Jsonifyer(this).toJson();\n");
-        sb.append("    }\n");
-        return sb.toString();
     }
 
     private boolean hasSuperClass(Object className) {
@@ -234,14 +222,14 @@ public class AmChartsWebsiteExtractor {
         StringBuilder sb = new StringBuilder();
 
         String t = type;
-        if(type.equals("Boolean")) {
+        if (type.equals("Boolean")) {
             t = "boolean";
-        } else if(type.equals("Double")) {
+        } else if (type.equals("Double")) {
             t = "double";
         }
 
-        sb.append("    public " + component + " set"+capitalize(field)+"("+t+" "+field+") {\n");
-        sb.append("        this."+ field +" = "+field+";\n");
+        sb.append("    public " + component + " set" + capitalize(field) + "(" + t + " " + field + ") {\n");
+        sb.append("        this." + field + " = " + field + ";\n");
         sb.append("        return this;\n");
         sb.append("    }\n");
         return sb.toString();
@@ -249,8 +237,8 @@ public class AmChartsWebsiteExtractor {
 
     private String createGetterFor(String type, String field) {
         StringBuilder sb = new StringBuilder();
-        sb.append("    public "+ type + " get"+capitalize(field) + "() {\n");
-        sb.append("        return "+field+";\n");
+        sb.append("    public " + type + " get" + capitalize(field) + "() {\n");
+        sb.append("        return " + field + ";\n");
         sb.append("    }\n");
 
         return sb.toString();
