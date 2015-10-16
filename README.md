@@ -3,7 +3,23 @@
 Java API for the awesome Charts Package amChartsv3 (http://www.amcharts.com).
 The Version of this API corresponds to the Version of amCharts.
 
-## Example
+## How to serialise to JSON
+To serialize the AmCharts to JSON, please use GSON from google/gson. The classes are ready to be consumed by GSON as done in the following code snippet.
+
+```java
+import de.stekoe.amcharts.addition.Color;
+import de.stekoe.amcharts.addition.ColorSerialiser;
+
+Gson gson = new Gson();
+GsonBuilder gsonBuilder = new GsonBuilder();
+gsonBuilder.registerTypeAdapter(Color.class, new ColorSerialiser());
+gson = gsonBuilder.create();
+
+AmChart chart = new AmRadarChart();
+String json = gson.toJson(chart);
+```
+
+## Example JSON Output
 
 The following code is based on an example from the website of amCharts:
 <pre>
