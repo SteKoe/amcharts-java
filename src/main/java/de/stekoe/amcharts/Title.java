@@ -10,11 +10,12 @@ public class Title implements Serializable {
     private Color color;
     private String id;
     private Double size;
+    private Double tabIndex;
     private String text;
 
     /**
      * Opacity of a title.
-     */
+     **/
     public Title setAlpha(double alpha) {
         this.alpha = alpha;
         return this;
@@ -26,7 +27,7 @@ public class Title implements Serializable {
 
     /**
      * Specifies if title should be bold or not.
-     */
+     **/
     public Title setBold(boolean bold) {
         this.bold = bold;
         return this;
@@ -38,7 +39,7 @@ public class Title implements Serializable {
 
     /**
      * Text color of a title.
-     */
+     **/
     public Title setColor(Color color) {
         this.color = color;
         return this;
@@ -50,7 +51,7 @@ public class Title implements Serializable {
 
     /**
      * Unique id of a Title. You don't need to set it, unless you want to.
-     */
+     **/
     public Title setId(String id) {
         this.id = id;
         return this;
@@ -62,7 +63,7 @@ public class Title implements Serializable {
 
     /**
      * Text size of a title.
-     */
+     **/
     public Title setSize(double size) {
         this.size = size;
         return this;
@@ -73,8 +74,22 @@ public class Title implements Serializable {
     }
 
     /**
+     * In case you set it to some number, the chart will set focus on the title when user
+     * clicks tab key. When a focus is set, screen readers like NVDA Screen reader will
+     * read the title. Note, not all browsers and readers support this.
+     **/
+    public Title setTabIndex(double tabIndex) {
+        this.tabIndex = tabIndex;
+        return this;
+    }
+
+    public Double getTabIndex() {
+        return tabIndex;
+    }
+
+    /**
      * Text of a title.
-     */
+     **/
     public Title setText(String text) {
         this.text = text;
         return this;

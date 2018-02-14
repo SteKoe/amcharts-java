@@ -3,12 +3,14 @@ package de.stekoe.amcharts;
 import de.stekoe.amcharts.addition.Color;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class GaugeBand implements Serializable {
     private Double alpha;
     private String balloonText;
     private Color color;
     private Double endValue;
+    private List<Number> gradientRatio;
     private String id;
     private String innerRadius;
     private String radius;
@@ -17,7 +19,7 @@ public class GaugeBand implements Serializable {
 
     /**
      * Opacity of band fill. Will use axis.bandAlpha if not set any.
-     */
+     **/
     public GaugeBand setAlpha(double alpha) {
         this.alpha = alpha;
         return this;
@@ -29,7 +31,7 @@ public class GaugeBand implements Serializable {
 
     /**
      * *When rolled-over, band will display balloon if you set some text for this property.
-     */
+     **/
     public GaugeBand setBalloonText(String balloonText) {
         this.balloonText = balloonText;
         return this;
@@ -41,7 +43,7 @@ public class GaugeBand implements Serializable {
 
     /**
      * Color of a band.
-     */
+     **/
     public GaugeBand setColor(Color color) {
         this.color = color;
         return this;
@@ -53,7 +55,7 @@ public class GaugeBand implements Serializable {
 
     /**
      * End value of a fill.
-     */
+     **/
     public GaugeBand setEndValue(double endValue) {
         this.endValue = endValue;
         return this;
@@ -64,8 +66,22 @@ public class GaugeBand implements Serializable {
     }
 
     /**
+     * Example: [-0.2, 0, -0.2]. Will make bands to be filled with color gradients. Negative
+     * value means the color will be darker than the original, and positive number means
+     * the color will be lighter.
+     **/
+    public GaugeBand setGradientRatio(List<Number> gradientRatio) {
+        this.gradientRatio = gradientRatio;
+        return this;
+    }
+
+    public List<Number> getGradientRatio() {
+        return gradientRatio;
+    }
+
+    /**
      * Unique id of a band.
-     */
+     **/
     public GaugeBand setId(String id) {
         this.id = id;
         return this;
@@ -78,7 +94,7 @@ public class GaugeBand implements Serializable {
     /**
      * Inner radius of a band. If not set any, the band will end with the end of minor ticks.
      * Set 0 if you want the band to be drawn to the axis center.
-     */
+     **/
     public GaugeBand setInnerRadius(String innerRadius) {
         this.innerRadius = innerRadius;
         return this;
@@ -90,7 +106,7 @@ public class GaugeBand implements Serializable {
 
     /**
      * Band radius. If not set any, the band will start with the axis outline.
-     */
+     **/
     public GaugeBand setRadius(String radius) {
         this.radius = radius;
         return this;
@@ -102,7 +118,7 @@ public class GaugeBand implements Serializable {
 
     /**
      * Start value of a fill.
-     */
+     **/
     public GaugeBand setStartValue(double startValue) {
         this.startValue = startValue;
         return this;
@@ -114,7 +130,7 @@ public class GaugeBand implements Serializable {
 
     /**
      * Gauge band can be clickable and can lead to some page.
-     */
+     **/
     public GaugeBand setUrl(String url) {
         this.url = url;
         return this;

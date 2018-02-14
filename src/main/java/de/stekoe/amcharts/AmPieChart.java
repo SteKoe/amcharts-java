@@ -5,12 +5,12 @@ public class AmPieChart extends AmSlicedChart {
     private Double angle;
     private String balloonText;
     private Double depth3D;
+    private String gradientType;
     private String innerRadius;
     private Double labelRadius;
     private String labelRadiusField;
     private String labelText;
     private Double minRadius;
-    private Double pieAlpha;
     private String pieX;
     private String pieY;
     private String pullOutRadius;
@@ -22,7 +22,7 @@ public class AmPieChart extends AmSlicedChart {
      * Sometimes, because of a rounding, percent of a sum of all slices is not equal to
      * 100%. If you set this to true, when this case happens, number of decimals will be
      * increased so that sum would become 100%.
-     */
+     **/
     public AmPieChart setAdjustPrecision(boolean adjustPrecision) {
         this.adjustPrecision = adjustPrecision;
         return this;
@@ -34,7 +34,7 @@ public class AmPieChart extends AmSlicedChart {
 
     /**
      * Pie lean angle (for 3D effect). Valid range is 0 - 90.
-     */
+     **/
     public AmPieChart setAngle(double angle) {
         this.angle = angle;
         return this;
@@ -48,7 +48,7 @@ public class AmPieChart extends AmSlicedChart {
      * Balloon text. The following tags can be used: [[value]], [[title]], [[percents]],
      * [[description]] or any other field name from your data provider. HTML tags can also
      * be used.
-     */
+     **/
     public AmPieChart setBalloonText(String balloonText) {
         this.balloonText = balloonText;
         return this;
@@ -60,7 +60,7 @@ public class AmPieChart extends AmSlicedChart {
 
     /**
      * Depth of the pie (for 3D effect).
-     */
+     **/
     public AmPieChart setDepth3D(double depth3D) {
         this.depth3D = depth3D;
         return this;
@@ -71,8 +71,20 @@ public class AmPieChart extends AmSlicedChart {
     }
 
     /**
+     * Type of gradient. Use gradientRatio to create gradients.
+     **/
+    public AmPieChart setGradientType(String gradientType) {
+        this.gradientType = gradientType;
+        return this;
+    }
+
+    public String getGradientType() {
+        return gradientType;
+    }
+
+    /**
      * Inner radius of the pie, in pixels or percents.
-     */
+     **/
     public AmPieChart setInnerRadius(String innerRadius) {
         this.innerRadius = innerRadius;
         return this;
@@ -85,7 +97,7 @@ public class AmPieChart extends AmSlicedChart {
     /**
      * The distance between the label and the slice, in pixels. You can use negative values
      * to put the label on the slice.
-     */
+     **/
     public AmPieChart setLabelRadius(double labelRadius) {
         this.labelRadius = labelRadius;
         return this;
@@ -98,7 +110,7 @@ public class AmPieChart extends AmSlicedChart {
     /**
      * Name of the field in dataProvider which specifies the length of a tick. Note, the
      * chart will not try to arrange labels automatically if this property is set.
-     */
+     **/
     public AmPieChart setLabelRadiusField(String labelRadiusField) {
         this.labelRadiusField = labelRadiusField;
         return this;
@@ -111,7 +123,7 @@ public class AmPieChart extends AmSlicedChart {
     /**
      * Label text. The following tags can be used: [[value]], [[title]], [[percents]], [[description]]
      * or any other field name from your data provider.
-     */
+     **/
     public AmPieChart setLabelText(String labelText) {
         this.labelText = labelText;
         return this;
@@ -123,7 +135,7 @@ public class AmPieChart extends AmSlicedChart {
 
     /**
      * Minimum radius of the pie, in pixels.
-     */
+     **/
     public AmPieChart setMinRadius(double minRadius) {
         this.minRadius = minRadius;
         return this;
@@ -134,20 +146,8 @@ public class AmPieChart extends AmSlicedChart {
     }
 
     /**
-     * Opacity of the slices. You can set the opacity of individual slice too.
-     */
-    public AmPieChart setPieAlpha(double pieAlpha) {
-        this.pieAlpha = pieAlpha;
-        return this;
-    }
-
-    public Double getPieAlpha() {
-        return pieAlpha;
-    }
-
-    /**
      * You can set fixed position of a pie center, in pixels or in percents.
-     */
+     **/
     public AmPieChart setPieX(String pieX) {
         this.pieX = pieX;
         return this;
@@ -159,7 +159,7 @@ public class AmPieChart extends AmSlicedChart {
 
     /**
      * You can set fixed position of a pie center, in pixels or in percents.
-     */
+     **/
     public AmPieChart setPieY(String pieY) {
         this.pieY = pieY;
         return this;
@@ -171,7 +171,7 @@ public class AmPieChart extends AmSlicedChart {
 
     /**
      * Pull out radius, in pixels or percents
-     */
+     **/
     public AmPieChart setPullOutRadius(String pullOutRadius) {
         this.pullOutRadius = pullOutRadius;
         return this;
@@ -183,7 +183,7 @@ public class AmPieChart extends AmSlicedChart {
 
     /**
      * *Radius of a pie, in pixels or percents. By default, radius is calculated automatically.
-     */
+     **/
     public AmPieChart setRadius(String radius) {
         this.radius = radius;
         return this;
@@ -197,7 +197,7 @@ public class AmPieChart extends AmSlicedChart {
      * Angle of the first slice, in degrees. This will work properly only if "depth3D" is
      * set to 0. If "depth3D" is greater than 0, then there can be two angles only: 90 and
      * 270. Value range is 0-360.
-     */
+     **/
     public AmPieChart setStartAngle(double startAngle) {
         this.startAngle = startAngle;
         return this;
@@ -209,7 +209,7 @@ public class AmPieChart extends AmSlicedChart {
 
     /**
      * Radius of the positions from which the slices will fly in.
-     */
+     **/
     public AmPieChart setStartRadius(String startRadius) {
         this.startRadius = startRadius;
         return this;

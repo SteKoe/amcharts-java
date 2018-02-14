@@ -14,7 +14,7 @@ import java.util.*;
 public class AmChartsWebsiteExtractor {
     private final Map<String, Field> fields = new LinkedHashMap<String, Field>();
 
-    private final List<String> imports = Arrays.asList("java.util.Date", "java.util.List", "org.json.JSONObject", "de.stekoe.amcharts.addition.Color", "import java.io.Serializable");
+    private final List<String> imports = Arrays.asList("java.util.Date", "java.util.List", "org.json.JSONObject", "de.stekoe.amcharts.addition.Color", "java.io.Serializable");
     private final Map<String, String> inheritances = new HashMap<String, String>();
     private final boolean forceWrite = true;
 

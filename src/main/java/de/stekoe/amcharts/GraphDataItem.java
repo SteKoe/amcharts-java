@@ -24,7 +24,7 @@ public class GraphDataItem implements Serializable {
 
     /**
      * Opacity of the data item.
-     */
+     **/
     public GraphDataItem setAlpha(double alpha) {
         this.alpha = alpha;
         return this;
@@ -36,7 +36,7 @@ public class GraphDataItem implements Serializable {
 
     /**
      * Bullet type.
-     */
+     **/
     public GraphDataItem setBullet(String bullet) {
         this.bullet = bullet;
         return this;
@@ -48,7 +48,7 @@ public class GraphDataItem implements Serializable {
 
     /**
      * Bullet size.
-     */
+     **/
     public GraphDataItem setBulletSize(double bulletSize) {
         this.bulletSize = bulletSize;
         return this;
@@ -60,7 +60,7 @@ public class GraphDataItem implements Serializable {
 
     /**
      * Category value.
-     */
+     **/
     public GraphDataItem setCategory(String category) {
         this.category = category;
         return this;
@@ -72,7 +72,7 @@ public class GraphDataItem implements Serializable {
 
     /**
      * Color of the data item.
-     */
+     **/
     public GraphDataItem setColor(Color color) {
         this.color = color;
         return this;
@@ -84,7 +84,7 @@ public class GraphDataItem implements Serializable {
 
     /**
      * Custom bullet (path to file name).
-     */
+     **/
     public GraphDataItem setCustomBullet(String customBullet) {
         this.customBullet = customBullet;
         return this;
@@ -96,7 +96,7 @@ public class GraphDataItem implements Serializable {
 
     /**
      * Original object from data provider.
-     */
+     **/
     public GraphDataItem setDataContext(Object dataContext) {
         this.dataContext = dataContext;
         return this;
@@ -108,7 +108,7 @@ public class GraphDataItem implements Serializable {
 
     /**
      * Description.
-     */
+     **/
     public GraphDataItem setDescription(String description) {
         this.description = description;
         return this;
@@ -120,7 +120,7 @@ public class GraphDataItem implements Serializable {
 
     /**
      * Array of colors of the data item, used by column and candlestick chart only.
-     */
+     **/
     public GraphDataItem setFillColors(List<Color> fillColors) {
         this.fillColors = fillColors;
         return this;
@@ -132,7 +132,7 @@ public class GraphDataItem implements Serializable {
 
     /**
      * Object which holds percents when recalculateToPercents is set to true.
-     */
+     **/
     public GraphDataItem setPercents(Object percents) {
         this.percents = percents;
         return this;
@@ -144,7 +144,7 @@ public class GraphDataItem implements Serializable {
 
     /**
      * SerialDataItem of this graphDataItem
-     */
+     **/
     public GraphDataItem setSerialDataItem(SerialDataItem serialDataItem) {
         this.serialDataItem = serialDataItem;
         return this;
@@ -156,7 +156,7 @@ public class GraphDataItem implements Serializable {
 
     /**
      * url
-     */
+     **/
     public GraphDataItem setUrl(String url) {
         this.url = url;
         return this;
@@ -168,7 +168,7 @@ public class GraphDataItem implements Serializable {
 
     /**
      * Object which holds values of the data item (value, open, close, low, high).
-     */
+     **/
     public GraphDataItem setValues(Object values) {
         this.values = values;
         return this;
@@ -180,7 +180,7 @@ public class GraphDataItem implements Serializable {
 
     /**
      * x coordinate of the data item.
-     */
+     **/
     public GraphDataItem setX(double x) {
         this.x = x;
         return this;
@@ -192,7 +192,7 @@ public class GraphDataItem implements Serializable {
 
     /**
      * y coordinate of the data item.
-     */
+     **/
     public GraphDataItem setY(double y) {
         this.y = y;
         return this;

@@ -22,7 +22,7 @@ public class GaugeArrow implements Serializable {
 
     /**
      * Opacity of an arrow.
-     */
+     **/
     public GaugeArrow setAlpha(double alpha) {
         this.alpha = alpha;
         return this;
@@ -35,7 +35,7 @@ public class GaugeArrow implements Serializable {
     /**
      * Axis of the arrow. You can use reference to the axis or id of the axis. If you don't
      * set any axis, the first axis of a chart will be used.
-     */
+     **/
     public GaugeArrow setAxis(GaugeAxis axis) {
         this.axis = axis;
         return this;
@@ -47,7 +47,7 @@ public class GaugeArrow implements Serializable {
 
     /**
      * Opacity of arrow border.
-     */
+     **/
     public GaugeArrow setBorderAlpha(double borderAlpha) {
         this.borderAlpha = borderAlpha;
         return this;
@@ -59,7 +59,7 @@ public class GaugeArrow implements Serializable {
 
     /**
      * In case you need the arrow to rotate only clock-wise, set this property to true.
-     */
+     **/
     public GaugeArrow setClockWiseOnly(boolean clockWiseOnly) {
         this.clockWiseOnly = clockWiseOnly;
         return this;
@@ -71,7 +71,7 @@ public class GaugeArrow implements Serializable {
 
     /**
      * Color of an arrow.
-     */
+     **/
     public GaugeArrow setColor(Color color) {
         this.color = color;
         return this;
@@ -83,7 +83,7 @@ public class GaugeArrow implements Serializable {
 
     /**
      * Unique id of an arrow.
-     */
+     **/
     public GaugeArrow setId(String id) {
         this.id = id;
         return this;
@@ -95,7 +95,7 @@ public class GaugeArrow implements Serializable {
 
     /**
      * Inner radius of an arrow.
-     */
+     **/
     public GaugeArrow setInnerRadius(String innerRadius) {
         this.innerRadius = innerRadius;
         return this;
@@ -107,7 +107,7 @@ public class GaugeArrow implements Serializable {
 
     /**
      * Opacity of a nail, holding the arrow.
-     */
+     **/
     public GaugeArrow setNailAlpha(double nailAlpha) {
         this.nailAlpha = nailAlpha;
         return this;
@@ -119,7 +119,7 @@ public class GaugeArrow implements Serializable {
 
     /**
      * Opacity of nail border.
-     */
+     **/
     public GaugeArrow setNailBorderAlpha(double nailBorderAlpha) {
         this.nailBorderAlpha = nailBorderAlpha;
         return this;
@@ -131,7 +131,7 @@ public class GaugeArrow implements Serializable {
 
     /**
      * Thickness of nail border.
-     */
+     **/
     public GaugeArrow setNailBorderThickness(double nailBorderThickness) {
         this.nailBorderThickness = nailBorderThickness;
         return this;
@@ -143,7 +143,7 @@ public class GaugeArrow implements Serializable {
 
     /**
      * Radius of a nail, holding the arrow.
-     */
+     **/
     public GaugeArrow setNailRadius(double nailRadius) {
         this.nailRadius = nailRadius;
         return this;
@@ -155,7 +155,7 @@ public class GaugeArrow implements Serializable {
 
     /**
      * Radius of an arrow.
-     */
+     **/
     public GaugeArrow setRadius(String radius) {
         this.radius = radius;
         return this;
@@ -167,7 +167,7 @@ public class GaugeArrow implements Serializable {
 
     /**
      * Width of arrow root.
-     */
+     **/
     public GaugeArrow setStartWidth(double startWidth) {
         this.startWidth = startWidth;
         return this;
@@ -179,7 +179,7 @@ public class GaugeArrow implements Serializable {
 
     /**
      * Value to which the arrow should point at.
-     */
+     **/
     public GaugeArrow setValue(double value) {
         this.value = value;
         return this;

@@ -4,8 +4,11 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import de.stekoe.amcharts.addition.Color;
 import de.stekoe.amcharts.addition.ColorSerialiser;
+import org.hamcrest.CoreMatchers;
+import org.junit.Assert;
 import org.junit.Test;
 
+import static com.jayway.jsonpath.matchers.JsonPathMatchers.hasJsonPath;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
 
@@ -20,6 +23,9 @@ public class AmChartSerializationTest {
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.registerTypeAdapter(Color.class, new ColorSerialiser());
 
-        assertThat(gson.toJson(pieChart).toString(), equalTo("{\"borderColor\":{\"colorHexVal\":\"000000\"},\"fontSize\":23.0}"));
+
+        String json = gson.toJson(pieChart);
+        Assert.assertThat(json, hasJsonPath("$.borderColor.colorHexVal", equalTo("000000")));
+        Assert.assertThat(json, hasJsonPath("$.fontSize", equalTo(23.0)));
     }
 }

@@ -10,7 +10,7 @@ public class AmRadarChart extends AmCoordinateChart {
 
     /**
      * Field in your data provider containing categories.
-     */
+     **/
     public AmRadarChart setCategoryField(String categoryField) {
         this.categoryField = categoryField;
         return this;
@@ -22,7 +22,7 @@ public class AmRadarChart extends AmCoordinateChart {
 
     /**
      * Bottom margin of the chart.
-     */
+     **/
     public AmRadarChart setMarginBottom(double marginBottom) {
         this.marginBottom = marginBottom;
         return this;
@@ -34,7 +34,7 @@ public class AmRadarChart extends AmCoordinateChart {
 
     /**
      * Left margin of the chart.
-     */
+     **/
     public AmRadarChart setMarginLeft(double marginLeft) {
         this.marginLeft = marginLeft;
         return this;
@@ -46,7 +46,7 @@ public class AmRadarChart extends AmCoordinateChart {
 
     /**
      * Right margin of the chart.
-     */
+     **/
     public AmRadarChart setMarginRight(double marginRight) {
         this.marginRight = marginRight;
         return this;
@@ -58,7 +58,7 @@ public class AmRadarChart extends AmCoordinateChart {
 
     /**
      * Top margin of the chart.
-     */
+     **/
     public AmRadarChart setMarginTop(double marginTop) {
         this.marginTop = marginTop;
         return this;
@@ -70,7 +70,7 @@ public class AmRadarChart extends AmCoordinateChart {
 
     /**
      * Radius of a radar.
-     */
+     **/
     public AmRadarChart setRadius(String radius) {
         this.radius = radius;
         return this;

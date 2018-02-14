@@ -19,7 +19,7 @@ public class Image implements Serializable {
 
     /**
      * Roll-over balloon color.
-     */
+     **/
     public Image setBalloonColor(Color balloonColor) {
         this.balloonColor = balloonColor;
         return this;
@@ -31,7 +31,7 @@ public class Image implements Serializable {
 
     /**
      * Roll-over text.
-     */
+     **/
     public Image setBalloonText(String balloonText) {
         this.balloonText = balloonText;
         return this;
@@ -44,7 +44,7 @@ public class Image implements Serializable {
     /**
      * Color of an image. Works only if an image is generated using SVG path (using svgPath
      * property on an Image)
-     */
+     **/
     public Image setColor(Color color) {
         this.color = color;
         return this;
@@ -56,7 +56,7 @@ public class Image implements Serializable {
 
     /**
      * Height of an image.
-     */
+     **/
     public Image setHeight(double height) {
         this.height = height;
         return this;
@@ -68,7 +68,7 @@ public class Image implements Serializable {
 
     /**
      * Horizontal offset.
-     */
+     **/
     public Image setOffsetX(double offsetX) {
         this.offsetX = offsetX;
         return this;
@@ -80,7 +80,7 @@ public class Image implements Serializable {
 
     /**
      * Vertical offset.
-     */
+     **/
     public Image setOffsetY(double offsetY) {
         this.offsetY = offsetY;
         return this;
@@ -93,7 +93,7 @@ public class Image implements Serializable {
     /**
      * Color of image outline. Works only if an image is generated using SVG path (using
      * svgPath property on an Image)
-     */
+     **/
     public Image setOutlineColor(Color outlineColor) {
         this.outlineColor = outlineColor;
         return this;
@@ -105,7 +105,7 @@ public class Image implements Serializable {
 
     /**
      * Rotation of an image.
-     */
+     **/
     public Image setRotation(double rotation) {
         this.rotation = rotation;
         return this;
@@ -117,7 +117,7 @@ public class Image implements Serializable {
 
     /**
      * Svg path of an image. Will not work with IE8.
-     */
+     **/
     public Image setSvgPath(String svgPath) {
         this.svgPath = svgPath;
         return this;
@@ -129,7 +129,7 @@ public class Image implements Serializable {
 
     /**
      * Url of an image.
-     */
+     **/
     public Image setUrl(String url) {
         this.url = url;
         return this;
@@ -141,7 +141,7 @@ public class Image implements Serializable {
 
     /**
      * Width on an image.
-     */
+     **/
     public Image setWidth(double width) {
         this.width = width;
         return this;

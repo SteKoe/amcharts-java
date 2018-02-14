@@ -19,7 +19,7 @@ public class AmCoordinateChart extends AmChart {
 
     /**
      * Read-only. Array, holding processed chart's data.
-     */
+     **/
     public AmCoordinateChart setChartData(List<Object> chartData) {
         this.chartData = chartData;
         return this;
@@ -30,9 +30,9 @@ public class AmCoordinateChart extends AmChart {
     }
 
     /**
-     * Specifies the colors of the graphs if the lineColor of a graph is not set. It there
-     * are more graphs then colors in this array, the chart picks random color.
-     */
+     * Specifies the colors of the graphs if the lineColor of a graph is not set. If there
+     * are more graphs then colors in this array, the chart picks a random color.
+     **/
     public AmCoordinateChart setColors(List<Color> colors) {
         this.colors = colors;
         return this;
@@ -44,7 +44,7 @@ public class AmCoordinateChart extends AmChart {
 
     /**
      * The array of graphs belonging to this chart.
-     */
+     **/
     public AmCoordinateChart setGraphs(List<AmGraph> graphs) {
         this.graphs = graphs;
         return this;
@@ -57,7 +57,7 @@ public class AmCoordinateChart extends AmChart {
     /**
      * Specifies if grid should be drawn above the graphs or below. Will not work properly
      * with 3D charts.
-     */
+     **/
     public AmCoordinateChart setGridAboveGraphs(boolean gridAboveGraphs) {
         this.gridAboveGraphs = gridAboveGraphs;
         return this;
@@ -72,7 +72,7 @@ public class AmCoordinateChart extends AmChart {
      * case guide has category or date defined, it will automatically will be assigned to
      * the category axis. Otherwise to first value axis, unless you specify a different
      * valueAxis for the guide.
-     */
+     **/
     public AmCoordinateChart setGuides(List<Guide> guides) {
         this.guides = guides;
         return this;
@@ -85,7 +85,7 @@ public class AmCoordinateChart extends AmChart {
     /**
      * Specifies whether the animation should be sequenced or all objects should appear
      * at once.
-     */
+     **/
     public AmCoordinateChart setSequencedAnimation(boolean sequencedAnimation) {
         this.sequencedAnimation = sequencedAnimation;
         return this;
@@ -98,7 +98,7 @@ public class AmCoordinateChart extends AmChart {
     /**
      * The initial opacity of the column/line. If you set startDuration to a value higher
      * than 0, the columns/lines will fade in from startAlpha. Value range is 0 - 1.
-     */
+     **/
     public AmCoordinateChart setStartAlpha(double startAlpha) {
         this.startAlpha = startAlpha;
         return this;
@@ -110,7 +110,7 @@ public class AmCoordinateChart extends AmChart {
 
     /**
      * Duration of the animation, in seconds.
-     */
+     **/
     public AmCoordinateChart setStartDuration(double startDuration) {
         this.startDuration = startDuration;
         return this;
@@ -122,7 +122,7 @@ public class AmCoordinateChart extends AmChart {
 
     /**
      * Animation effect. Possible values are: easeOutSine, easeInSine, elastic, bounce
-     */
+     **/
     public AmCoordinateChart setStartEffect(String startEffect) {
         this.startEffect = startEffect;
         return this;
@@ -134,7 +134,7 @@ public class AmCoordinateChart extends AmChart {
 
     /**
      * Target of url.
-     */
+     **/
     public AmCoordinateChart setUrlTarget(String urlTarget) {
         this.urlTarget = urlTarget;
         return this;
@@ -147,7 +147,7 @@ public class AmCoordinateChart extends AmChart {
     /**
      * The array of value axes. Chart creates one value axis automatically, so if you need
      * only one value axis, you don't need to create it.
-     */
+     **/
     public AmCoordinateChart setValueAxes(List<ValueAxis> valueAxes) {
         this.valueAxes = valueAxes;
         return this;

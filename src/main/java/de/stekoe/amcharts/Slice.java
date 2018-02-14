@@ -19,7 +19,7 @@ public class Slice implements Serializable {
 
     /**
      * Opacity of a slice.
-     */
+     **/
     public Slice setAlpha(double alpha) {
         this.alpha = alpha;
         return this;
@@ -31,7 +31,7 @@ public class Slice implements Serializable {
 
     /**
      * Color of a slice.
-     */
+     **/
     public Slice setColor(Color color) {
         this.color = color;
         return this;
@@ -43,7 +43,7 @@ public class Slice implements Serializable {
 
     /**
      * Original object from data provider.
-     */
+     **/
     public Slice setDataContext(Object dataContext) {
         this.dataContext = dataContext;
         return this;
@@ -55,7 +55,7 @@ public class Slice implements Serializable {
 
     /**
      * Slice description.
-     */
+     **/
     public Slice setDescription(String description) {
         this.description = description;
         return this;
@@ -67,7 +67,7 @@ public class Slice implements Serializable {
 
     /**
      * Specifies whether the slice is hidden
-     */
+     **/
     public Slice setHidden(boolean hidden) {
         this.hidden = hidden;
         return this;
@@ -79,7 +79,7 @@ public class Slice implements Serializable {
 
     /**
      * Percent value of a slice.
-     */
+     **/
     public Slice setPercents(double percents) {
         this.percents = percents;
         return this;
@@ -91,7 +91,7 @@ public class Slice implements Serializable {
 
     /**
      * Specifies whether the slice is pulled or not.
-     */
+     **/
     public Slice setPulled(boolean pulled) {
         this.pulled = pulled;
         return this;
@@ -103,7 +103,7 @@ public class Slice implements Serializable {
 
     /**
      * Slice title
-     */
+     **/
     public Slice setTitle(String title) {
         this.title = title;
         return this;
@@ -115,7 +115,7 @@ public class Slice implements Serializable {
 
     /**
      * Url of a slice
-     */
+     **/
     public Slice setUrl(String url) {
         this.url = url;
         return this;
@@ -127,7 +127,7 @@ public class Slice implements Serializable {
 
     /**
      * Value of a slice
-     */
+     **/
     public Slice setValue(double value) {
         this.value = value;
         return this;
@@ -139,7 +139,7 @@ public class Slice implements Serializable {
 
     /**
      * specifies whether this slice has a legend entry
-     */
+     **/
     public Slice setVisibleInLegend(boolean visibleInLegend) {
         this.visibleInLegend = visibleInLegend;
         return this;
