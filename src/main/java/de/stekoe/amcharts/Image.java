@@ -4,6 +4,11 @@ import de.stekoe.amcharts.addition.Color;
 
 import java.io.Serializable;
 
+/**
+ * Image is used to add images to the end/start of trend lines. Allows you to display
+ * image anywhere on chart's plot area.
+ */
+
 public class Image implements Serializable {
     private Color balloonColor;
     private String balloonText;
@@ -18,8 +23,9 @@ public class Image implements Serializable {
     private Double width;
 
     /**
-     * Roll-over balloon color.
-     **/
+     * @param balloonColor Roll-over balloon color.
+     * @return Image
+     */
     public Image setBalloonColor(Color balloonColor) {
         this.balloonColor = balloonColor;
         return this;
@@ -30,8 +36,9 @@ public class Image implements Serializable {
     }
 
     /**
-     * Roll-over text.
-     **/
+     * @param balloonText Roll-over text.
+     * @return Image
+     */
     public Image setBalloonText(String balloonText) {
         this.balloonText = balloonText;
         return this;
@@ -42,9 +49,10 @@ public class Image implements Serializable {
     }
 
     /**
-     * Color of an image. Works only if an image is generated using SVG path (using svgPath
-     * property on an Image)
-     **/
+     * @param color Color of an image. Works only if an image is generated using SVG path (using svgPath
+     *              property on an Image)
+     * @return Image
+     */
     public Image setColor(Color color) {
         this.color = color;
         return this;
@@ -55,8 +63,9 @@ public class Image implements Serializable {
     }
 
     /**
-     * Height of an image.
-     **/
+     * @param height Height of an image.
+     * @return Image
+     */
     public Image setHeight(double height) {
         this.height = height;
         return this;
@@ -67,8 +76,9 @@ public class Image implements Serializable {
     }
 
     /**
-     * Horizontal offset.
-     **/
+     * @param offsetX Horizontal offset.
+     * @return Image
+     */
     public Image setOffsetX(double offsetX) {
         this.offsetX = offsetX;
         return this;
@@ -79,8 +89,9 @@ public class Image implements Serializable {
     }
 
     /**
-     * Vertical offset.
-     **/
+     * @param offsetY Vertical offset.
+     * @return Image
+     */
     public Image setOffsetY(double offsetY) {
         this.offsetY = offsetY;
         return this;
@@ -91,9 +102,10 @@ public class Image implements Serializable {
     }
 
     /**
-     * Color of image outline. Works only if an image is generated using SVG path (using
-     * svgPath property on an Image)
-     **/
+     * @param outlineColor Color of image outline. Works only if an image is generated using SVG path (using
+     *                     svgPath property on an Image)
+     * @return Image
+     */
     public Image setOutlineColor(Color outlineColor) {
         this.outlineColor = outlineColor;
         return this;
@@ -104,8 +116,9 @@ public class Image implements Serializable {
     }
 
     /**
-     * Rotation of an image.
-     **/
+     * @param rotation Rotation of an image.
+     * @return Image
+     */
     public Image setRotation(double rotation) {
         this.rotation = rotation;
         return this;
@@ -116,8 +129,9 @@ public class Image implements Serializable {
     }
 
     /**
-     * Svg path of an image. Will not work with IE8.
-     **/
+     * @param svgPath Svg path of an image. Will not work with IE8.
+     * @return Image
+     */
     public Image setSvgPath(String svgPath) {
         this.svgPath = svgPath;
         return this;
@@ -128,8 +142,9 @@ public class Image implements Serializable {
     }
 
     /**
-     * Url of an image.
-     **/
+     * @param url Url of an image.
+     * @return Image
+     */
     public Image setUrl(String url) {
         this.url = url;
         return this;
@@ -140,8 +155,9 @@ public class Image implements Serializable {
     }
 
     /**
-     * Width on an image.
-     **/
+     * @param width Width on an image.
+     * @return Image
+     */
     public Image setWidth(double width) {
         this.width = width;
         return this;

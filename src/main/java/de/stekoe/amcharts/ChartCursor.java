@@ -5,6 +5,11 @@ import de.stekoe.amcharts.addition.Color;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * Creates a cursor for the chart which follows the mouse movements. In case of AmSerialChart
+ * charts it shows the balloons of hovered data points.
+ */
+
 public class ChartCursor implements Serializable {
     private Double adjustment;
     private Double animationDuration;
@@ -44,9 +49,10 @@ public class ChartCursor implements Serializable {
     private Boolean zooming;
 
     /**
-     * If you set adjustment to -1, the balloon will be shown near previous, if you set
-     * it to 1 - near next data point.
-     **/
+     * @param adjustment If you set adjustment to -1, the balloon will be shown near previous, if you set
+     *                   it to 1 - near next data point.
+     * @return ChartCursor
+     */
     public ChartCursor setAdjustment(double adjustment) {
         this.adjustment = adjustment;
         return this;
@@ -57,8 +63,9 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Duration of animation of a line, in seconds.
-     **/
+     * @param animationDuration Duration of animation of a line, in seconds.
+     * @return ChartCursor
+     */
     public ChartCursor setAnimationDuration(double animationDuration) {
         this.animationDuration = animationDuration;
         return this;
@@ -69,9 +76,10 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Specifies if cursor should arrange balloons so they won't overlap. If chart is rotated,
-     * it might be good idea to turn this off.
-     **/
+     * @param avoidBalloonOverlapping Specifies if cursor should arrange balloons so they won't overlap. If chart is rotated,
+     *                                it might be good idea to turn this off.
+     * @return ChartCursor
+     */
     public ChartCursor setAvoidBalloonOverlapping(boolean avoidBalloonOverlapping) {
         this.avoidBalloonOverlapping = avoidBalloonOverlapping;
         return this;
@@ -82,8 +90,9 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * defines if the balloon should be shown above the datapoint or sideways
-     **/
+     * @param balloonPointerOrientation defines if the balloon should be shown above the datapoint or sideways
+     * @return ChartCursor
+     */
     public ChartCursor setBalloonPointerOrientation(String balloonPointerOrientation) {
         this.balloonPointerOrientation = balloonPointerOrientation;
         return this;
@@ -94,8 +103,9 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Specifies if bullet for each graph will follow the cursor.
-     **/
+     * @param bulletsEnabled Specifies if bullet for each graph will follow the cursor.
+     * @return ChartCursor
+     */
     public ChartCursor setBulletsEnabled(boolean bulletsEnabled) {
         this.bulletsEnabled = bulletsEnabled;
         return this;
@@ -106,8 +116,9 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Size of bullets, following the cursor.
-     **/
+     * @param bulletSize Size of bullets, following the cursor.
+     * @return ChartCursor
+     */
     public ChartCursor setBulletSize(double bulletSize) {
         this.bulletSize = bulletSize;
         return this;
@@ -118,8 +129,9 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Opacity of the category balloon.
-     **/
+     * @param categoryBalloonAlpha Opacity of the category balloon.
+     * @return ChartCursor
+     */
     public ChartCursor setCategoryBalloonAlpha(double categoryBalloonAlpha) {
         this.categoryBalloonAlpha = categoryBalloonAlpha;
         return this;
@@ -130,8 +142,9 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Color of the category balloon. cursorColor is used if not set.
-     **/
+     * @param categoryBalloonColor Color of the category balloon. cursorColor is used if not set.
+     * @return ChartCursor
+     */
     public ChartCursor setCategoryBalloonColor(Color categoryBalloonColor) {
         this.categoryBalloonColor = categoryBalloonColor;
         return this;
@@ -142,9 +155,10 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Category balloon date format (used only if category axis parses dates). Check this
-     * page for instructions on how to format dates.
-     **/
+     * @param categoryBalloonDateFormat Category balloon date format (used only if category axis parses dates). Check this
+     *                                  page for instructions on how to format dates.
+     * @return ChartCursor
+     */
     public ChartCursor setCategoryBalloonDateFormat(String categoryBalloonDateFormat) {
         this.categoryBalloonDateFormat = categoryBalloonDateFormat;
         return this;
@@ -155,8 +169,9 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Specifies whether category balloon is enabled.
-     **/
+     * @param categoryBalloonEnabled Specifies whether category balloon is enabled.
+     * @return ChartCursor
+     */
     public ChartCursor setCategoryBalloonEnabled(boolean categoryBalloonEnabled) {
         this.categoryBalloonEnabled = categoryBalloonEnabled;
         return this;
@@ -167,9 +182,10 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * You can have [[category]] - [[toCategory]] tags in there and show category ranges
-     * this way.
-     **/
+     * @param categoryBalloonText You can have [[category]] - [[toCategory]] tags in there and show category ranges
+     *                            this way.
+     * @return ChartCursor
+     */
     public ChartCursor setCategoryBalloonText(String categoryBalloonText) {
         this.categoryBalloonText = categoryBalloonText;
         return this;
@@ -180,8 +196,9 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Text color.
-     **/
+     * @param color Text color.
+     * @return ChartCursor
+     */
     public ChartCursor setColor(Color color) {
         this.color = color;
         return this;
@@ -192,8 +209,9 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Opacity of the cursor line.
-     **/
+     * @param cursorAlpha Opacity of the cursor line.
+     * @return ChartCursor
+     */
     public ChartCursor setCursorAlpha(double cursorAlpha) {
         this.cursorAlpha = cursorAlpha;
         return this;
@@ -204,8 +222,9 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Color of the cursor line.
-     **/
+     * @param cursorColor Color of the cursor line.
+     * @return ChartCursor
+     */
     public ChartCursor setCursorColor(Color cursorColor) {
         this.cursorColor = cursorColor;
         return this;
@@ -216,11 +235,12 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Specifies where the cursor line should be placed - on the beginning of the period
-     * (day, hour, etc) or in the middle (only when parseDates property of categoryAxis
-     * is set to true). If you want the cursor to follow mouse and not to glue to the nearest
-     * data point, set "mouse" here. Possible values are: start, middle, mouse.
-     **/
+     * @param cursorPosition Specifies where the cursor line should be placed - on the beginning of the period
+     *                       (day, hour, etc) or in the middle (only when parseDates property of categoryAxis
+     *                       is set to true). If you want the cursor to follow mouse and not to glue to the nearest
+     *                       data point, set "mouse" here. Possible values are: start, middle, mouse.
+     * @return ChartCursor
+     */
     public ChartCursor setCursorPosition(String cursorPosition) {
         this.cursorPosition = cursorPosition;
         return this;
@@ -231,8 +251,9 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Specifies whether cursor is enabled.
-     **/
+     * @param enabled Specifies whether cursor is enabled.
+     * @return ChartCursor
+     */
     public ChartCursor setEnabled(boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -243,10 +264,11 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * If set to true, instead of a cursor line user will see a fill which width will always
-     * be equal to the width of one data item. We'd recommend setting cursorAlpha to 0.1
-     * or some other small number if using this feature.
-     **/
+     * @param fullWidth If set to true, instead of a cursor line user will see a fill which width will always
+     *                  be equal to the width of one data item. We'd recommend setting cursorAlpha to 0.1
+     *                  or some other small number if using this feature.
+     * @return ChartCursor
+     */
     public ChartCursor setFullWidth(boolean fullWidth) {
         this.fullWidth = fullWidth;
         return this;
@@ -257,9 +279,10 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * If you make graph's bullets invisible by setting their opacity to 0 and will set
-     * graphBulletAlpha to 1, the bullets will only appear at the cursor's position.
-     **/
+     * @param graphBulletAlpha If you make graph's bullets invisible by setting their opacity to 0 and will set
+     *                         graphBulletAlpha to 1, the bullets will only appear at the cursor's position.
+     * @return ChartCursor
+     */
     public ChartCursor setGraphBulletAlpha(double graphBulletAlpha) {
         this.graphBulletAlpha = graphBulletAlpha;
         return this;
@@ -270,9 +293,10 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Size of a graph's bullet (if available) at the cursor position. If you don't want
-     * the bullet to change it's size, set this property to 1.
-     **/
+     * @param graphBulletSize Size of a graph's bullet (if available) at the cursor position. If you don't want
+     *                        the bullet to change it's size, set this property to 1.
+     * @return ChartCursor
+     */
     public ChartCursor setGraphBulletSize(double graphBulletSize) {
         this.graphBulletSize = graphBulletSize;
         return this;
@@ -283,8 +307,9 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * This makes cursor and balloons to remain after user touches the chart.
-     **/
+     * @param leaveAfterTouch This makes cursor and balloons to remain after user touches the chart.
+     * @return ChartCursor
+     */
     public ChartCursor setLeaveAfterTouch(boolean leaveAfterTouch) {
         this.leaveAfterTouch = leaveAfterTouch;
         return this;
@@ -295,9 +320,10 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Specifies if cursor should be left at it's last position. Useful for touch devices
-     * - user might want to see the balloons after he moves finger away.
-     **/
+     * @param leaveCursor Specifies if cursor should be left at it's last position. Useful for touch devices
+     *                    - user might want to see the balloons after he moves finger away.
+     * @return ChartCursor
+     */
     public ChartCursor setLeaveCursor(boolean leaveCursor) {
         this.leaveCursor = leaveCursor;
         return this;
@@ -308,11 +334,12 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * If set to an id or a reference to AmGraph object, CategoryAxis cursor line will be
-     * limited to this graph instead of being drawn through full height of plot area. Note,
-     * this works with serial chart only. Also, cursorPosition of ChartCursor must be set
-     * to middle.
-     **/
+     * @param limitToGraph If set to an id or a reference to AmGraph object, CategoryAxis cursor line will be
+     *                     limited to this graph instead of being drawn through full height of plot area. Note,
+     *                     this works with serial chart only. Also, cursorPosition of ChartCursor must be set
+     *                     to middle.
+     * @return ChartCursor
+     */
     public ChartCursor setLimitToGraph(AmGraph limitToGraph) {
         this.limitToGraph = limitToGraph;
         return this;
@@ -323,9 +350,10 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * You can add listeners of events using this property. Example: listeners = [{"event":"changed",
-     * "method":handleEvent}];
-     **/
+     * @param listeners You can add listeners of events using this property. Example: listeners = [{"event":"changed",
+     *                  "method":handleEvent}];
+     * @return ChartCursor
+     */
     public ChartCursor setListeners(List<Object> listeners) {
         this.listeners = listeners;
         return this;
@@ -336,9 +364,10 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * If this is set to true, only one balloon at a time will be displayed. Note, this
-     * is quite CPU consuming.
-     **/
+     * @param oneBalloonOnly If this is set to true, only one balloon at a time will be displayed. Note, this
+     *                       is quite CPU consuming.
+     * @return ChartCursor
+     */
     public ChartCursor setOneBalloonOnly(boolean oneBalloonOnly) {
         this.oneBalloonOnly = oneBalloonOnly;
         return this;
@@ -349,8 +378,9 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * *If this is set to true, the user will be able to pan the chart instead of zooming.
-     **/
+     * @param pan *If this is set to true, the user will be able to pan the chart instead of zooming.
+     * @return ChartCursor
+     */
     public ChartCursor setPan(boolean pan) {
         this.pan = pan;
         return this;
@@ -361,8 +391,9 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Opacity of the selection.
-     **/
+     * @param selectionAlpha Opacity of the selection.
+     * @return ChartCursor
+     */
     public ChartCursor setSelectionAlpha(double selectionAlpha) {
         this.selectionAlpha = selectionAlpha;
         return this;
@@ -373,9 +404,10 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Specifies if cursor should only mark selected area but not zoom-in after user releases
-     * mouse button.
-     **/
+     * @param selectWithoutZooming Specifies if cursor should only mark selected area but not zoom-in after user releases
+     *                             mouse button.
+     * @return ChartCursor
+     */
     public ChartCursor setSelectWithoutZooming(boolean selectWithoutZooming) {
         this.selectWithoutZooming = selectWithoutZooming;
         return this;
@@ -386,9 +418,10 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * If true, the graph will display balloon on next available data point if currently
-     * hovered item doesn't have value for this graph.
-     **/
+     * @param showNextAvailable If true, the graph will display balloon on next available data point if currently
+     *                          hovered item doesn't have value for this graph.
+     * @return ChartCursor
+     */
     public ChartCursor setShowNextAvailable(boolean showNextAvailable) {
         this.showNextAvailable = showNextAvailable;
         return this;
@@ -399,10 +432,11 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * In case you set it to some number, the chart will set focus on chart cursor (works
-     * only with serial chart) when user clicks tab key. When a focus is set user can move
-     * cursor using cursor keys. Note, not all browsers and readers support this.
-     **/
+     * @param tabIndex In case you set it to some number, the chart will set focus on chart cursor (works
+     *                 only with serial chart) when user clicks tab key. When a focus is set user can move
+     *                 cursor using cursor keys. Note, not all browsers and readers support this.
+     * @return ChartCursor
+     */
     public ChartCursor setTabIndex(double tabIndex) {
         this.tabIndex = tabIndex;
         return this;
@@ -413,9 +447,10 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Specifies whether value balloons are enabled. In case they are not, the balloons
-     * might be displayed anyway, when the user rolls-over the column or bullet.
-     **/
+     * @param valueBalloonsEnabled Specifies whether value balloons are enabled. In case they are not, the balloons
+     *                             might be displayed anyway, when the user rolls-over the column or bullet.
+     * @return ChartCursor
+     */
     public ChartCursor setValueBalloonsEnabled(boolean valueBalloonsEnabled) {
         this.valueBalloonsEnabled = valueBalloonsEnabled;
         return this;
@@ -426,8 +461,9 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Opacity of value line. Will use cursorAlpha value if not set.
-     **/
+     * @param valueLineAlpha Opacity of value line. Will use cursorAlpha value if not set.
+     * @return ChartCursor
+     */
     public ChartCursor setValueLineAlpha(double valueLineAlpha) {
         this.valueLineAlpha = valueLineAlpha;
         return this;
@@ -438,8 +474,9 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Specifies if value balloon next to value axes labels should be displayed.
-     **/
+     * @param valueLineBalloonEnabled Specifies if value balloon next to value axes labels should be displayed.
+     * @return ChartCursor
+     */
     public ChartCursor setValueLineBalloonEnabled(boolean valueLineBalloonEnabled) {
         this.valueLineBalloonEnabled = valueLineBalloonEnabled;
         return this;
@@ -450,11 +487,12 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Specifies if cursor of Serial chart should display horizontal (or vertical if chart
-     * is rotated) line. This line might help users to compare distant values of a chart.
-     * You can also enable value balloons on this line by setting valueLineBalloonEnabled
-     * to true.
-     **/
+     * @param valueLineEnabled Specifies if cursor of Serial chart should display horizontal (or vertical if chart
+     *                         is rotated) line. This line might help users to compare distant values of a chart.
+     *                         You can also enable value balloons on this line by setting valueLineBalloonEnabled
+     *                         to true.
+     * @return ChartCursor
+     */
     public ChartCursor setValueLineEnabled(boolean valueLineEnabled) {
         this.valueLineEnabled = valueLineEnabled;
         return this;
@@ -465,8 +503,9 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Specifies if the user can zoom-in value axess of a serial chart.
-     **/
+     * @param valueZoomable Specifies if the user can zoom-in value axess of a serial chart.
+     * @return ChartCursor
+     */
     public ChartCursor setValueZoomable(boolean valueZoomable) {
         this.valueZoomable = valueZoomable;
         return this;
@@ -477,9 +516,10 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Specifies if the user can zoom-in the chart. If pan is set to true, zoomable is switched
-     * to false automatically.
-     **/
+     * @param zoomable Specifies if the user can zoom-in the chart. If pan is set to true, zoomable is switched
+     *                 to false automatically.
+     * @return ChartCursor
+     */
     public ChartCursor setZoomable(boolean zoomable) {
         this.zoomable = zoomable;
         return this;
@@ -490,8 +530,9 @@ public class ChartCursor implements Serializable {
     }
 
     /**
-     * Read-only. Indicates if currently user is selecting some chart area to zoom-in.
-     **/
+     * @param zooming Read-only. Indicates if currently user is selecting some chart area to zoom-in.
+     * @return ChartCursor
+     */
     public ChartCursor setZooming(boolean zooming) {
         this.zooming = zooming;
         return this;

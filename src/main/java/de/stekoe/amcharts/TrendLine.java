@@ -5,6 +5,11 @@ import de.stekoe.amcharts.addition.Color;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * Creates a trendline for AmSerialChart and AmXYChart charts which indicates the trend
+ * of your data or covers some different purposes. Multiple can be assigned.
+ */
+
 public class TrendLine implements Serializable {
     private String balloonText;
     private Double dashLength;
@@ -27,8 +32,9 @@ public class TrendLine implements Serializable {
     private ValueAxis valueAxisX;
 
     /**
-     * When set, enables displaying a roll-over balloon.
-     **/
+     * @param balloonText When set, enables displaying a roll-over balloon.
+     * @return TrendLine
+     */
     public TrendLine setBalloonText(String balloonText) {
         this.balloonText = balloonText;
         return this;
@@ -39,8 +45,9 @@ public class TrendLine implements Serializable {
     }
 
     /**
-     * Dash length.
-     **/
+     * @param dashLength Dash length.
+     * @return TrendLine
+     */
     public TrendLine setDashLength(double dashLength) {
         this.dashLength = dashLength;
         return this;
@@ -51,9 +58,10 @@ public class TrendLine implements Serializable {
     }
 
     /**
-     * String, equal to category value to which trend line should be drawn. It should be
-     * used if chart doesn't parse dates.
-     **/
+     * @param finalCategory String, equal to category value to which trend line should be drawn. It should be
+     *                      used if chart doesn't parse dates.
+     * @return TrendLine
+     */
     public TrendLine setFinalCategory(String finalCategory) {
         this.finalCategory = finalCategory;
         return this;
@@ -64,9 +72,10 @@ public class TrendLine implements Serializable {
     }
 
     /**
-     * Date to which trend line should be drawn. It can be date string (using the same date
-     * format as chart.dataDateFormat) or date object.
-     **/
+     * @param finalDate Date to which trend line should be drawn. It can be date string (using the same date
+     *                  format as chart.dataDateFormat) or date object.
+     * @return TrendLine
+     */
     public TrendLine setFinalDate(Date finalDate) {
         this.finalDate = finalDate;
         return this;
@@ -77,8 +86,9 @@ public class TrendLine implements Serializable {
     }
 
     /**
-     * Allows to add an image to the end of a trend line.
-     **/
+     * @param finalImage Allows to add an image to the end of a trend line.
+     * @return TrendLine
+     */
     public TrendLine setFinalImage(Image finalImage) {
         this.finalImage = finalImage;
         return this;
@@ -89,8 +99,9 @@ public class TrendLine implements Serializable {
     }
 
     /**
-     * Value at which trend line should end.
-     **/
+     * @param finalValue Value at which trend line should end.
+     * @return TrendLine
+     */
     public TrendLine setFinalValue(double finalValue) {
         this.finalValue = finalValue;
         return this;
@@ -101,8 +112,9 @@ public class TrendLine implements Serializable {
     }
 
     /**
-     * Used by XY chart only. X value at which trend line should end.
-     **/
+     * @param finalXValue Used by XY chart only. X value at which trend line should end.
+     * @return TrendLine
+     */
     public TrendLine setFinalXValue(double finalXValue) {
         this.finalXValue = finalXValue;
         return this;
@@ -113,8 +125,9 @@ public class TrendLine implements Serializable {
     }
 
     /**
-     * Unique id of a Trend line. You don't need to set it, unless you want to.
-     **/
+     * @param id Unique id of a Trend line. You don't need to set it, unless you want to.
+     * @return TrendLine
+     */
     public TrendLine setId(String id) {
         this.id = id;
         return this;
@@ -125,9 +138,10 @@ public class TrendLine implements Serializable {
     }
 
     /**
-     * String, equal to category value from which trend line should start. It should be
-     * used if chart doesn't parse dates.
-     **/
+     * @param initialCategory String, equal to category value from which trend line should start. It should be
+     *                        used if chart doesn't parse dates.
+     * @return TrendLine
+     */
     public TrendLine setInitialCategory(String initialCategory) {
         this.initialCategory = initialCategory;
         return this;
@@ -138,9 +152,10 @@ public class TrendLine implements Serializable {
     }
 
     /**
-     * Date from which trend line should start. It can be date string (using the same date
-     * format as chart.dataDateFormat) or date object.
-     **/
+     * @param initialDate Date from which trend line should start. It can be date string (using the same date
+     *                    format as chart.dataDateFormat) or date object.
+     * @return TrendLine
+     */
     public TrendLine setInitialDate(Date initialDate) {
         this.initialDate = initialDate;
         return this;
@@ -151,8 +166,9 @@ public class TrendLine implements Serializable {
     }
 
     /**
-     * Allows to add an image to the beginning of a trend line.
-     **/
+     * @param initialImage Allows to add an image to the beginning of a trend line.
+     * @return TrendLine
+     */
     public TrendLine setInitialImage(Image initialImage) {
         this.initialImage = initialImage;
         return this;
@@ -163,8 +179,9 @@ public class TrendLine implements Serializable {
     }
 
     /**
-     * Value from which trend line should start.
-     **/
+     * @param initialValue Value from which trend line should start.
+     * @return TrendLine
+     */
     public TrendLine setInitialValue(double initialValue) {
         this.initialValue = initialValue;
         return this;
@@ -175,8 +192,9 @@ public class TrendLine implements Serializable {
     }
 
     /**
-     * Used by XY chart only. X value from which trend line should start.
-     **/
+     * @param initialXValue Used by XY chart only. X value from which trend line should start.
+     * @return TrendLine
+     */
     public TrendLine setInitialXValue(double initialXValue) {
         this.initialXValue = initialXValue;
         return this;
@@ -187,9 +205,10 @@ public class TrendLine implements Serializable {
     }
 
     /**
-     * Used by Stock chart. If this property is set to true, this trend line won't be removed
-     * when clicked on eraser tool.
-     **/
+     * @param isProtected Used by Stock chart. If this property is set to true, this trend line won't be removed
+     *                    when clicked on eraser tool.
+     * @return TrendLine
+     */
     public TrendLine setIsProtected(boolean isProtected) {
         this.isProtected = isProtected;
         return this;
@@ -200,8 +219,9 @@ public class TrendLine implements Serializable {
     }
 
     /**
-     * Line opacity.
-     **/
+     * @param lineAlpha Line opacity.
+     * @return TrendLine
+     */
     public TrendLine setLineAlpha(double lineAlpha) {
         this.lineAlpha = lineAlpha;
         return this;
@@ -212,8 +232,9 @@ public class TrendLine implements Serializable {
     }
 
     /**
-     * Line color.
-     **/
+     * @param lineColor Line color.
+     * @return TrendLine
+     */
     public TrendLine setLineColor(Color lineColor) {
         this.lineColor = lineColor;
         return this;
@@ -224,8 +245,9 @@ public class TrendLine implements Serializable {
     }
 
     /**
-     * Line thickness.
-     **/
+     * @param lineThickness Line thickness.
+     * @return TrendLine
+     */
     public TrendLine setLineThickness(double lineThickness) {
         this.lineThickness = lineThickness;
         return this;
@@ -236,9 +258,10 @@ public class TrendLine implements Serializable {
     }
 
     /**
-     * Value axis of the trend line. Will use first value axis of the chart if not set any.
-     * You can use a reference to the value axis object or id of value axis.
-     **/
+     * @param valueAxis Value axis of the trend line. Will use first value axis of the chart if not set any.
+     *                  You can use a reference to the value axis object or id of value axis.
+     * @return TrendLine
+     */
     public TrendLine setValueAxis(ValueAxis valueAxis) {
         this.valueAxis = valueAxis;
         return this;
@@ -249,9 +272,10 @@ public class TrendLine implements Serializable {
     }
 
     /**
-     * Used by XY chart only. X axis of trend line. Will use first X axis of the chart if
-     * not set any. You can use a reference to the value axis object or id of value axis.
-     **/
+     * @param valueAxisX Used by XY chart only. X axis of trend line. Will use first X axis of the chart if
+     *                   not set any. You can use a reference to the value axis object or id of value axis.
+     * @return TrendLine
+     */
     public TrendLine setValueAxisX(ValueAxis valueAxisX) {
         this.valueAxisX = valueAxisX;
         return this;

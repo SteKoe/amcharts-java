@@ -4,6 +4,10 @@ import de.stekoe.amcharts.addition.Color;
 
 import java.io.Serializable;
 
+/**
+ * Create a scrollbar for AmSerialChart and AmXYChart charts.
+ */
+
 public class ChartScrollbar implements Serializable {
     private String accessibleLabel;
     private Boolean autoGridCount;
@@ -51,12 +55,13 @@ public class ChartScrollbar implements Serializable {
     private String vResizeCursorHover;
 
     /**
-     * Text which screen readers will read if user rolls-over or sets focus using tab key
-     * (this is possible only if tabIndex property of AmGraph is set to some number) on
-     * the grips or draggable part of a scrollbar. Text is added as aria-label tag. Note
-     * - not all screen readers and browsers support this. Note, you should set tabIndex
-     * to some number in order it would be possible to zoom chart using cursor keys.
-     **/
+     * @param accessibleLabel Text which screen readers will read if user rolls-over or sets focus using tab key
+     *                        (this is possible only if tabIndex property of AmGraph is set to some number) on
+     *                        the grips or draggable part of a scrollbar. Text is added as aria-label tag. Note
+     *                        - not all screen readers and browsers support this. Note, you should set tabIndex
+     *                        to some number in order it would be possible to zoom chart using cursor keys.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setAccessibleLabel(String accessibleLabel) {
         this.accessibleLabel = accessibleLabel;
         return this;
@@ -67,9 +72,10 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Specifies whether number of gridCount is specified automatically, according to the
-     * axis size.
-     **/
+     * @param autoGridCount Specifies whether number of gridCount is specified automatically, according to the
+     *                      axis size.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setAutoGridCount(boolean autoGridCount) {
         this.autoGridCount = autoGridCount;
         return this;
@@ -80,8 +86,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Background opacity.
-     **/
+     * @param backgroundAlpha Background opacity.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setBackgroundAlpha(double backgroundAlpha) {
         this.backgroundAlpha = backgroundAlpha;
         return this;
@@ -92,8 +99,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Background color of the scrollbar.
-     **/
+     * @param backgroundColor Background color of the scrollbar.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setBackgroundColor(Color backgroundColor) {
         this.backgroundColor = backgroundColor;
         return this;
@@ -104,8 +112,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Read-only. Category axis of the scrollbar.
-     **/
+     * @param categoryAxis Read-only. Category axis of the scrollbar.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setCategoryAxis(CategoryAxis categoryAxis) {
         this.categoryAxis = categoryAxis;
         return this;
@@ -116,8 +125,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Text color.
-     **/
+     * @param color Text color.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setColor(Color color) {
         this.color = color;
         return this;
@@ -128,8 +138,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Mouse cursor displayed when clicked on selected part of a scrollbar.
-     **/
+     * @param dragCursorDown Mouse cursor displayed when clicked on selected part of a scrollbar.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setDragCursorDown(String dragCursorDown) {
         this.dragCursorDown = dragCursorDown;
         return this;
@@ -140,8 +151,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Mouse cursor displayed when hovering over selected part of a scrollbar.
-     **/
+     * @param dragCursorHover Mouse cursor displayed when hovering over selected part of a scrollbar.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setDragCursorHover(String dragCursorHover) {
         this.dragCursorHover = dragCursorHover;
         return this;
@@ -152,12 +164,13 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * File name of scrollbar drag (resize grip) icon. You can find a set of icons in amcharts/images
-     * folder - you can choose from these: dragIconRectBig, dragIconRectBigBlack, dragIconRectSmall,
-     * dragIconRectSmallBlack, dragIconRoundBig, dragIconRoundBigBlack, dragIconRoundSmall,
-     * dragIconRoundSmallBlack. You can also use your own custom icons. Don't forget to
-     * change dragIconWidth and dragIconHeight if you change icons.
-     **/
+     * @param dragIcon File name of scrollbar drag (resize grip) icon. You can find a set of icons in amcharts/images
+     *                 folder - you can choose from these: dragIconRectBig, dragIconRectBigBlack, dragIconRectSmall,
+     *                 dragIconRectSmallBlack, dragIconRoundBig, dragIconRoundBigBlack, dragIconRoundSmall,
+     *                 dragIconRoundSmallBlack. You can also use your own custom icons. Don't forget to
+     *                 change dragIconWidth and dragIconHeight if you change icons.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setDragIcon(String dragIcon) {
         this.dragIcon = dragIcon;
         return this;
@@ -168,9 +181,10 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Height of resize grip image. Note, you should also update the image in amcharts/images
-     * folder if you don't want it to be distorted because of resizing.
-     **/
+     * @param dragIconHeight Height of resize grip image. Note, you should also update the image in amcharts/images
+     *                       folder if you don't want it to be distorted because of resizing.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setDragIconHeight(double dragIconHeight) {
         this.dragIconHeight = dragIconHeight;
         return this;
@@ -181,9 +195,10 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Width of resize grip image. Note, you should also update the image in amcharts/images
-     * folder if you don't want it to be distorted because of resizing.
-     **/
+     * @param dragIconWidth Width of resize grip image. Note, you should also update the image in amcharts/images
+     *                      folder if you don't want it to be distorted because of resizing.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setDragIconWidth(double dragIconWidth) {
         this.dragIconWidth = dragIconWidth;
         return this;
@@ -194,9 +209,10 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Specifies if scrollbar is enabled. You can hide/show scrollbar using this property
-     * without actually removing it.
-     **/
+     * @param enabled Specifies if scrollbar is enabled. You can hide/show scrollbar using this property
+     *                without actually removing it.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setEnabled(boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -207,9 +223,10 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Specifies which graph will be displayed in the scrollbar. Only Serial chart's category
-     * scrollbar can display a graph.
-     **/
+     * @param graph Specifies which graph will be displayed in the scrollbar. Only Serial chart's category
+     *              scrollbar can display a graph.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setGraph(AmGraph graph) {
         this.graph = graph;
         return this;
@@ -220,8 +237,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Graph fill opacity. Value range is 0 - 1.
-     **/
+     * @param graphFillAlpha Graph fill opacity. Value range is 0 - 1.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setGraphFillAlpha(double graphFillAlpha) {
         this.graphFillAlpha = graphFillAlpha;
         return this;
@@ -232,8 +250,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Graph fill color.
-     **/
+     * @param graphFillColor Graph fill color.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setGraphFillColor(Color graphFillColor) {
         this.graphFillColor = graphFillColor;
         return this;
@@ -244,8 +263,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Graph line opacity. Value range is 0 - 1.
-     **/
+     * @param graphLineAlpha Graph line opacity. Value range is 0 - 1.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setGraphLineAlpha(double graphLineAlpha) {
         this.graphLineAlpha = graphLineAlpha;
         return this;
@@ -256,8 +276,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Graph line color.
-     **/
+     * @param graphLineColor Graph line color.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setGraphLineColor(Color graphLineColor) {
         this.graphLineColor = graphLineColor;
         return this;
@@ -268,10 +289,11 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * by default the graph type is the same as the original graph's type, however in case
-     * of candlestick or ohlc you might want to show line graph in the scrollbar. Possible
-     * values are: line, column, step, smoothedLine, candlestick, ohlc
-     **/
+     * @param graphType by default the graph type is the same as the original graph's type, however in case
+     *                  of candlestick or ohlc you might want to show line graph in the scrollbar. Possible
+     *                  values are: line, column, step, smoothedLine, candlestick, ohlc
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setGraphType(String graphType) {
         this.graphType = graphType;
         return this;
@@ -282,8 +304,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Grid opacity. Value range is 0 - 1.
-     **/
+     * @param gridAlpha Grid opacity. Value range is 0 - 1.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setGridAlpha(double gridAlpha) {
         this.gridAlpha = gridAlpha;
         return this;
@@ -294,8 +317,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Grid color.
-     **/
+     * @param gridColor Grid color.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setGridColor(Color gridColor) {
         this.gridColor = gridColor;
         return this;
@@ -306,8 +330,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * The number of grid lines.
-     **/
+     * @param gridCount The number of grid lines.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setGridCount(double gridCount) {
         this.gridCount = gridCount;
         return this;
@@ -318,8 +343,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Specifies whether resize grips are hidden when mouse is away from the scrollbar.
-     **/
+     * @param hideResizeGrips Specifies whether resize grips are hidden when mouse is away from the scrollbar.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setHideResizeGrips(boolean hideResizeGrips) {
         this.hideResizeGrips = hideResizeGrips;
         return this;
@@ -330,8 +356,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Mouse cursor type shown when user hovers horizontal cursor's resize grips.
-     **/
+     * @param hResizeCursor Mouse cursor type shown when user hovers horizontal cursor's resize grips.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setHResizeCursor(String hResizeCursor) {
         this.hResizeCursor = hResizeCursor;
         return this;
@@ -342,9 +369,10 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * CSS value of cursor displayed when mouse is pressed down over horizontal cursor's
-     * resize grip.
-     **/
+     * @param hResizeCursorDown CSS value of cursor displayed when mouse is pressed down over horizontal cursor's
+     *                          resize grip.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setHResizeCursorDown(String hResizeCursorDown) {
         this.hResizeCursorDown = hResizeCursorDown;
         return this;
@@ -355,8 +383,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * *CSS value of cursor displayed when hovering over horizontal cursor's resize grip.
-     **/
+     * @param hResizeCursorHover *CSS value of cursor displayed when hovering over horizontal cursor's resize grip.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setHResizeCursorHover(String hResizeCursorHover) {
         this.hResizeCursorHover = hResizeCursorHover;
         return this;
@@ -367,11 +396,12 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * If you have column type graph in your scrollbar, and this graph has custom colors
-     * for one or more columns in data provider, those columns will be colored with this
-     * custom color. However you might not want this in some cases. Set this property to
-     * true to use scrollbar's graph colors.
-     **/
+     * @param ignoreCustomColors If you have column type graph in your scrollbar, and this graph has custom colors
+     *                           for one or more columns in data provider, those columns will be colored with this
+     *                           custom color. However you might not want this in some cases. Set this property to
+     *                           true to use scrollbar's graph colors.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setIgnoreCustomColors(boolean ignoreCustomColors) {
         this.ignoreCustomColors = ignoreCustomColors;
         return this;
@@ -382,8 +412,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * *Maximum value of ValueAxis of ChartScrollbar. Calculated automatically, if not set.
-     **/
+     * @param maximum *Maximum value of ValueAxis of ChartScrollbar. Calculated automatically, if not set.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setMaximum(double maximum) {
         this.maximum = maximum;
         return this;
@@ -394,8 +425,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * *Minimum value of ValueAxis of ChartScrollbar. Calculated automatically, if not set.
-     **/
+     * @param minimum *Minimum value of ValueAxis of ChartScrollbar. Calculated automatically, if not set.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setMinimum(double minimum) {
         this.minimum = minimum;
         return this;
@@ -406,8 +438,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Distance from plot area to scrollbar, in pixels.
-     **/
+     * @param offset Distance from plot area to scrollbar, in pixels.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setOffset(double offset) {
         this.offset = offset;
         return this;
@@ -418,11 +451,12 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * By default, scrollbar is in the opsite side of plot area from the axis. If you set
-     * this property to false, scrollbar will be placed next to category/value axis. However
-     * it won't adjust it's position regarding axis labels, so you might need to use offset
-     * property to move scrollbar away from labels.
-     **/
+     * @param oppositeAxis By default, scrollbar is in the opsite side of plot area from the axis. If you set
+     *                     this property to false, scrollbar will be placed next to category/value axis. However
+     *                     it won't adjust it's position regarding axis labels, so you might need to use offset
+     *                     property to move scrollbar away from labels.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setOppositeAxis(boolean oppositeAxis) {
         this.oppositeAxis = oppositeAxis;
         return this;
@@ -433,10 +467,11 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * If set to false it will prevent the chart scroll bar to change selection scope. The
-     * grip images will not be shown as well. The user would still be able to pan / move
-     * selection.
-     **/
+     * @param resizeEnabled If set to false it will prevent the chart scroll bar to change selection scope. The
+     *                      grip images will not be shown as well. The user would still be able to pan / move
+     *                      selection.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setResizeEnabled(boolean resizeEnabled) {
         this.resizeEnabled = resizeEnabled;
         return this;
@@ -447,8 +482,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Height (width, if chart is rotated) of a scrollbar.
-     **/
+     * @param scrollbarHeight Height (width, if chart is rotated) of a scrollbar.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setScrollbarHeight(double scrollbarHeight) {
         this.scrollbarHeight = scrollbarHeight;
         return this;
@@ -459,9 +495,10 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Duration of scrolling, when the user clicks on scrollbar's background, in seconds.
-     * Note, updateOnReleaseOnly should be set to false in order animation to happen.
-     **/
+     * @param scrollDuration Duration of scrolling, when the user clicks on scrollbar's background, in seconds.
+     *                       Note, updateOnReleaseOnly should be set to false in order animation to happen.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setScrollDuration(double scrollDuration) {
         this.scrollDuration = scrollDuration;
         return this;
@@ -472,8 +509,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Selected backround opacity.
-     **/
+     * @param selectedBackgroundAlpha Selected backround opacity.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setSelectedBackgroundAlpha(double selectedBackgroundAlpha) {
         this.selectedBackgroundAlpha = selectedBackgroundAlpha;
         return this;
@@ -484,8 +522,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Selected background color.
-     **/
+     * @param selectedBackgroundColor Selected background color.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setSelectedBackgroundColor(Color selectedBackgroundColor) {
         this.selectedBackgroundColor = selectedBackgroundColor;
         return this;
@@ -496,8 +535,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Selected graph's fill opacity. Value range is 0 - 1.
-     **/
+     * @param selectedGraphFillAlpha Selected graph's fill opacity. Value range is 0 - 1.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setSelectedGraphFillAlpha(double selectedGraphFillAlpha) {
         this.selectedGraphFillAlpha = selectedGraphFillAlpha;
         return this;
@@ -508,8 +548,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Selected graph's fill color.
-     **/
+     * @param selectedGraphFillColor Selected graph's fill color.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setSelectedGraphFillColor(Color selectedGraphFillColor) {
         this.selectedGraphFillColor = selectedGraphFillColor;
         return this;
@@ -520,8 +561,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Selected graph's line opacity. Value range is 0 - 1.
-     **/
+     * @param selectedGraphLineAlpha Selected graph's line opacity. Value range is 0 - 1.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setSelectedGraphLineAlpha(double selectedGraphLineAlpha) {
         this.selectedGraphLineAlpha = selectedGraphLineAlpha;
         return this;
@@ -532,8 +574,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Selected graph's line color.
-     **/
+     * @param selectedGraphLineColor Selected graph's line color.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setSelectedGraphLineColor(Color selectedGraphLineColor) {
         this.selectedGraphLineColor = selectedGraphLineColor;
         return this;
@@ -544,12 +587,13 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * In case you set it to some number, the chart will set focus on grips and draggable
-     * area of the scrollbar when user clicks tab key. When a focus is set, screen readers
-     * like NVDA Screen reader will read label which is set using accessibleLabel property
-     * of ChartScrollbar. When a focus is set user can zoom-in, zoom-out or pan the scrollbar
-     * using cursor keys. Note, not all browsers and readers support this.
-     **/
+     * @param tabIndex In case you set it to some number, the chart will set focus on grips and draggable
+     *                 area of the scrollbar when user clicks tab key. When a focus is set, screen readers
+     *                 like NVDA Screen reader will read label which is set using accessibleLabel property
+     *                 of ChartScrollbar. When a focus is set user can zoom-in, zoom-out or pan the scrollbar
+     *                 using cursor keys. Note, not all browsers and readers support this.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setTabIndex(double tabIndex) {
         this.tabIndex = tabIndex;
         return this;
@@ -560,9 +604,10 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Specifies if the chart should be updated while dragging/resizing the scrollbar or
-     * only at the moment when user releases mouse button.
-     **/
+     * @param updateOnReleaseOnly Specifies if the chart should be updated while dragging/resizing the scrollbar or
+     *                            only at the moment when user releases mouse button.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setUpdateOnReleaseOnly(boolean updateOnReleaseOnly) {
         this.updateOnReleaseOnly = updateOnReleaseOnly;
         return this;
@@ -573,8 +618,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * Mouse cursor type shown when user hovers vertical cursor's resize grips.
-     **/
+     * @param vResizeCursor Mouse cursor type shown when user hovers vertical cursor's resize grips.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setVResizeCursor(String vResizeCursor) {
         this.vResizeCursor = vResizeCursor;
         return this;
@@ -585,9 +631,10 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * CSS value of cursor displayed when mouse is pressed down over vertical cursor's resize
-     * grip.
-     **/
+     * @param vResizeCursorDown CSS value of cursor displayed when mouse is pressed down over vertical cursor's resize
+     *                          grip.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setVResizeCursorDown(String vResizeCursorDown) {
         this.vResizeCursorDown = vResizeCursorDown;
         return this;
@@ -598,8 +645,9 @@ public class ChartScrollbar implements Serializable {
     }
 
     /**
-     * CSS value of cursor displayed when hovering over vertical cursor's resize grip.
-     **/
+     * @param vResizeCursorHover CSS value of cursor displayed when hovering over vertical cursor's resize grip.
+     * @return ChartScrollbar
+     */
     public ChartScrollbar setVResizeCursorHover(String vResizeCursorHover) {
         this.vResizeCursorHover = vResizeCursorHover;
         return this;

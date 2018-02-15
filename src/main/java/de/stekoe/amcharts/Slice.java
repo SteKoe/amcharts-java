@@ -4,6 +4,14 @@ import de.stekoe.amcharts.addition.Color;
 
 import java.io.Serializable;
 
+/**
+ * Slice is an item of AmPieChart's chartData Array and holds all the information about
+ * the slice. When working with a pie chart, you do not create slices or change it's
+ * properties directly, instead you set array of data using dataProvider property. Consider
+ * properties of a Slice read-only - change values in chart's data provider if you need
+ * to.
+ */
+
 public class Slice implements Serializable {
     private Double alpha;
     private Color color;
@@ -18,8 +26,9 @@ public class Slice implements Serializable {
     private Boolean visibleInLegend;
 
     /**
-     * Opacity of a slice.
-     **/
+     * @param alpha Opacity of a slice.
+     * @return Slice
+     */
     public Slice setAlpha(double alpha) {
         this.alpha = alpha;
         return this;
@@ -30,8 +39,9 @@ public class Slice implements Serializable {
     }
 
     /**
-     * Color of a slice.
-     **/
+     * @param color Color of a slice.
+     * @return Slice
+     */
     public Slice setColor(Color color) {
         this.color = color;
         return this;
@@ -42,8 +52,9 @@ public class Slice implements Serializable {
     }
 
     /**
-     * Original object from data provider.
-     **/
+     * @param dataContext Original object from data provider.
+     * @return Slice
+     */
     public Slice setDataContext(Object dataContext) {
         this.dataContext = dataContext;
         return this;
@@ -54,8 +65,9 @@ public class Slice implements Serializable {
     }
 
     /**
-     * Slice description.
-     **/
+     * @param description Slice description.
+     * @return Slice
+     */
     public Slice setDescription(String description) {
         this.description = description;
         return this;
@@ -66,8 +78,9 @@ public class Slice implements Serializable {
     }
 
     /**
-     * Specifies whether the slice is hidden
-     **/
+     * @param hidden Specifies whether the slice is hidden
+     * @return Slice
+     */
     public Slice setHidden(boolean hidden) {
         this.hidden = hidden;
         return this;
@@ -78,8 +91,9 @@ public class Slice implements Serializable {
     }
 
     /**
-     * Percent value of a slice.
-     **/
+     * @param percents Percent value of a slice.
+     * @return Slice
+     */
     public Slice setPercents(double percents) {
         this.percents = percents;
         return this;
@@ -90,8 +104,9 @@ public class Slice implements Serializable {
     }
 
     /**
-     * Specifies whether the slice is pulled or not.
-     **/
+     * @param pulled Specifies whether the slice is pulled or not.
+     * @return Slice
+     */
     public Slice setPulled(boolean pulled) {
         this.pulled = pulled;
         return this;
@@ -102,8 +117,9 @@ public class Slice implements Serializable {
     }
 
     /**
-     * Slice title
-     **/
+     * @param title Slice title
+     * @return Slice
+     */
     public Slice setTitle(String title) {
         this.title = title;
         return this;
@@ -114,8 +130,9 @@ public class Slice implements Serializable {
     }
 
     /**
-     * Url of a slice
-     **/
+     * @param url Url of a slice
+     * @return Slice
+     */
     public Slice setUrl(String url) {
         this.url = url;
         return this;
@@ -126,8 +143,9 @@ public class Slice implements Serializable {
     }
 
     /**
-     * Value of a slice
-     **/
+     * @param value Value of a slice
+     * @return Slice
+     */
     public Slice setValue(double value) {
         this.value = value;
         return this;
@@ -138,8 +156,9 @@ public class Slice implements Serializable {
     }
 
     /**
-     * specifies whether this slice has a legend entry
-     **/
+     * @param visibleInLegend specifies whether this slice has a legend entry
+     * @return Slice
+     */
     public Slice setVisibleInLegend(boolean visibleInLegend) {
         this.visibleInLegend = visibleInLegend;
         return this;

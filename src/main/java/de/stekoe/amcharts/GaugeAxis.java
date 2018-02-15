@@ -6,6 +6,10 @@ import de.stekoe.amcharts.addition.Listener;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * Creates an axis for AmAngularGauge charts, multiple can be assigned.
+ */
+
 public class GaugeAxis implements Serializable {
     private Double axisAlpha;
     private Color axisColor;
@@ -57,8 +61,9 @@ public class GaugeAxis implements Serializable {
     private Double valueInterval;
 
     /**
-     * Axis opacity.
-     **/
+     * @param axisAlpha Axis opacity.
+     * @return GaugeAxis
+     */
     public GaugeAxis setAxisAlpha(double axisAlpha) {
         this.axisAlpha = axisAlpha;
         return this;
@@ -69,8 +74,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Axis color.
-     **/
+     * @param axisColor Axis color.
+     * @return GaugeAxis
+     */
     public GaugeAxis setAxisColor(Color axisColor) {
         this.axisColor = axisColor;
         return this;
@@ -81,8 +87,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Thickness of the axis outline.
-     **/
+     * @param axisThickness Thickness of the axis outline.
+     * @return GaugeAxis
+     */
     public GaugeAxis setAxisThickness(double axisThickness) {
         this.axisThickness = axisThickness;
         return this;
@@ -93,8 +100,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Opacity of band fills.
-     **/
+     * @param bandAlpha Opacity of band fills.
+     * @return GaugeAxis
+     */
     public GaugeAxis setBandAlpha(double bandAlpha) {
         this.bandAlpha = bandAlpha;
         return this;
@@ -105,10 +113,11 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Example: [-0.2, 0, -0.2]. Will make bands to be filled with color gradients. Negative
-     * value means the color will be darker than the original, and positive number means
-     * the color will be lighter.
-     **/
+     * @param bandGradientRatio Example: [-0.2, 0, -0.2]. Will make bands to be filled with color gradients. Negative
+     *                          value means the color will be darker than the original, and positive number means
+     *                          the color will be lighter.
+     * @return GaugeAxis
+     */
     public GaugeAxis setBandGradientRatio(List<Number> bandGradientRatio) {
         this.bandGradientRatio = bandGradientRatio;
         return this;
@@ -119,8 +128,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Opacity of band outlines.
-     **/
+     * @param bandOutlineAlpha Opacity of band outlines.
+     * @return GaugeAxis
+     */
     public GaugeAxis setBandOutlineAlpha(double bandOutlineAlpha) {
         this.bandOutlineAlpha = bandOutlineAlpha;
         return this;
@@ -131,8 +141,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Color of band outlines.
-     **/
+     * @param bandOutlineColor Color of band outlines.
+     * @return GaugeAxis
+     */
     public GaugeAxis setBandOutlineColor(Color bandOutlineColor) {
         this.bandOutlineColor = bandOutlineColor;
         return this;
@@ -143,8 +154,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Thickness of band outlines.
-     **/
+     * @param bandOutlineThickness Thickness of band outlines.
+     * @return GaugeAxis
+     */
     public GaugeAxis setBandOutlineThickness(double bandOutlineThickness) {
         this.bandOutlineThickness = bandOutlineThickness;
         return this;
@@ -155,9 +167,10 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Array of bands - GaugeBand objects. Bands are used to draw color fills between specified
-     * values.
-     **/
+     * @param bands Array of bands - GaugeBand objects. Bands are used to draw color fills between specified
+     *              values.
+     * @return GaugeAxis
+     */
     public GaugeAxis setBands(List<GaugeBand> bands) {
         this.bands = bands;
         return this;
@@ -168,8 +181,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Text displayed below the axis center.
-     **/
+     * @param bottomText Text displayed below the axis center.
+     * @return GaugeAxis
+     */
     public GaugeAxis setBottomText(String bottomText) {
         this.bottomText = bottomText;
         return this;
@@ -180,8 +194,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Specifies if text should be bold.
-     **/
+     * @param bottomTextBold Specifies if text should be bold.
+     * @return GaugeAxis
+     */
     public GaugeAxis setBottomTextBold(boolean bottomTextBold) {
         this.bottomTextBold = bottomTextBold;
         return this;
@@ -192,8 +207,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Bottom text color.
-     **/
+     * @param bottomTextColor Bottom text color.
+     * @return GaugeAxis
+     */
     public GaugeAxis setBottomTextColor(Color bottomTextColor) {
         this.bottomTextColor = bottomTextColor;
         return this;
@@ -204,8 +220,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Font size of bottom text.
-     **/
+     * @param bottomTextFontSize Font size of bottom text.
+     * @return GaugeAxis
+     */
     public GaugeAxis setBottomTextFontSize(double bottomTextFontSize) {
         this.bottomTextFontSize = bottomTextFontSize;
         return this;
@@ -216,8 +233,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Y offset of bottom text.
-     **/
+     * @param bottomTextYOffset Y offset of bottom text.
+     * @return GaugeAxis
+     */
     public GaugeAxis setBottomTextYOffset(double bottomTextYOffset) {
         this.bottomTextYOffset = bottomTextYOffset;
         return this;
@@ -228,8 +246,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * X position of the axis, relative to the center of the gauge.
-     **/
+     * @param centerX X position of the axis, relative to the center of the gauge.
+     * @return GaugeAxis
+     */
     public GaugeAxis setCenterX(String centerX) {
         this.centerX = centerX;
         return this;
@@ -240,8 +259,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Y position of the axis, relative to the center of the gauge.
-     **/
+     * @param centerY Y position of the axis, relative to the center of the gauge.
+     * @return GaugeAxis
+     */
     public GaugeAxis setCenterY(String centerY) {
         this.centerY = centerY;
         return this;
@@ -252,8 +272,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Specifies labels color of the axis.
-     **/
+     * @param color Specifies labels color of the axis.
+     * @return GaugeAxis
+     */
     public GaugeAxis setColor(Color color) {
         this.color = color;
         return this;
@@ -264,8 +285,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Axis end angle. Valid values are from - 180 to 180.
-     **/
+     * @param endAngle Axis end angle. Valid values are from - 180 to 180.
+     * @return GaugeAxis
+     */
     public GaugeAxis setEndAngle(double endAngle) {
         this.endAngle = endAngle;
         return this;
@@ -276,8 +298,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Axis end (max) value
-     **/
+     * @param endValue Axis end (max) value
+     * @return GaugeAxis
+     */
     public GaugeAxis setEndValue(double endValue) {
         this.endValue = endValue;
         return this;
@@ -288,8 +311,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Font size for axis labels.
-     **/
+     * @param fontSize Font size for axis labels.
+     * @return GaugeAxis
+     */
     public GaugeAxis setFontSize(double fontSize) {
         this.fontSize = fontSize;
         return this;
@@ -300,9 +324,10 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Number of grid lines. Note, GaugeAxis doesn't adjust gridCount, so you should check
-     * your values and choose a proper gridCount which would result grids at round numbers.
-     **/
+     * @param gridCount Number of grid lines. Note, GaugeAxis doesn't adjust gridCount, so you should check
+     *                  your values and choose a proper gridCount which would result grids at round numbers.
+     * @return GaugeAxis
+     */
     public GaugeAxis setGridCount(double gridCount) {
         this.gridCount = gridCount;
         return this;
@@ -313,8 +338,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Specifies if grid should be drawn inside or outside the axis.
-     **/
+     * @param gridInside Specifies if grid should be drawn inside or outside the axis.
+     * @return GaugeAxis
+     */
     public GaugeAxis setGridInside(boolean gridInside) {
         this.gridInside = gridInside;
         return this;
@@ -325,8 +351,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Unique id of an axis.
-     **/
+     * @param id Unique id of an axis.
+     * @return GaugeAxis
+     */
     public GaugeAxis setId(String id) {
         this.id = id;
         return this;
@@ -337,8 +364,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Specifies if labels should be placed inside or outside the axis.
-     **/
+     * @param inside Specifies if labels should be placed inside or outside the axis.
+     * @return GaugeAxis
+     */
     public GaugeAxis setInside(boolean inside) {
         this.inside = inside;
         return this;
@@ -349,8 +377,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Frequency of labels.
-     **/
+     * @param labelFrequency Frequency of labels.
+     * @return GaugeAxis
+     */
     public GaugeAxis setLabelFrequency(double labelFrequency) {
         this.labelFrequency = labelFrequency;
         return this;
@@ -361,8 +390,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Distance from axis to the labels.
-     **/
+     * @param labelOffset Distance from axis to the labels.
+     * @return GaugeAxis
+     */
     public GaugeAxis setLabelOffset(double labelOffset) {
         this.labelOffset = labelOffset;
         return this;
@@ -373,8 +403,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Specifies if labels on the axis should be shown.
-     **/
+     * @param labelsEnabled Specifies if labels on the axis should be shown.
+     * @return GaugeAxis
+     */
     public GaugeAxis setLabelsEnabled(boolean labelsEnabled) {
         this.labelsEnabled = labelsEnabled;
         return this;
@@ -385,9 +416,10 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * You can add listeners of events using this property. Example: listeners = [{"event":"clickBand",
-     * "method":handleClick}];
-     **/
+     * @param listeners You can add listeners of events using this property. Example: listeners = [{"event":"clickBand",
+     *                  "method":handleClick}];
+     * @return GaugeAxis
+     */
     public GaugeAxis setListeners(List<Listener> listeners) {
         this.listeners = listeners;
         return this;
@@ -398,8 +430,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Interval, at which minor ticks should be placed.
-     **/
+     * @param minorTickInterval Interval, at which minor ticks should be placed.
+     * @return GaugeAxis
+     */
     public GaugeAxis setMinorTickInterval(double minorTickInterval) {
         this.minorTickInterval = minorTickInterval;
         return this;
@@ -410,8 +443,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Length of a minor tick.
-     **/
+     * @param minorTickLength Length of a minor tick.
+     * @return GaugeAxis
+     */
     public GaugeAxis setMinorTickLength(double minorTickLength) {
         this.minorTickLength = minorTickLength;
         return this;
@@ -422,8 +456,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Axis radius.
-     **/
+     * @param radius Axis radius.
+     * @return GaugeAxis
+     */
     public GaugeAxis setRadius(String radius) {
         this.radius = radius;
         return this;
@@ -434,8 +469,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Specifies if the first label should be shown.
-     **/
+     * @param showFirstLabel Specifies if the first label should be shown.
+     * @return GaugeAxis
+     */
     public GaugeAxis setShowFirstLabel(boolean showFirstLabel) {
         this.showFirstLabel = showFirstLabel;
         return this;
@@ -446,8 +482,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Specifies if the last label should be shown.
-     **/
+     * @param showLastLabel Specifies if the last label should be shown.
+     * @return GaugeAxis
+     */
     public GaugeAxis setShowLastLabel(boolean showLastLabel) {
         this.showLastLabel = showLastLabel;
         return this;
@@ -458,8 +495,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Axis start angle. Valid values are from - 180 to 180.
-     **/
+     * @param startAngle Axis start angle. Valid values are from - 180 to 180.
+     * @return GaugeAxis
+     */
     public GaugeAxis setStartAngle(double startAngle) {
         this.startAngle = startAngle;
         return this;
@@ -470,8 +508,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Axis start (min) value.
-     **/
+     * @param startValue Axis start (min) value.
+     * @return GaugeAxis
+     */
     public GaugeAxis setStartValue(double startValue) {
         this.startValue = startValue;
         return this;
@@ -482,8 +521,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Opacity of axis ticks.
-     **/
+     * @param tickAlpha Opacity of axis ticks.
+     * @return GaugeAxis
+     */
     public GaugeAxis setTickAlpha(double tickAlpha) {
         this.tickAlpha = tickAlpha;
         return this;
@@ -494,8 +534,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Color of axis ticks.
-     **/
+     * @param tickColor Color of axis ticks.
+     * @return GaugeAxis
+     */
     public GaugeAxis setTickColor(Color tickColor) {
         this.tickColor = tickColor;
         return this;
@@ -506,8 +547,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Length of a major tick.
-     **/
+     * @param tickLength Length of a major tick.
+     * @return GaugeAxis
+     */
     public GaugeAxis setTickLength(double tickLength) {
         this.tickLength = tickLength;
         return this;
@@ -518,8 +560,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Tick thickness.
-     **/
+     * @param tickThickness Tick thickness.
+     * @return GaugeAxis
+     */
     public GaugeAxis setTickThickness(double tickThickness) {
         this.tickThickness = tickThickness;
         return this;
@@ -530,8 +573,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Text displayed above the axis center.
-     **/
+     * @param topText Text displayed above the axis center.
+     * @return GaugeAxis
+     */
     public GaugeAxis setTopText(String topText) {
         this.topText = topText;
         return this;
@@ -542,8 +586,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Specifies if text should be bold.
-     **/
+     * @param topTextBold Specifies if text should be bold.
+     * @return GaugeAxis
+     */
     public GaugeAxis setTopTextBold(boolean topTextBold) {
         this.topTextBold = topTextBold;
         return this;
@@ -554,8 +599,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Color of top text.
-     **/
+     * @param topTextColor Color of top text.
+     * @return GaugeAxis
+     */
     public GaugeAxis setTopTextColor(Color topTextColor) {
         this.topTextColor = topTextColor;
         return this;
@@ -566,8 +612,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Font size of top text.
-     **/
+     * @param topTextFontSize Font size of top text.
+     * @return GaugeAxis
+     */
     public GaugeAxis setTopTextFontSize(double topTextFontSize) {
         this.topTextFontSize = topTextFontSize;
         return this;
@@ -578,8 +625,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Y offset of top text.
-     **/
+     * @param topTextYOffset Y offset of top text.
+     * @return GaugeAxis
+     */
     public GaugeAxis setTopTextYOffset(double topTextYOffset) {
         this.topTextYOffset = topTextYOffset;
         return this;
@@ -590,8 +638,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * A string which can be placed next to axis labels.
-     **/
+     * @param unit A string which can be placed next to axis labels.
+     * @return GaugeAxis
+     */
     public GaugeAxis setUnit(String unit) {
         this.unit = unit;
         return this;
@@ -602,8 +651,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Position of the unit.
-     **/
+     * @param unitPosition Position of the unit.
+     * @return GaugeAxis
+     */
     public GaugeAxis setUnitPosition(String unitPosition) {
         this.unitPosition = unitPosition;
         return this;
@@ -614,8 +664,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * *Specifies if small and big numbers should use prefixes to make them more readable.
-     **/
+     * @param usePrefixes *Specifies if small and big numbers should use prefixes to make them more readable.
+     * @return GaugeAxis
+     */
     public GaugeAxis setUsePrefixes(boolean usePrefixes) {
         this.usePrefixes = usePrefixes;
         return this;
@@ -626,8 +677,9 @@ public class GaugeAxis implements Serializable {
     }
 
     /**
-     * Interval, at which ticks with values should be placed.
-     **/
+     * @param valueInterval Interval, at which ticks with values should be placed.
+     * @return GaugeAxis
+     */
     public GaugeAxis setValueInterval(double valueInterval) {
         this.valueInterval = valueInterval;
         return this;

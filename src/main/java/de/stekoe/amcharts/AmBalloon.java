@@ -4,6 +4,12 @@ import de.stekoe.amcharts.addition.Color;
 
 import java.io.Serializable;
 
+/**
+ * Creates the balloons ( tooltips ) of the chart, It follows the mouse cursor when
+ * you roll-over the data items. The framework generates the instances automatically
+ * you only need to adjust the appearance to your needs.
+ */
+
 public class AmBalloon implements Serializable {
     private Boolean adjustBorderColor;
     private Double animationDuration;
@@ -33,9 +39,10 @@ public class AmBalloon implements Serializable {
     private Double verticalPadding;
 
     /**
-     * If this is set to true, border color instead of background color will be changed
-     * when user rolls-over the slice, graph, etc.
-     **/
+     * @param adjustBorderColor If this is set to true, border color instead of background color will be changed
+     *                          when user rolls-over the slice, graph, etc.
+     * @return AmBalloon
+     */
     public AmBalloon setAdjustBorderColor(boolean adjustBorderColor) {
         this.adjustBorderColor = adjustBorderColor;
         return this;
@@ -46,8 +53,9 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Duration of balloon movement from previous point to current point, in seconds.
-     **/
+     * @param animationDuration Duration of balloon movement from previous point to current point, in seconds.
+     * @return AmBalloon
+     */
     public AmBalloon setAnimationDuration(double animationDuration) {
         this.animationDuration = animationDuration;
         return this;
@@ -58,8 +66,9 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Balloon border opacity. Value range is 0 - 1.
-     **/
+     * @param borderAlpha Balloon border opacity. Value range is 0 - 1.
+     * @return AmBalloon
+     */
     public AmBalloon setBorderAlpha(double borderAlpha) {
         this.borderAlpha = borderAlpha;
         return this;
@@ -70,8 +79,9 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Balloon border color. Will only be used of adjustBorderColor is false.
-     **/
+     * @param borderColor Balloon border color. Will only be used of adjustBorderColor is false.
+     * @return AmBalloon
+     */
     public AmBalloon setBorderColor(Color borderColor) {
         this.borderColor = borderColor;
         return this;
@@ -82,8 +92,9 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Balloon border thickness.
-     **/
+     * @param borderThickness Balloon border thickness.
+     * @return AmBalloon
+     */
     public AmBalloon setBorderThickness(double borderThickness) {
         this.borderThickness = borderThickness;
         return this;
@@ -94,8 +105,9 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Color of text in the balloon.
-     **/
+     * @param color Color of text in the balloon.
+     * @return AmBalloon
+     */
     public AmBalloon setColor(Color color) {
         this.color = color;
         return this;
@@ -106,8 +118,9 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Balloon corner radius.
-     **/
+     * @param cornerRadius Balloon corner radius.
+     * @return AmBalloon
+     */
     public AmBalloon setCornerRadius(double cornerRadius) {
         this.cornerRadius = cornerRadius;
         return this;
@@ -118,9 +131,10 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * If your balloon has links, you have to set this to false in order for those links
-     * to be clickable.
-     **/
+     * @param disableMouseEvents If your balloon has links, you have to set this to false in order for those links
+     *                           to be clickable.
+     * @return AmBalloon
+     */
     public AmBalloon setDisableMouseEvents(boolean disableMouseEvents) {
         this.disableMouseEvents = disableMouseEvents;
         return this;
@@ -131,12 +145,13 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Allows having drop-shaped balloons. Note, these balloons will not check for overlapping
-     * with other balloons, or if they go outside plot area. It also does not change pointer
-     * orientation automatically based on its vertical position like regular balloons do.
-     * You can use pointerOrientation property if you want it to point to different direction.
-     * Not supported by IE8.
-     **/
+     * @param drop Allows having drop-shaped balloons. Note, these balloons will not check for overlapping
+     *             with other balloons, or if they go outside plot area. It also does not change pointer
+     *             orientation automatically based on its vertical position like regular balloons do.
+     *             You can use pointerOrientation property if you want it to point to different direction.
+     *             Not supported by IE8.
+     * @return AmBalloon
+     */
     public AmBalloon setDrop(boolean drop) {
         this.drop = drop;
         return this;
@@ -147,19 +162,20 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Use this property to disable balloons for certain value axes. I.e.: "valueAxes":
-     * [{
-     * // ...
-     * // value balloons are shown
-     * }, {
-     * // ...
-     * "balloon": {
-     * "enabled":
-     * false
-     * }
-     * // value balloons are not shown
-     * }]
-     **/
+     * @param enabled Use this property to disable balloons for certain value axes. I.e.: "valueAxes":
+     *                [{
+     *                // ...
+     *                // value balloons are shown
+     *                }, {
+     *                // ...
+     *                "balloon": {
+     *                "enabled":
+     *                false
+     *                }
+     *                // value balloons are not shown
+     *                }]
+     * @return AmBalloon
+     */
     public AmBalloon setEnabled(boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -170,8 +186,9 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Duration of a fade out animation, in seconds.
-     **/
+     * @param fadeOutDuration Duration of a fade out animation, in seconds.
+     * @return AmBalloon
+     */
     public AmBalloon setFadeOutDuration(double fadeOutDuration) {
         this.fadeOutDuration = fadeOutDuration;
         return this;
@@ -182,8 +199,9 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Balloon background opacity.
-     **/
+     * @param fillAlpha Balloon background opacity.
+     * @return AmBalloon
+     */
     public AmBalloon setFillAlpha(double fillAlpha) {
         this.fillAlpha = fillAlpha;
         return this;
@@ -194,9 +212,10 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Balloon background color. Usually balloon background color is set by the chart. Only
-     * if "adjustBorderColor" is "true" this color will be used.
-     **/
+     * @param fillColor Balloon background color. Usually balloon background color is set by the chart. Only
+     *                  if "adjustBorderColor" is "true" this color will be used.
+     * @return AmBalloon
+     */
     public AmBalloon setFillColor(Color fillColor) {
         this.fillColor = fillColor;
         return this;
@@ -207,10 +226,11 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Specifies if balloon should follow mouse when hovering the slice/column/bullet or
-     * stay in fixed position (this does not affect balloon behavior if ChartCursor is used).
-     * Note: This setting is ignored in JavaScript Maps.
-     **/
+     * @param fixedPosition Specifies if balloon should follow mouse when hovering the slice/column/bullet or
+     *                      stay in fixed position (this does not affect balloon behavior if ChartCursor is used).
+     *                      Note: This setting is ignored in JavaScript Maps.
+     * @return AmBalloon
+     */
     public AmBalloon setFixedPosition(boolean fixedPosition) {
         this.fixedPosition = fixedPosition;
         return this;
@@ -221,8 +241,9 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Size of text in the balloon. Chart's fontSize is used by default.
-     **/
+     * @param fontSize Size of text in the balloon. Chart's fontSize is used by default.
+     * @return AmBalloon
+     */
     public AmBalloon setFontSize(double fontSize) {
         this.fontSize = fontSize;
         return this;
@@ -233,8 +254,9 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Horizontal padding of the balloon.
-     **/
+     * @param horizontalPadding Horizontal padding of the balloon.
+     * @return AmBalloon
+     */
     public AmBalloon setHorizontalPadding(double horizontalPadding) {
         this.horizontalPadding = horizontalPadding;
         return this;
@@ -245,8 +267,9 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Maximum width of a balloon.
-     **/
+     * @param maxWidth Maximum width of a balloon.
+     * @return AmBalloon
+     */
     public AmBalloon setMaxWidth(double maxWidth) {
         this.maxWidth = maxWidth;
         return this;
@@ -257,11 +280,12 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Defines horizontal distance from mouse pointer to balloon pointer. If you set it
-     * to a small value, the balloon might flicker, as mouse might lose focus on hovered
-     * object. NOTE: this setting is ignored unless fixedPosition is set to false or Chart
-     * Cursor is enabled.
-     **/
+     * @param offsetX Defines horizontal distance from mouse pointer to balloon pointer. If you set it
+     *                to a small value, the balloon might flicker, as mouse might lose focus on hovered
+     *                object. NOTE: this setting is ignored unless fixedPosition is set to false or Chart
+     *                Cursor is enabled.
+     * @return AmBalloon
+     */
     public AmBalloon setOffsetX(double offsetX) {
         this.offsetX = offsetX;
         return this;
@@ -272,11 +296,12 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Defines vertical distance from mouse pointer to balloon pointer. If you set it to
-     * a small value, the balloon might flicker, as mouse might lose focus on hovered object.
-     * NOTE: this setting is ignored unless fixedPosition is set to false or Chart Cursor
-     * is enabled.
-     **/
+     * @param offsetY Defines vertical distance from mouse pointer to balloon pointer. If you set it to
+     *                a small value, the balloon might flicker, as mouse might lose focus on hovered object.
+     *                NOTE: this setting is ignored unless fixedPosition is set to false or Chart Cursor
+     *                is enabled.
+     * @return AmBalloon
+     */
     public AmBalloon setOffsetY(double offsetY) {
         this.offsetY = offsetY;
         return this;
@@ -287,8 +312,9 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Works only if balloon.drop set to true, specifies direction of a pointer.
-     **/
+     * @param pointerOrientation Works only if balloon.drop set to true, specifies direction of a pointer.
+     * @return AmBalloon
+     */
     public AmBalloon setPointerOrientation(String pointerOrientation) {
         this.pointerOrientation = pointerOrientation;
         return this;
@@ -299,8 +325,9 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * The width of the pointer (arrow) "root". Only used if cornerRadius is 0.
-     **/
+     * @param pointerWidth The width of the pointer (arrow) "root". Only used if cornerRadius is 0.
+     * @return AmBalloon
+     */
     public AmBalloon setPointerWidth(double pointerWidth) {
         this.pointerWidth = pointerWidth;
         return this;
@@ -311,8 +338,9 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Opacity of a shadow.
-     **/
+     * @param shadowAlpha Opacity of a shadow.
+     * @return AmBalloon
+     */
     public AmBalloon setShadowAlpha(double shadowAlpha) {
         this.shadowAlpha = shadowAlpha;
         return this;
@@ -323,8 +351,9 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Color of a shadow.
-     **/
+     * @param shadowColor Color of a shadow.
+     * @return AmBalloon
+     */
     public AmBalloon setShadowColor(Color shadowColor) {
         this.shadowColor = shadowColor;
         return this;
@@ -335,10 +364,11 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * If cornerRadius of a balloon is >0, showBullet is set to true for value balloons
-     * when ChartCursor is used. If you don't want the bullet near the balloon, set it to
-     * false: chart.balloon.showBullet = false
-     **/
+     * @param showBullet If cornerRadius of a balloon is >0, showBullet is set to true for value balloons
+     *                   when ChartCursor is used. If you don't want the bullet near the balloon, set it to
+     *                   false: chart.balloon.showBullet = false
+     * @return AmBalloon
+     */
     public AmBalloon setShowBullet(boolean showBullet) {
         this.showBullet = showBullet;
         return this;
@@ -349,8 +379,9 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Text alignment, possible values "left", "middle" and "right"
-     **/
+     * @param textAlign Text alignment, possible values "left", "middle" and "right"
+     * @return AmBalloon
+     */
     public AmBalloon setTextAlign(String textAlign) {
         this.textAlign = textAlign;
         return this;
@@ -361,8 +392,9 @@ public class AmBalloon implements Serializable {
     }
 
     /**
-     * Vertical padding of the balloon.
-     **/
+     * @param verticalPadding Vertical padding of the balloon.
+     * @return AmBalloon
+     */
     public AmBalloon setVerticalPadding(double verticalPadding) {
         this.verticalPadding = verticalPadding;
         return this;

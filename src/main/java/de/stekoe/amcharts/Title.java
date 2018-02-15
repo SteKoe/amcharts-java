@@ -4,6 +4,10 @@ import de.stekoe.amcharts.addition.Color;
 
 import java.io.Serializable;
 
+/**
+ * Creates a title on above the chart, multiple can be assigned.
+ */
+
 public class Title implements Serializable {
     private Double alpha;
     private Boolean bold;
@@ -14,8 +18,9 @@ public class Title implements Serializable {
     private String text;
 
     /**
-     * Opacity of a title.
-     **/
+     * @param alpha Opacity of a title.
+     * @return Title
+     */
     public Title setAlpha(double alpha) {
         this.alpha = alpha;
         return this;
@@ -26,8 +31,9 @@ public class Title implements Serializable {
     }
 
     /**
-     * Specifies if title should be bold or not.
-     **/
+     * @param bold Specifies if title should be bold or not.
+     * @return Title
+     */
     public Title setBold(boolean bold) {
         this.bold = bold;
         return this;
@@ -38,8 +44,9 @@ public class Title implements Serializable {
     }
 
     /**
-     * Text color of a title.
-     **/
+     * @param color Text color of a title.
+     * @return Title
+     */
     public Title setColor(Color color) {
         this.color = color;
         return this;
@@ -50,8 +57,9 @@ public class Title implements Serializable {
     }
 
     /**
-     * Unique id of a Title. You don't need to set it, unless you want to.
-     **/
+     * @param id Unique id of a Title. You don't need to set it, unless you want to.
+     * @return Title
+     */
     public Title setId(String id) {
         this.id = id;
         return this;
@@ -62,8 +70,9 @@ public class Title implements Serializable {
     }
 
     /**
-     * Text size of a title.
-     **/
+     * @param size Text size of a title.
+     * @return Title
+     */
     public Title setSize(double size) {
         this.size = size;
         return this;
@@ -74,10 +83,11 @@ public class Title implements Serializable {
     }
 
     /**
-     * In case you set it to some number, the chart will set focus on the title when user
-     * clicks tab key. When a focus is set, screen readers like NVDA Screen reader will
-     * read the title. Note, not all browsers and readers support this.
-     **/
+     * @param tabIndex In case you set it to some number, the chart will set focus on the title when user
+     *                 clicks tab key. When a focus is set, screen readers like NVDA Screen reader will
+     *                 read the title. Note, not all browsers and readers support this.
+     * @return Title
+     */
     public Title setTabIndex(double tabIndex) {
         this.tabIndex = tabIndex;
         return this;
@@ -88,8 +98,9 @@ public class Title implements Serializable {
     }
 
     /**
-     * Text of a title.
-     **/
+     * @param text Text of a title.
+     * @return Title
+     */
     public Title setText(String text) {
         this.text = text;
         return this;

@@ -4,6 +4,10 @@ import de.stekoe.amcharts.addition.Color;
 
 import java.util.List;
 
+/**
+ * Extension for AmChart to create gauge charts.
+ */
+
 public class AmAngularGauge extends AmChart {
     private Boolean adjustSize;
     private List<GaugeArrow> arrows;
@@ -26,8 +30,9 @@ public class AmAngularGauge extends AmChart {
     private String startEffect;
 
     /**
-     * Uses the whole space of the canvas to draw the gauge.
-     **/
+     * @param adjustSize Uses the whole space of the canvas to draw the gauge.
+     * @return AmAngularGauge
+     */
     public AmAngularGauge setAdjustSize(boolean adjustSize) {
         this.adjustSize = adjustSize;
         return this;
@@ -38,8 +43,9 @@ public class AmAngularGauge extends AmChart {
     }
 
     /**
-     * Array of arrows.
-     **/
+     * @param arrows Array of arrows.
+     * @return AmAngularGauge
+     */
     public AmAngularGauge setArrows(List<GaugeArrow> arrows) {
         this.arrows = arrows;
         return this;
@@ -50,8 +56,9 @@ public class AmAngularGauge extends AmChart {
     }
 
     /**
-     * Array of axes.
-     **/
+     * @param axes Array of axes.
+     * @return AmAngularGauge
+     */
     public AmAngularGauge setAxes(List<GaugeAxis> axes) {
         this.axes = axes;
         return this;
@@ -62,8 +69,9 @@ public class AmAngularGauge extends AmChart {
     }
 
     /**
-     * In case you use gauge to create a clock, set this to true.
-     **/
+     * @param clockWiseOnly In case you use gauge to create a clock, set this to true.
+     * @return AmAngularGauge
+     */
     public AmAngularGauge setClockWiseOnly(boolean clockWiseOnly) {
         this.clockWiseOnly = clockWiseOnly;
         return this;
@@ -74,8 +82,9 @@ public class AmAngularGauge extends AmChart {
     }
 
     /**
-     * Gauge face opacity.
-     **/
+     * @param faceAlpha Gauge face opacity.
+     * @return AmAngularGauge
+     */
     public AmAngularGauge setFaceAlpha(double faceAlpha) {
         this.faceAlpha = faceAlpha;
         return this;
@@ -86,8 +95,9 @@ public class AmAngularGauge extends AmChart {
     }
 
     /**
-     * Gauge face border opacity.
-     **/
+     * @param faceBorderAlpha Gauge face border opacity.
+     * @return AmAngularGauge
+     */
     public AmAngularGauge setFaceBorderAlpha(double faceBorderAlpha) {
         this.faceBorderAlpha = faceBorderAlpha;
         return this;
@@ -98,8 +108,9 @@ public class AmAngularGauge extends AmChart {
     }
 
     /**
-     * Gauge face border color.
-     **/
+     * @param faceBorderColor Gauge face border color.
+     * @return AmAngularGauge
+     */
     public AmAngularGauge setFaceBorderColor(Color faceBorderColor) {
         this.faceBorderColor = faceBorderColor;
         return this;
@@ -110,8 +121,9 @@ public class AmAngularGauge extends AmChart {
     }
 
     /**
-     * Gauge face border width.
-     **/
+     * @param faceBorderWidth Gauge face border width.
+     * @return AmAngularGauge
+     */
     public AmAngularGauge setFaceBorderWidth(double faceBorderWidth) {
         this.faceBorderWidth = faceBorderWidth;
         return this;
@@ -122,8 +134,9 @@ public class AmAngularGauge extends AmChart {
     }
 
     /**
-     * Gauge face color, requires faceAlpha > 0
-     **/
+     * @param faceColor Gauge face color, requires faceAlpha > 0
+     * @return AmAngularGauge
+     */
     public AmAngularGauge setFaceColor(Color faceColor) {
         this.faceColor = faceColor;
         return this;
@@ -134,9 +147,10 @@ public class AmAngularGauge extends AmChart {
     }
 
     /**
-     * Gauge face image-pattern. Example: {"url":"../amcharts/patterns/black/pattern1.png",
-     * "width":4, "height":4}
-     **/
+     * @param facePattern Gauge face image-pattern. Example: {"url":"../amcharts/patterns/black/pattern1.png",
+     *                    "width":4, "height":4}
+     * @return AmAngularGauge
+     */
     public AmAngularGauge setFacePattern(Object facePattern) {
         this.facePattern = facePattern;
         return this;
@@ -147,8 +161,9 @@ public class AmAngularGauge extends AmChart {
     }
 
     /**
-     * Gauge's horizontal position in pixel, origin is the center. Centered by default.
-     **/
+     * @param gaugeX Gauge's horizontal position in pixel, origin is the center. Centered by default.
+     * @return AmAngularGauge
+     */
     public AmAngularGauge setGaugeX(double gaugeX) {
         this.gaugeX = gaugeX;
         return this;
@@ -159,8 +174,9 @@ public class AmAngularGauge extends AmChart {
     }
 
     /**
-     * Gauge's vertical position in pixel, origin is the center. Centered by default.
-     **/
+     * @param gaugeY Gauge's vertical position in pixel, origin is the center. Centered by default.
+     * @return AmAngularGauge
+     */
     public AmAngularGauge setGaugeY(double gaugeY) {
         this.gaugeY = gaugeY;
         return this;
@@ -171,8 +187,9 @@ public class AmAngularGauge extends AmChart {
     }
 
     /**
-     * Bottom spacing between chart and container.
-     **/
+     * @param marginBottom Bottom spacing between chart and container.
+     * @return AmAngularGauge
+     */
     public AmAngularGauge setMarginBottom(double marginBottom) {
         this.marginBottom = marginBottom;
         return this;
@@ -183,8 +200,9 @@ public class AmAngularGauge extends AmChart {
     }
 
     /**
-     * Left-hand spacing between chart and container.
-     **/
+     * @param marginLeft Left-hand spacing between chart and container.
+     * @return AmAngularGauge
+     */
     public AmAngularGauge setMarginLeft(double marginLeft) {
         this.marginLeft = marginLeft;
         return this;
@@ -195,8 +213,9 @@ public class AmAngularGauge extends AmChart {
     }
 
     /**
-     * Right-hand spacing between chart and container.
-     **/
+     * @param marginRight Right-hand spacing between chart and container.
+     * @return AmAngularGauge
+     */
     public AmAngularGauge setMarginRight(double marginRight) {
         this.marginRight = marginRight;
         return this;
@@ -207,8 +226,9 @@ public class AmAngularGauge extends AmChart {
     }
 
     /**
-     * Top spacing between chart and container.
-     **/
+     * @param marginTop Top spacing between chart and container.
+     * @return AmAngularGauge
+     */
     public AmAngularGauge setMarginTop(double marginTop) {
         this.marginTop = marginTop;
         return this;
@@ -219,8 +239,9 @@ public class AmAngularGauge extends AmChart {
     }
 
     /**
-     * Minimum radius of a gauge.
-     **/
+     * @param minRadius Minimum radius of a gauge.
+     * @return AmAngularGauge
+     */
     public AmAngularGauge setMinRadius(double minRadius) {
         this.minRadius = minRadius;
         return this;
@@ -231,8 +252,9 @@ public class AmAngularGauge extends AmChart {
     }
 
     /**
-     * Duration of arrow animation.
-     **/
+     * @param startDuration Duration of arrow animation.
+     * @return AmAngularGauge
+     */
     public AmAngularGauge setStartDuration(double startDuration) {
         this.startDuration = startDuration;
         return this;
@@ -243,9 +265,10 @@ public class AmAngularGauge extends AmChart {
     }
 
     /**
-     * Transition effect of the arrows, possible effects: easeOutSine, easeInSine, elastic,
-     * bounce.
-     **/
+     * @param startEffect Transition effect of the arrows, possible effects: easeOutSine, easeInSine, elastic,
+     *                    bounce.
+     * @return AmAngularGauge
+     */
     public AmAngularGauge setStartEffect(String startEffect) {
         this.startEffect = startEffect;
         return this;

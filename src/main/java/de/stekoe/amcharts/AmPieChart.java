@@ -1,5 +1,9 @@
 package de.stekoe.amcharts;
 
+/**
+ * Extension for AmSlicedChart to create pie/donut charts.
+ */
+
 public class AmPieChart extends AmSlicedChart {
     private Boolean adjustPrecision;
     private Double angle;
@@ -19,10 +23,11 @@ public class AmPieChart extends AmSlicedChart {
     private String startRadius;
 
     /**
-     * Sometimes, because of a rounding, percent of a sum of all slices is not equal to
-     * 100%. If you set this to true, when this case happens, number of decimals will be
-     * increased so that sum would become 100%.
-     **/
+     * @param adjustPrecision Sometimes, because of a rounding, percent of a sum of all slices is not equal to
+     *                        100%. If you set this to true, when this case happens, number of decimals will be
+     *                        increased so that sum would become 100%.
+     * @return AmPieChart
+     */
     public AmPieChart setAdjustPrecision(boolean adjustPrecision) {
         this.adjustPrecision = adjustPrecision;
         return this;
@@ -33,8 +38,9 @@ public class AmPieChart extends AmSlicedChart {
     }
 
     /**
-     * Pie lean angle (for 3D effect). Valid range is 0 - 90.
-     **/
+     * @param angle Pie lean angle (for 3D effect). Valid range is 0 - 90.
+     * @return AmPieChart
+     */
     public AmPieChart setAngle(double angle) {
         this.angle = angle;
         return this;
@@ -45,10 +51,11 @@ public class AmPieChart extends AmSlicedChart {
     }
 
     /**
-     * Balloon text. The following tags can be used: [[value]], [[title]], [[percents]],
-     * [[description]] or any other field name from your data provider. HTML tags can also
-     * be used.
-     **/
+     * @param balloonText Balloon text. The following tags can be used: [[value]], [[title]], [[percents]],
+     *                    [[description]] or any other field name from your data provider. HTML tags can also
+     *                    be used.
+     * @return AmPieChart
+     */
     public AmPieChart setBalloonText(String balloonText) {
         this.balloonText = balloonText;
         return this;
@@ -59,8 +66,9 @@ public class AmPieChart extends AmSlicedChart {
     }
 
     /**
-     * Depth of the pie (for 3D effect).
-     **/
+     * @param depth3D Depth of the pie (for 3D effect).
+     * @return AmPieChart
+     */
     public AmPieChart setDepth3D(double depth3D) {
         this.depth3D = depth3D;
         return this;
@@ -71,8 +79,9 @@ public class AmPieChart extends AmSlicedChart {
     }
 
     /**
-     * Type of gradient. Use gradientRatio to create gradients.
-     **/
+     * @param gradientType Type of gradient. Use gradientRatio to create gradients.
+     * @return AmPieChart
+     */
     public AmPieChart setGradientType(String gradientType) {
         this.gradientType = gradientType;
         return this;
@@ -83,8 +92,9 @@ public class AmPieChart extends AmSlicedChart {
     }
 
     /**
-     * Inner radius of the pie, in pixels or percents.
-     **/
+     * @param innerRadius Inner radius of the pie, in pixels or percents.
+     * @return AmPieChart
+     */
     public AmPieChart setInnerRadius(String innerRadius) {
         this.innerRadius = innerRadius;
         return this;
@@ -95,9 +105,10 @@ public class AmPieChart extends AmSlicedChart {
     }
 
     /**
-     * The distance between the label and the slice, in pixels. You can use negative values
-     * to put the label on the slice.
-     **/
+     * @param labelRadius The distance between the label and the slice, in pixels. You can use negative values
+     *                    to put the label on the slice.
+     * @return AmPieChart
+     */
     public AmPieChart setLabelRadius(double labelRadius) {
         this.labelRadius = labelRadius;
         return this;
@@ -108,9 +119,10 @@ public class AmPieChart extends AmSlicedChart {
     }
 
     /**
-     * Name of the field in dataProvider which specifies the length of a tick. Note, the
-     * chart will not try to arrange labels automatically if this property is set.
-     **/
+     * @param labelRadiusField Name of the field in dataProvider which specifies the length of a tick. Note, the
+     *                         chart will not try to arrange labels automatically if this property is set.
+     * @return AmPieChart
+     */
     public AmPieChart setLabelRadiusField(String labelRadiusField) {
         this.labelRadiusField = labelRadiusField;
         return this;
@@ -121,9 +133,10 @@ public class AmPieChart extends AmSlicedChart {
     }
 
     /**
-     * Label text. The following tags can be used: [[value]], [[title]], [[percents]], [[description]]
-     * or any other field name from your data provider.
-     **/
+     * @param labelText Label text. The following tags can be used: [[value]], [[title]], [[percents]], [[description]]
+     *                  or any other field name from your data provider.
+     * @return AmPieChart
+     */
     public AmPieChart setLabelText(String labelText) {
         this.labelText = labelText;
         return this;
@@ -134,8 +147,9 @@ public class AmPieChart extends AmSlicedChart {
     }
 
     /**
-     * Minimum radius of the pie, in pixels.
-     **/
+     * @param minRadius Minimum radius of the pie, in pixels.
+     * @return AmPieChart
+     */
     public AmPieChart setMinRadius(double minRadius) {
         this.minRadius = minRadius;
         return this;
@@ -146,8 +160,9 @@ public class AmPieChart extends AmSlicedChart {
     }
 
     /**
-     * You can set fixed position of a pie center, in pixels or in percents.
-     **/
+     * @param pieX You can set fixed position of a pie center, in pixels or in percents.
+     * @return AmPieChart
+     */
     public AmPieChart setPieX(String pieX) {
         this.pieX = pieX;
         return this;
@@ -158,8 +173,9 @@ public class AmPieChart extends AmSlicedChart {
     }
 
     /**
-     * You can set fixed position of a pie center, in pixels or in percents.
-     **/
+     * @param pieY You can set fixed position of a pie center, in pixels or in percents.
+     * @return AmPieChart
+     */
     public AmPieChart setPieY(String pieY) {
         this.pieY = pieY;
         return this;
@@ -170,8 +186,9 @@ public class AmPieChart extends AmSlicedChart {
     }
 
     /**
-     * Pull out radius, in pixels or percents
-     **/
+     * @param pullOutRadius Pull out radius, in pixels or percents
+     * @return AmPieChart
+     */
     public AmPieChart setPullOutRadius(String pullOutRadius) {
         this.pullOutRadius = pullOutRadius;
         return this;
@@ -182,8 +199,9 @@ public class AmPieChart extends AmSlicedChart {
     }
 
     /**
-     * *Radius of a pie, in pixels or percents. By default, radius is calculated automatically.
-     **/
+     * @param radius *Radius of a pie, in pixels or percents. By default, radius is calculated automatically.
+     * @return AmPieChart
+     */
     public AmPieChart setRadius(String radius) {
         this.radius = radius;
         return this;
@@ -194,10 +212,11 @@ public class AmPieChart extends AmSlicedChart {
     }
 
     /**
-     * Angle of the first slice, in degrees. This will work properly only if "depth3D" is
-     * set to 0. If "depth3D" is greater than 0, then there can be two angles only: 90 and
-     * 270. Value range is 0-360.
-     **/
+     * @param startAngle Angle of the first slice, in degrees. This will work properly only if "depth3D" is
+     *                   set to 0. If "depth3D" is greater than 0, then there can be two angles only: 90 and
+     *                   270. Value range is 0-360.
+     * @return AmPieChart
+     */
     public AmPieChart setStartAngle(double startAngle) {
         this.startAngle = startAngle;
         return this;
@@ -208,8 +227,9 @@ public class AmPieChart extends AmSlicedChart {
     }
 
     /**
-     * Radius of the positions from which the slices will fly in.
-     **/
+     * @param startRadius Radius of the positions from which the slices will fly in.
+     * @return AmPieChart
+     */
     public AmPieChart setStartRadius(String startRadius) {
         this.startRadius = startRadius;
         return this;

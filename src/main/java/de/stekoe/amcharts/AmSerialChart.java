@@ -2,6 +2,13 @@ package de.stekoe.amcharts;
 
 import java.util.Date;
 
+/**
+ * Extension for AmRectangularChart to create line, area, column, bar, step line, smoothed
+ * line, candlestick and OHLC charts. The charts support multiple axes with simple or
+ * logarithmic scales, the data points can be displayed at equal / irregular intervals
+ * or on timeline basis.
+ */
+
 public class AmSerialChart extends AmRectangularChart {
     private String balloonDateFormat;
     private Double bezierX;
@@ -25,8 +32,9 @@ public class AmSerialChart extends AmRectangularChart {
     private Boolean zoomOutOnDataUpdate;
 
     /**
-     * *Date format of the graph balloon (if chart parses dates and you don't use chartCursor).
-     **/
+     * @param balloonDateFormat *Date format of the graph balloon (if chart parses dates and you don't use chartCursor).
+     * @return AmSerialChart
+     */
     public AmSerialChart setBalloonDateFormat(String balloonDateFormat) {
         this.balloonDateFormat = balloonDateFormat;
         return this;
@@ -37,10 +45,11 @@ public class AmSerialChart extends AmRectangularChart {
     }
 
     /**
-     * Horizontal tension of bezier (used by smoothed line). If not defined, chart adjust
-     * tension by itself, taking in to account if chart is rotated or not. Allowed values
-     * 1 - Infinity
-     **/
+     * @param bezierX Horizontal tension of bezier (used by smoothed line). If not defined, chart adjust
+     *                tension by itself, taking in to account if chart is rotated or not. Allowed values
+     *                1 - Infinity
+     * @return AmSerialChart
+     */
     public AmSerialChart setBezierX(double bezierX) {
         this.bezierX = bezierX;
         return this;
@@ -51,9 +60,10 @@ public class AmSerialChart extends AmRectangularChart {
     }
 
     /**
-     * Read-only. Chart creates category axis itself. If you want to change some properties,
-     * you should get this axis from the chart and set properties to this object.
-     **/
+     * @param categoryAxis Read-only. Chart creates category axis itself. If you want to change some properties,
+     *                     you should get this axis from the chart and set properties to this object.
+     * @return AmSerialChart
+     */
     public AmSerialChart setCategoryAxis(CategoryAxis categoryAxis) {
         this.categoryAxis = categoryAxis;
         return this;
@@ -64,9 +74,10 @@ public class AmSerialChart extends AmRectangularChart {
     }
 
     /**
-     * Category field name tells the chart the name of the field in your dataProvider object
-     * which will be used for category axis values.
-     **/
+     * @param categoryField Category field name tells the chart the name of the field in your dataProvider object
+     *                      which will be used for category axis values.
+     * @return AmSerialChart
+     */
     public AmSerialChart setCategoryField(String categoryField) {
         this.categoryField = categoryField;
         return this;
@@ -77,8 +88,9 @@ public class AmSerialChart extends AmRectangularChart {
     }
 
     /**
-     * The gap in pixels between two columns of the same category.
-     **/
+     * @param columnSpacing The gap in pixels between two columns of the same category.
+     * @return AmSerialChart
+     */
     public AmSerialChart setColumnSpacing(double columnSpacing) {
         this.columnSpacing = columnSpacing;
         return this;
@@ -89,8 +101,9 @@ public class AmSerialChart extends AmRectangularChart {
     }
 
     /**
-     * Space between 3D stacked columns.
-     **/
+     * @param columnSpacing3D Space between 3D stacked columns.
+     * @return AmSerialChart
+     */
     public AmSerialChart setColumnSpacing3D(double columnSpacing3D) {
         this.columnSpacing3D = columnSpacing3D;
         return this;
@@ -101,8 +114,9 @@ public class AmSerialChart extends AmRectangularChart {
     }
 
     /**
-     * Relative width of columns. Value range is 0 - 1.
-     **/
+     * @param columnWidth Relative width of columns. Value range is 0 - 1.
+     * @return AmSerialChart
+     */
     public AmSerialChart setColumnWidth(double columnWidth) {
         this.columnWidth = columnWidth;
         return this;
@@ -113,11 +127,12 @@ public class AmSerialChart extends AmRectangularChart {
     }
 
     /**
-     * Even if your chart parses dates, you can pass them as strings in your data – all
-     * you need to do is to set data date format and the chart will parse dates to date
-     * objects. Check this page for available formats. Please note that two-digit years
-     * (YY) as well as literal month names (MMM) are NOT supported in this setting.
-     **/
+     * @param dataDateFormat Even if your chart parses dates, you can pass them as strings in your data – all
+     *                       you need to do is to set data date format and the chart will parse dates to date
+     *                       objects. Check this page for available formats. Please note that two-digit years
+     *                       (YY) as well as literal month names (MMM) are NOT supported in this setting.
+     * @return AmSerialChart
+     */
     public AmSerialChart setDataDateFormat(String dataDateFormat) {
         this.dataDateFormat = dataDateFormat;
         return this;
@@ -128,9 +143,10 @@ public class AmSerialChart extends AmRectangularChart {
     }
 
     /**
-     * Read-only. If category axis parses dates endDate indicates date to which the chart
-     * is currently displayed.
-     **/
+     * @param endDate Read-only. If category axis parses dates endDate indicates date to which the chart
+     *                is currently displayed.
+     * @return AmSerialChart
+     */
     public AmSerialChart setEndDate(Date endDate) {
         this.endDate = endDate;
         return this;
@@ -141,8 +157,9 @@ public class AmSerialChart extends AmRectangularChart {
     }
 
     /**
-     * Read-only. Category index to which the chart is currently displayed.
-     **/
+     * @param endIndex Read-only. Category index to which the chart is currently displayed.
+     * @return AmSerialChart
+     */
     public AmSerialChart setEndIndex(double endIndex) {
         this.endIndex = endIndex;
         return this;
@@ -153,8 +170,9 @@ public class AmSerialChart extends AmRectangularChart {
     }
 
     /**
-     * Maximum number of series allowed to select.
-     **/
+     * @param maxSelectedSeries Maximum number of series allowed to select.
+     * @return AmSerialChart
+     */
     public AmSerialChart setMaxSelectedSeries(double maxSelectedSeries) {
         this.maxSelectedSeries = maxSelectedSeries;
         return this;
@@ -165,9 +183,10 @@ public class AmSerialChart extends AmRectangularChart {
     }
 
     /**
-     * The longest time span allowed to select (in milliseconds) for example, 259200000
-     * will limit selection to 3 days. Works if equalSpacing is set to false (default).
-     **/
+     * @param maxSelectedTime The longest time span allowed to select (in milliseconds) for example, 259200000
+     *                        will limit selection to 3 days. Works if equalSpacing is set to false (default).
+     * @return AmSerialChart
+     */
     public AmSerialChart setMaxSelectedTime(double maxSelectedTime) {
         this.maxSelectedTime = maxSelectedTime;
         return this;
@@ -178,9 +197,10 @@ public class AmSerialChart extends AmRectangularChart {
     }
 
     /**
-     * The shortest time span allowed to select (in milliseconds) for example, 1000 will
-     * limit selection to 1 second. Works if equalSpacing is set to false (default).
-     **/
+     * @param minSelectedTime The shortest time span allowed to select (in milliseconds) for example, 1000 will
+     *                        limit selection to 1 second. Works if equalSpacing is set to false (default).
+     * @return AmSerialChart
+     */
     public AmSerialChart setMinSelectedTime(double minSelectedTime) {
         this.minSelectedTime = minSelectedTime;
         return this;
@@ -191,9 +211,10 @@ public class AmSerialChart extends AmRectangularChart {
     }
 
     /**
-     * Specifies if scrolling of a chart with mouse wheel is enabled. If you press shift
-     * while rotating mouse wheel, the chart will zoom-in/out.
-     **/
+     * @param mouseWheelScrollEnabled Specifies if scrolling of a chart with mouse wheel is enabled. If you press shift
+     *                                while rotating mouse wheel, the chart will zoom-in/out.
+     * @return AmSerialChart
+     */
     public AmSerialChart setMouseWheelScrollEnabled(boolean mouseWheelScrollEnabled) {
         this.mouseWheelScrollEnabled = mouseWheelScrollEnabled;
         return this;
@@ -204,9 +225,10 @@ public class AmSerialChart extends AmRectangularChart {
     }
 
     /**
-     * Specifies if zooming of a chart with mouse wheel is enabled. If you press shift while
-     * rotating mouse wheel, the chart will scroll.
-     **/
+     * @param mouseWheelZoomEnabled Specifies if zooming of a chart with mouse wheel is enabled. If you press shift while
+     *                              rotating mouse wheel, the chart will scroll.
+     * @return AmSerialChart
+     */
     public AmSerialChart setMouseWheelZoomEnabled(boolean mouseWheelZoomEnabled) {
         this.mouseWheelZoomEnabled = mouseWheelZoomEnabled;
         return this;
@@ -217,9 +239,10 @@ public class AmSerialChart extends AmRectangularChart {
     }
 
     /**
-     * If you set this to true, the chart will be rotated by 90 degrees (the columns will
-     * become bars).
-     **/
+     * @param rotate If you set this to true, the chart will be rotated by 90 degrees (the columns will
+     *               become bars).
+     * @return AmSerialChart
+     */
     public AmSerialChart setRotate(boolean rotate) {
         this.rotate = rotate;
         return this;
@@ -230,9 +253,10 @@ public class AmSerialChart extends AmRectangularChart {
     }
 
     /**
-     * Read-only. If category axis parses dates startDate indicates date from which the
-     * chart is currently displayed.
-     **/
+     * @param startDate Read-only. If category axis parses dates startDate indicates date from which the
+     *                  chart is currently displayed.
+     * @return AmSerialChart
+     */
     public AmSerialChart setStartDate(Date startDate) {
         this.startDate = startDate;
         return this;
@@ -243,8 +267,9 @@ public class AmSerialChart extends AmRectangularChart {
     }
 
     /**
-     * Read-only. Category index from which the chart is currently displayed.
-     **/
+     * @param startIndex Read-only. Category index from which the chart is currently displayed.
+     * @return AmSerialChart
+     */
     public AmSerialChart setStartIndex(double startIndex) {
         this.startIndex = startIndex;
         return this;
@@ -255,8 +280,9 @@ public class AmSerialChart extends AmRectangularChart {
     }
 
     /**
-     * Value scrollbar, enables scrolling value axes.
-     **/
+     * @param valueScrollbar Value scrollbar, enables scrolling value axes.
+     * @return AmSerialChart
+     */
     public AmSerialChart setValueScrollbar(ChartScrollbar valueScrollbar) {
         this.valueScrollbar = valueScrollbar;
         return this;
@@ -267,8 +293,9 @@ public class AmSerialChart extends AmRectangularChart {
     }
 
     /**
-     * Specifies if chart should zoom-out when data is updated.
-     **/
+     * @param zoomOutOnDataUpdate Specifies if chart should zoom-out when data is updated.
+     * @return AmSerialChart
+     */
     public AmSerialChart setZoomOutOnDataUpdate(boolean zoomOutOnDataUpdate) {
         this.zoomOutOnDataUpdate = zoomOutOnDataUpdate;
         return this;
