@@ -1,5 +1,6 @@
 package de.stekoe.amcharts.extractor;
 
+import de.stekoe.amcharts.helper.AmChartsWebsiteExtractor;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
